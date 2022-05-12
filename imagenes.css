@@ -1,0 +1,23 @@
+#sp{
+    width:"600";
+    height:"400";
+}
+#it{
+    width:"600";
+    height:"400";
+}
+#jp{
+    width:"600";
+    height:"400";
+}
+#mx{
+    width:"600";
+    height:"400";
+}
+
+.container{
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
