@@ -1,0 +1,30 @@
+#sp{
+    width: 500px;
+    height: 600px;
+    float: left;
+}
+#it{
+    width: 500px;
+    height: 600px;
+    float: left;
+}
+#jp{
+    width: 500px;
+    height: 600px;
+    float:left;
+}
+#mx{
+    width: 500px;
+    height: 600px;
+    float:left;
+}
+
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .container {}
+
