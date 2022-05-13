@@ -19,12 +19,19 @@
     float:left;
 }
 
-.abs-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
+a:visited {
 
-  .container {}
+    color:red;
+}
+
+a:hover {
+    color:white;
+    background-color: blue;
+}
+
+
+
+
+
+
 
