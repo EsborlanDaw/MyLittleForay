@@ -1,0 +1,15 @@
+#ciudades{
+    float: left;
+    width: 80%;
+}
+#restaurante{
+    float: right;
+}
+.imagenes img{
+    float: left;
+    width: 400px;
+}
+.texto p{
+    float: right;
+    text-align: center;
+}
