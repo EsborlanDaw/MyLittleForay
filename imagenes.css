@@ -1,16 +1,14 @@
 .container img {
-    margin-left: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 50px;
-    width:400px;
-    height:400px;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    width:500px;
+    height:500px;
     padding: 15px;
 }
 
-#texto{
-    position: absolute;
-}
+
 a:visited {
 
     color:red;
