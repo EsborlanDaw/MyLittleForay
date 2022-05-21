@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="IMG/LOGOIMG.png">
-  <link rel="stylesheet" href="imagenes.css">
+  <link rel="stylesheet" href="inicio.css">
   <link rel="stylesheet" href="bootstrap/js/">
   <link rel="stylesheet" href="CSS/style.css">
   <!-- Latest compiled and minified CSS -->
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
+
   <header>
     <div class="px-3 py-2 text-center text-white">
       <a href="inicio.html">
@@ -25,89 +25,171 @@
       </a>
     </div>
   </header>
-  <div class="container">
-    <div class="contenedor" id="sp">
-      <img src="/img/paises/España.jpg" class="img-thumbnail" alt="España">
-      <div class="centrado">
-        <a href="paises/españa/españa.html" target="_blank">ESPAÑA</a>
+  <nav id = "barramenu" class="navbar navbar-expand-sm bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">INICIO</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DESTINOS</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">ESPAÑA</a></li>
+              <li><a class="dropdown-item" href="#">ITALIA</a></li>
+              <li><a class="dropdown-item" href="#">JAPÓN</a></li>
+              <li><a class="dropdown-item" href="#">MÉXICO</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">RESTAURANTE</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">CARTA ESPAÑA</a></li>
+              <li><a class="dropdown-item" href="#">CARTA ITALIA</a></li>
+              <li><a class="dropdown-item" href="#">CARTA JAPÓN</a></li>
+              <li><a class="dropdown-item" href="#">CARTA MÉXICO</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">RESERVA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">SOBRE NOSOTROS</a>
+          </li>   
+        </ul>
       </div>
     </div>
-    <div class="contenedor" id="it">
-      <img src="./img/paises/Italia.jpg" class="img-thumbnail" alt="Italia">
-      <div class="centrado">
-        <a href="paises/italia/italia.html" target="_blank">ITALIA</a>
+  </nav>
+    <!-- Carousel -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+  
+  <!-- The slideshow/carousel -->
+    <div id = "carousel" class="carousel-inner" data-bs-ride="carousel" data-bs-pause="false">
+      <div class="carousel-item active">
+        <img src="./IMG/ciudades/Espana/Barcelona.jpg" alt="Barcelona" class="img-thumbnail bg-primary" style="width:100%">
+        <div class="carousel-caption">
+          <h3>Barcelona</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./IMG/ciudades/Italia/Napoles.jpg" alt="Napoles" class="img-thumbnail bg-primary" style="width:100%">
+        <div class="carousel-caption">
+          <h3>Napoles</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./IMG/ciudades/Japon/Osaka.jpg" alt="Osaka" class="img-thumbnail bg-primary" style="width:100%">
+        <div class="carousel-caption">
+          <h3>Osaka</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./IMG/ciudades/Mexico/CiudadDeMexico.jpg" alt="CMexico" class="img-thumbnail bg-primary" style="width:100%">
+        <div class="carousel-caption">
+          <h3>Ciudad De Mexico</h3>
+        </div>
       </div>
     </div>
-    <div class="contenedor" id="jp">
-      <img src="./img/paises/Japon.jpg" class="img-thumbnail" alt="Japon">
-      <div class="centrado">
-        <a href="paises/japon/japon.html" target="_blank">JAPON</a>
-      </div>
-=======
-    <header>
-      <div class="px-3 py-2 text-center text-white">
-        <a href="inicio.html">
-          <img src="IMG/Marca.png" alt="LOGO">
-        </a>
-      </div>
-    </header>
-    <div class="container">
-        <div class="contenedor" id = "sp" >
-          <img src="./img/paises/España.jpg" class="img-thumbnail" alt="España">
-          <div class="centrado">
-          <a  href="paises/españa/españa.html" target="_blank">ESPAÑA</a>
-          </div>
-        </div>
-        <div class="contenedor" id = "it">
-          <img src="./img/paises/Italia.jpg" class="img-thumbnail" alt="Italia">
-          <div class="centrado">
-          <a href="paises/italia/italia.html" target="_blank">ITALIA</a>
-        </div>
-        </div>
-        <div class="contenedor" id = "jp">
-          <img src="./img/paises/Japon.jpg" class="img-thumbnail" alt="Japon">
-          <div class="centrado">
-          <a href="paises/japon/japon.html" target="_blank">JAPON</a>
-        </div>
-        </div>
-        <div class="contenedor" id = "mx">
-          <img src="./img/paises/Mexico.jpg" class="img-thumbnail" alt="Mexico">
-          <div class="centrado">
-          <a  href="paises/mexico/mexico.html" target="_blank">MEXICO </a>
-        </div>
-        </div>
->>>>>>> 31020aa4eab179d5f89e044d85eacf0e3d39cbc3
-    </div>
-    <div class="contenedor" id="mx">
-      <img src="./img/paises/Mexico.jpg" class="img-thumbnail" alt="Mexico">
-      <div class="centrado">
-        <a href="paises/mexico/mexico.html" target="_blank">MEXICO </a>
-      </div>
+  
+  <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+</div>
+<div class="container mt-3">
+  <h2 style="text-align: center">7 DÍAS MÁGICOS EN UNO DE NUESTROS PAÍSES OFERTADOS</h2>
+  <div class="mt-4 p-4 bg-info text-white rounded" style="width:100%">
+    <h1>Las mejores ofertas de Paquetes Vacacionales</h1> 
+    <h5>Por la compra del paquete vacacional en alguno de nuestros distintos países, recibirás una comida o cena gratis
+      en la cadena más famosa de restaurantes, MALUFA. Ahí podrás disgustar uno de los menús más famosos del país que escojas y
+      así probar la comida más típica y tradicional. ¡¡¡NO TE LO PIERDAS!!!
+    </h5> 
+    <div class="d-grid">
+      <button type="button" class="btn btn-light btn-block">RESERVA AHORA</button>
     </div>
   </div>
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
+</div>
+<br>
+<div id="paises">  
+  <p class="h1" style="text-align:center">¿ Qué país te gustaría visitar?</p>
 
-      <span class="">&copy; 2022 Company, Inc</span>
-    </div>
-    <div class="col-1">
-      <h5>Contact us:</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Telefono: 610705043</a></li>
-        <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Email: mlf@gmail.com</a></li>
-      </ul>
-    </div>
+  <div id="sp" class="card" style="width:300px; height: 490px">
+      <img class="card-img-top" src="./IMG/paises/España.jpg" class="img-thumbnail bg-dark" alt="España" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">ESPAÑA</h4>
+        <p class="card-text">Se trata de un país igualmente rico en cultura, arte, gastronomía y entretenimiento.
+          La inigualable comida española y un clima soleado son algunas de las razones por las que este país atrae a miles de visitantes cada mes.
+        </p>
+        <a href="paises/españa/españa.html" class="btn btn-primary"> + info </a>
+        <span class="badge bg-primary" style="float:right">desde 450€</span>
+      </div>
+  </div>
 
-    <div></div>
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a href="">About us FALTA</a></li>
-    </ul>
-  </footer>
-</body>
-<<<<<<< HEAD
+  <div id="it" class="card" style="width:300px; height: 490px">
+      <img class="card-img-top" src="./img/paises/Italia.jpg" alt="Italia" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">ITALIA</h4>
+        <p class="card-text">Su geografía y un clima excepcional te invitan a pasar los mejores días en tierras Italianas, podrás disfrutar 
+          de un sol que no se apaga nunca: los lagos del norte, los Apeninos, las suaves colinas de la región Toscana, las playas, los volcanes.</p>
+        <a href="paises/italia/italia.html" class="btn btn-primary"> + info </a>
+        <span class="badge bg-primary" style="float:right">desde 550€</span>
+      </div>
+  </div>
 
-</html>
-=======
-</html>
+  <div id="jp" class="card" style="width:300px; height: 490px">
+      <img class="card-img-top" src="./img/paises/Japon.jpg" alt="Italia" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">JAPON</h4>
+        <p class="card-text">Viajar a Japón es visitar sus grandes urbes. Metrópolis gigantes, grandes edificios,
+          gente por todos sitios y cientos de lugares de ocio. La antítesis de ciudades tradicionales como Kioto es Tokio o Osaka. 
+          Tokio son varias ciudades metidas en una sola.</p>
+        <a href="paises/japon/japon.html" class="btn btn-primary"> + info </a>
+        <span class="badge bg-primary" style="float:right">desde 750€</span>
+      </div>
+  </div>
+
+  <div id="mx" class="card" style="width:300px; height: 490px">
+      <img class="card-img-top" src="./img/paises/Mexico.jpg" alt="Italia" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">MEXICO</h4>
+        <p class="card-text">México es un páis que cuenta con una gran diversidad de recursos naturales, enorme riqueza
+          cultural, reconocida gastronomía a nivel mundial y el clima excepcional... lo posición como un destino atractivo.</p>
+        <a href="paises/mexico/mexico.html" class="btn btn-primary"> + info </a>
+        <span class="badge bg-primary" style="float:right">desde 650€</span>
+      </div>
+  </div>
+</div>
+
+<div class="mt-4 p-5 bg-primary text-white rounded">
   
->>>>>>> 31020aa4eab179d5f89e044d85eacf0e3d39cbc3
+  <h1 style="text-align: center">¡Múltiples ventajas al reservar tu Paquete!</h1>
+  <h4>MEJOR PRECIO ONLINE</h4>
+  <p>Tenemos los mejores precios en todos los paquetes vacacionales. Si lo necesitas, 
+    ponemos a tu disposición traslados hasta el hotel, o para una mayor autonomía, disponemos de coches de alquiler según necesidad.
+    <a href="https://www.rentalcars.com">Escoge tu vehículo</a>
+  </p>
+ 
+  <h4>SEGURO DE VIAJE INCLUIDO</h4>
+  <p>En todos nuestros paquetes de viaje incluimos gratis un seguro de asistencia y cobertura de equipaje, pérdida de conexiones, 
+    gastos médicos hasta 1.500€ en el extranjero... También tienes la opción de ampliar el seguro con mayores coberturas
+    a través de: <a href="https://www.allianz-assistance.es">Allianz</a></p>
+
+  <h4>A TU DISPOSICIÓN LAS 24H</h4>
+  <p>Para tu tranquilidad y que puedas disfrutar de tus vacaciones al máximo, estamos a tu disposición las 24h, los 365 días del año. 
+    ¡Tu satisfacción es la nuestra!</p>
+
+</div>
+
+</body>
+</html>
+
