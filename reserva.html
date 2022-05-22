@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="IMG/LOGOIMG.png">
-  <link rel="stylesheet" href="inicio.css">
+  <link rel="stylesheet" href="CSS/reserva.css">
   <link rel="stylesheet" href="bootstrap/js/">
   <link rel="stylesheet" href="CSS/style.css">
   <!-- Latest compiled and minified CSS -->
@@ -60,12 +60,13 @@
       </div>
     </div>
   </nav>
-
-  <div class="container mt-3">
-    <h2>RESERVA</h2>
+  <div style="text-align:center">
+    <h1>RESERVA</h1>
+    <h3>¿A qué país vas a viajar?</h3>
+    </div>
+  <div id="Reserva" class="container mt-3">
     <form action="/action_page.php">
       <div class="mb-3 mt-3">
-        <h2>¿A qué país vas a viajar?</h2>
         <form action="/action_page.php">
             <div class="form-floating mb-3 mt-3">
               <select class="form-select" id="sel1" name="sellist">
@@ -92,6 +93,24 @@
     <label for="comment">Información extra relevante: </label>
     <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
     </form>
+  </div>
+  <br>
+  <div class="card">
+    <div class="card-header" style="text-align:center">RESUMEN RESERVA</div>
+    <div class="card-body">
+        <img src="">Poner foto segun país
+        <h4 class="card-title">ESCRIBIR NOMBRE PAIS</h4>
+        <p class="card-text">VUELO + HOTEL </p>
+        <p class="card-text">7 días / 6 noches</p>
+    </div>
+    <div class="card-footer">
+        <h4 class="card-title">TOTAL</h4>
+        <p class="card-text"> Hacer calculos con java segun total de personas y descuentos</p>
+        <p class="card-text">Añadir desglose con ventana emergente para poder ver como se ha calculado el precio</p>
+        <div class="d-grid">
+            <button type="button" class="btn btn-success btn-block">CONFIRMAR RESERVA</button>
+          </div>
+    </div>
   </div>
 
 </body>

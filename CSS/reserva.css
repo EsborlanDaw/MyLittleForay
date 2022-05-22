@@ -1,0 +1,10 @@
+#Reserva form{
+    float: left;
+    width: 70%;
+}
+
+.card{
+    float: right;
+    margin-right: 20px;
+    width: 30%;
+}
