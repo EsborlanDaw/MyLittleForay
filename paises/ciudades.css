@@ -1,15 +1,7 @@
-#ciudades{
-    float: left;
-    width: 80%;
+header{
+    background-color:#04051c ;
+
 }
-#restaurante{
-    float: right;
-}
-.imagenes img{
-    float: left;
-    width: 400px;
-}
-.texto p{
-    float: right;
-    text-align: center;
+h1{
+    text-align:center
 }
