@@ -77,18 +77,34 @@
               </select>
               <label for="sel1" class="form-label">Selecciona uno:</label>
             </div>
+            <div id="current_date"></p>
+              <script>
+              date = new Date();
+              year = date.getFullYear();
+              month = date.getMonth() + 1;
+              day = date.getDate();
+              document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
+              </script>
+            <label for="start">Inicio:</label>
+          <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="20-12-31">
         </div>
 
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <label for="email"></label>
+        <input type="email" class="form-control" id="email" placeholder="Correo" name="email">
         <br>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="First Name">
-            <input type="text" class="form-control" placeholder="Last Name">
+            <input type="text" class="form-control" placeholder="Nombre">
+            <input type="text" class="form-control" placeholder="Primer Apellido">
+            <input type="text" class="form-control" placeholder="Segundo Apellido">
         </div>
-        <label for="start">Inicio:</label>
-
-        <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+        <div class="form-floating mb-3 mt-3">
+          <select class="form-select" id="sel1" name="sellist">
+            <option>DNI</option>
+            <option>NIF</option>
+          </select>
+          <label for="sel1" class="form-label">Tipo Documento:</label>
+        </div>
+        
        <br>
     <label for="comment">Información extra relevante: </label>
     <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
@@ -97,12 +113,18 @@
   <br>
   <div class="card">
     <div class="card-header" style="text-align:center">RESUMEN RESERVA</div>
-    <div class="card-body">
+    <div class="card-header">
         <img src="">Poner foto segun país
         <h4 class="card-title">ESCRIBIR NOMBRE PAIS</h4>
         <p class="card-text">VUELO + HOTEL </p>
         <p class="card-text">7 días / 6 noches</p>
     </div>
+    <div class="card-body">
+      <h4 class="card-title">Datos personales</h4>
+      <p class="card-text">Nombre:</p>
+      <p class="card-text">Fecha: </p>
+      
+  </div>
     <div class="card-footer">
         <h4 class="card-title">TOTAL</h4>
         <p class="card-text"> Hacer calculos con java segun total de personas y descuentos</p>
