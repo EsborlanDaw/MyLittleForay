@@ -5,3 +5,28 @@ header{
 h1{
     text-align:center
 }
+#demo {
+    width: 60%;
+    
+    margin: 0 auto;
+}
+
+#imagenCarrusel{
+    width: 30%;
+    float: left;
+}
+#ciudadInfo{
+    padding-left: 10px;
+    width: 70%;
+    float:right
+}
+#itinerario{
+    
+    width: 60%;
+    float: left;
+}
+#incluye{
+    border: solid black 5px;
+    width: 40%;
+    float: right;
+}

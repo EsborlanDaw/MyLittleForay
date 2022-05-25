@@ -16,7 +16,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- header -->
     <header>
       <div class="px-3 py-2 text-center text-white">
         <a href="inicio.html">
@@ -25,7 +25,7 @@
       </div>
     </header>
     
-    <!-- NAVBAR -->
+    <!-- navbar -->
     <nav id="barramenu" class="navbar navbar-expand-sm navbar-dark bg-primary ">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -36,7 +36,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DESTINOS</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">ESPAÑA</a></li>
+                <li><a class="dropdown-item disabled" href="#">ESPAÑA</a></li>
                 <li><a class="dropdown-item" href="#">ITALIA</a></li>
                 <li><a class="dropdown-item" href="#">JAPÓN</a></li>
                 <li><a class="dropdown-item" href="#">MÉXICO</a></li>
@@ -61,7 +61,7 @@
 
     <h1>VEN A ESPAÑA</h1>
 
-    <!-- INTRO -->
+    <!-- intro: ¡¡hay que terminar el texto!!-->
     <div class="text-star" id="intro">
       <pre>
         Aquí podrás disfrutar de un maravilloso clima mediterraneo y de una comida deliciosa.
@@ -70,9 +70,81 @@
       </pre>
     </div>
 
+    <!--carrusel: imágenes con info de cada ciudad -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-    <!-- FOOTER -->
-    <div class="footer">
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+    
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="container">
+          <div class="carousel-item active">
+            <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
+              <img src="../../img/ciudades/Espana/Barcelona.jpg" alt="Los Angeles" class="d-block w-100">
+            </div>
+            <div id="ciudadInfo" class="text-left">
+              <p>hola hola</p>
+            </div>
+          </div>
+          
+          <div class="carousel-item">
+            <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
+              <img src="../../img/ciudades/Espana/Malaga.jpg" alt="Los Angeles" class="d-block w-100">
+            </div>
+            <div id="ciudadInfo" class="text-left">
+              <p>hola hola</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
+              <img src="../../img/ciudades/Espana/Valencia.JPG" alt="Los Angeles" class="d-block w-100">
+            </div>
+            <div id="ciudadInfo" class="text-left">
+              <p>hola hola</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Left and right controls/icons -->
+      <button id="botonAnt" class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded"></span>
+      </button>
+      <button id="botonSig" class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded"></span>
+      </button>
+    </div>
+
+    <!-- parte itinerario + parte incluye -->
+    <div class="container" >
+      <div id="itinerario" class="border rounded-start" style="margin-top: 50px; margin-bottom: 50px;">
+        <pre>
+          wc
+          wdc
+          wdcwdc
+          wdc
+          wdc
+        </pre>
+      </div>
+      <div id="incluye" class="border rounded-end" style="margin-top: 50px; margin-bottom: 50px;">
+        <pre>
+          wc
+          wdc
+          wdcwdc
+          wdc
+          wdc
+        </pre>
+      </div>
+    </div>
+    
+
+    <!-- footer -->
+    <div class="footer" style="clear: both;">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         
     <div class="col-1" style="width: 30%; text-align: center;">
