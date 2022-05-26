@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 
+
+
 <head>
   <title>RESERVA</title>
   <meta charset="utf-8">
@@ -70,22 +72,22 @@
       <div class="mb-3 mt-3">
         <form>
           <div class="form-floating mb-3 mt-3">
-            <select class="form-select" id="sel1" name="sellist">
+            <select class="form-select" id="pais" name="sellist">
               <option>España</option>
               <option>Italia</option>
               <option>Japón</option>
               <option>México</option>
             </select>
-            <label for="sel1" class="form-label">Selecciona uno:</label>
+            <label for="pais" class="form-label">Selecciona uno:</label>
           </div>
 
           <div id="fecha" style="text-align: center;">
             Check-in:
             <label for="start"></label>
-            <input type="date" id="start" name="trip-start" value="current_date" min="current_date" max="20-12-30">
+            <input type="date" id="fcheckin" name="trip-start" value="current_date" min="current_date" max="20-12-30">
             Check-out:
             <label for="end"></label>
-            <input type="date" id="end" name="trip-end" value="">
+            <input type="date" id="fcheckout" name="trip-end" value="">
           </div>
           <br>
           <input type="text" class="form-control" placeholder="Ciudad Origen">
@@ -93,8 +95,7 @@
 
           <div id="InfoReserva">
             <div class="form-floating mb-3 mt-3">
-              <select class="form-select" id="sel1" name="sellist" style="width: 30%;">
-                <option>0</option>
+              <select class="form-select" id="adultos" name="sellist" style="width: 30%;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -112,10 +113,10 @@
                 <option>15</option>
                 <option>16</option>
               </select>
-              <label for="sel1" class="form-label">Adultos:</label>
+              <label for="adultos" class="form-label">Adultos:</label>
             </div>
             <div class="form-floating mb-3 mt-3">
-              <select class="form-select" id="sel1" name="sellist" style="width: 30%;">
+              <select class="form-select" id="niños" name="sellist" style="width: 30%;">
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
@@ -134,12 +135,12 @@
                 <option>15</option>
                 <option>16</option>
               </select>
-              <label for="sel1" class="form-label">Niños:</label>
+              <label for="niños" class="form-label">Niños:</label>
             </div>
 
             <div class="form-floating mb-3 mt-3" style="width: 30%">
 
-              <select class="form-select" id="sel1" name="sellist">
+              <select class="form-select" id="habitaciones" name="sellist">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -151,10 +152,11 @@
                 <option>9</option>
                 <option>10</option>
               </select>
-              <label for="sel1" class="form-label">Número de habitaciones:</label>
+              <label for="habitaciones" class="form-label">Número de habitaciones:</label>
 
             </div>
           </div>
+          <br>
           <div id="InfoPersonal">
             <h5>INFORMACIÓN PERSONAL</h5>
             <div class="input-group mb-3">
@@ -163,25 +165,26 @@
               <input type="text" class="form-control" placeholder="Segundo Apellido">
             </div>
             <div class="form-floating">
-              <select class="form-select" id="sel1" name="sellist">
+              <select class="form-select" id="tipdoc" name="sellist">
                 <option>DNI</option>
                 <option>NIF</option>
               </select>
-              <label for="sel1" class="form-label">Tipo Documento:</label>
+              <label for="tipdoc" class="form-label">Tipo Documento:</label>
             </div>
             <br>
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Prefijo">
-              <input type="tel" class="form-control" style="width: 80%" placeholder="Telefono">
+              <input id="tel0" type="tel" class="form-control" style="width: 80%" placeholder="Telefono">
             </div>
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Prefijo">
-              <input type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono">
+              <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono">
             </div>
             <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Correo">
-              <input type="email" class="form-control" placeholder="Confirma correo">
+              <input id="email0" type="email" class="form-control" placeholder="Correo">
+              <input id="email1" type="email" class="form-control" placeholder="Confirma correo">
             </div>
+            <br>
             <h5>COMUNICACIONES</h5>
             <p>A continuación, indiquenos sus preferencias respecto al tratamiento de sus datos:</p>
             <div class="form-check">
@@ -195,30 +198,32 @@
             </div>
 
           </div>
+          <br>
           <div id="Añadir">
             <h5>OPCIONES PARA AÑADIR A TU RESERVA</h5>
             <div id="extras">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="check3" name="option3" value="something">
+                <input class="form-check-input" type="checkbox" id="traslado" name="option1" value="something">
                 <label class="form-check-label">¿Quieres reservar un taxi o servicio de traslado con antelación?</label>
                 <p>Evita sorpresas y llega a tu alojamiento desde el aeropuerto sin complicaciones. Añadiremos opciones
                   para
                   que reserves un taxi en la confirmación de la reserva.</p>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="check4" name="option4" value="something">
+                <input class="form-check-input" type="checkbox" id="vehiculo" name="option2" value="something">
                 <label class="form-check-label">Quiero alquilar un vehículo</label>
                 <p>¡Aprovecha al máximo el viaje! Te mandaremos un cógido promocional con un 80% de descuento
                   en el aquiler de tu vehículo</p></a>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="check3" name="option3" value="something">
+                <input class="form-check-input" type="checkbox" id="restaurante" name="option3" value="something">
                 <label class="form-check-label">Añadir cena o comida extra en el restaurante MALUFA</label>
                 <p>Solo por reservar con nosotros se le añade una comida o cena totalmente gratuita, tiene la opción
-                  de añadir otra.</p>
+                  de añadir otra. En el caso de querer añadir más días ha de ponerse en contacto con el restaurante
+                  al 963852741 o por correo malufa@turestaurante.com</p>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="check4" name="option4" value="something">
+                <input class="form-check-input" type="checkbox" id="fiesta" name="option4" value="something">
                 <label class="form-check-label">Pack Fiesta</label>
                 <p>Contamos con el mejor grupo de guías turísticos en el ocio nocturno. Disfruta de las mejores fiestas
                   y discotecas que nos brindan estas fabulosas ciudades. El pack incluye una consumición y entrada
