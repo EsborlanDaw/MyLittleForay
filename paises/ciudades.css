@@ -10,7 +10,6 @@ h1{
     
     margin: 0 auto;
 }
-
 #imagenCarrusel{
     width: 30%;
     float: left;
@@ -20,25 +19,22 @@ h1{
     width: 70%;
     float:right
 }
-#itYinc{
-    margin-top: 50px;
-    margin-bottom: 50px
-}
 #itinerario{
-    
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 60%;
     float: left;
 }
 #incluye{
+    margin-top: 50px;
+    margin-bottom: 50px;
     border: solid black 5px;
     width: 40%;
     float: right;
 }
-
 #botonAnt:hover,#botonSig:hover{
     background: black;
     opacity: 0.1;
     width: 10%;
-    background-image: url();
 }
 
