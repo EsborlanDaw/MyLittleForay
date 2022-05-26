@@ -1,6 +1,7 @@
 #Reserva form{
     float: left;
     width: 65%;
+
 }
 
 .card{
@@ -8,5 +9,13 @@
     margin-right: 20px;
     width: 30%;
 }
+
+#extras p{
+    font-size: smaller;
+    color: blue;
+}
+
+
+
 
 
