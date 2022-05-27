@@ -67,6 +67,7 @@
     <h3>¿A qué país vas a viajar?</h3>
   </div>
   <div id="Reserva" class="container-fluid mt-3">
+
     <form>
       <h5>DATOS RESERVA</h5>
       <div class="mb-3 mt-3">
@@ -85,212 +86,236 @@
             Check-in:
             <label for="start"></label>
             <input type="date" id="fcheckin" name="trip-start" value="current_date" min="current_date" max="20-12-30">
-            Check-out:
-            <label for="end"></label>
-            <input type="date" id="fcheckout" name="trip-end" value="">
+
+            <button id="fcheckout" type="button" class="btn btn-primary" data-bs-toggle="popover" title="Confirmar Fecha"
+              data-bs-content="Check-out:" style="margin-left: 20px; height:35px;">
+              <p>Confirmar Fecha</p>
+            </button>
           </div>
-          <br>
-          <input type="text" class="form-control" placeholder="Ciudad Origen">
-          <br>
+      </div>
+      <br>
+      <input type="text" class="form-control" placeholder="Ciudad Origen">
+      <br>
 
-          <div id="InfoReserva">
-            <div class="form-floating mb-3 mt-3">
-              <select class="form-select" id="adultos" name="sellist" style="width: 30%;">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-              </select>
-              <label for="adultos" class="form-label">Adultos:</label>
-            </div>
-            <div class="form-floating mb-3 mt-3">
-              <select class="form-select" id="niños" name="sellist" style="width: 30%;">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-              </select>
-              <label for="niños" class="form-label">Niños:</label>
-            </div>
+      <div id="InfoReserva">
+        <div class="form-floating mb-3 mt-3">
+          <select class="form-select" id="adultos" name="sellist" style="width: 30%;">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+          </select>
+          <label for="adultos" class="form-label">Adultos:</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+          <select class="form-select" id="niños" name="sellist" style="width: 30%;">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+          </select>
+          <label for="niños" class="form-label">Niños:</label>
+        </div>
 
-            <div class="form-floating mb-3 mt-3" style="width: 30%">
+        <div class="form-floating mb-3 mt-3" style="width: 30%">
 
-              <select class="form-select" id="habitaciones" name="sellist">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-              <label for="habitaciones" class="form-label">Número de habitaciones:</label>
+          <select class="form-select" id="habitaciones" name="sellist">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+          <label for="habitaciones" class="form-label">Número de habitaciones:</label>
 
-            </div>
-          </div>
-          <br>
-          <div id="InfoPersonal">
-            <h5>INFORMACIÓN PERSONAL</h5>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nombre">
-              <input type="text" class="form-control" placeholder="Primer Apellido">
-              <input type="text" class="form-control" placeholder="Segundo Apellido">
-            </div>
-            <div class="form-floating">
-              <select class="form-select" id="tipdoc" name="sellist">
-                <option>DNI</option>
-                <option>NIF</option>
-              </select>
-              <label for="tipdoc" class="form-label">Tipo Documento:</label>
-            </div>
-            <br>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Prefijo">
-              <input id="tel0" type="tel" class="form-control" style="width: 80%" placeholder="Telefono">
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Prefijo">
-              <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono">
-            </div>
-            <div class="input-group mb-3">
-              <input id="email0" type="email" class="form-control" placeholder="Correo">
-              <input id="email1" type="email" class="form-control" placeholder="Confirma correo">
-            </div>
-            <br>
-            <h5>COMUNICACIONES</h5>
-            <p>A continuación, indiquenos sus preferencias respecto al tratamiento de sus datos:</p>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something">
-              <label class="form-check-label">Quiero recibir comunicaciones generales</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="check2" name="option2" value="something">
-              <label class="form-check-label">Quiero recibir ofertas personalizadas en base a mis intereses</label>
+        </div>
+      </div>
+      <br>
+      <div id="InfoPersonal">
+        <h5>INFORMACIÓN PERSONAL</h5>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nombre">
+          <input type="text" class="form-control" placeholder="Primer Apellido">
+          <input type="text" class="form-control" placeholder="Segundo Apellido">
+        </div>
+        <div class="form-floating">
+          <select class="form-select" id="tipdoc" name="sellist">
+            <option>DNI</option>
+            <option>NIF</option>
+          </select>
+          <label for="tipdoc" class="form-label">Tipo Documento:</label>
+        </div>
+        <br>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Prefijo">
+          <input id="tel0" type="tel" class="form-control" style="width: 80%" placeholder="Telefono">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Prefijo">
+          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono">
+        </div>
+        <div class="input-group mb-3">
+          <input id="email0" type="email" class="form-control" placeholder="Correo">
+          <input id="email1" type="email" class="form-control" placeholder="Confirma correo">
+        </div>
+        <br>
+        <h5>COMUNICACIONES</h5>
+        <p>A continuación, indiquenos sus preferencias respecto al tratamiento de sus datos:</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something">
+          <label class="form-check-label">Quiero recibir comunicaciones generales</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check2" name="option2" value="something">
+          <label class="form-check-label">Quiero recibir ofertas personalizadas en base a mis intereses</label>
 
-            </div>
+        </div>
 
-          </div>
-          <br>
-          <div id="Añadir">
-            <h5>OPCIONES PARA AÑADIR A TU RESERVA</h5>
-            <div id="extras">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="traslado" name="option1" value="something">
-                <label class="form-check-label" data-bs-toggle="tooltip" title="Evita sorpresas y llega a tu alojamiento 
+      </div>
+      <br>
+      <div id="Añadir">
+        <h5>OPCIONES PARA AÑADIR A TU RESERVA</h5>
+        <div id="extras">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="traslado" name="option1" value="something">
+            <label class="form-check-label" data-bs-toggle="tooltip"
+              title="Evita sorpresas y llega a tu alojamiento 
                 desde el aeropuerto sin complicaciones. Añadiremos opciones para que reserves un taxi en la confirmación de la reserva.">
-                ¿Quieres reservar un taxi o servicio de traslado con antelación?</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="vehiculo" name="option2" value="something">
-                <label class="form-check-label" data-bs-toggle="tooltip" title="¡Aprovecha al máximo el viaje! 
+              ¿Quieres reservar un taxi o servicio de traslado con antelación?</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="vehiculo" name="option2" value="something">
+            <label class="form-check-label" data-bs-toggle="tooltip" title="¡Aprovecha al máximo el viaje! 
                   Te mandaremos un cógido promocional con un 80% de descuento en el aquiler de tu vehículo">
-                  Quiero alquilar un vehículo</label>  
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="restaurante" name="option3" value="something">
-                <label class="form-check-label" data-bs-toggle="tooltip" title="Solo por reservar 
+              Quiero alquilar un vehículo</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="restaurante" name="option3" value="something">
+            <label class="form-check-label" data-bs-toggle="tooltip" title="Solo por reservar 
                   con nosotros se le añade una comida o cena totalmente gratuita, tiene la opción
                   de añadir otra. En el caso de querer añadir más días ha de ponerse en contacto con el restaurante
-                  al 963852741 o por correo malufa@turestaurante.com">Añadir cena o comida extra en el 
-                  restaurante MALUFA</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="fiesta" name="option4" value="something">
-                <label class="form-check-label"data-bs-toggle="tooltip" title="Contamos con el mejor grupo de 
+                  al 963852741 o por correo malufa@turestaurante.com">Añadir cena o comida extra en el
+              restaurante MALUFA</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="fiesta" name="option4" value="something">
+            <label class="form-check-label" data-bs-toggle="tooltip" title="Contamos con el mejor grupo de 
                 guías turísticos en el ocio nocturno. Disfruta de las mejores fiestas y discotecas que nos brindan 
                 estas fabulosas ciudades. El pack incluye una consumición y entrada
                 gratuita en todas las discotecas.">Pack Fiesta</label>
-                
-              </div>
-              
-            </div>
+
           </div>
 
-
-        </form>
-        <br>
-        <div class="container-fluid" style="text-align:center">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-            CONFIRMAR RESERVA
-          </button>
         </div>
-        <!-- The Modal -->
-        <div class="modal fade" id="myModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">RESERVA CONFIRMADA CON ÉXITO</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
-              <!-- Modal body -->
-              <div class="modal-body">
-                Modal body..
-              </div>
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              </div>
+      </div>
+    </form>
+
+
+    <br>
+    <div class="container-fluid" style="text-align:center">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir">
+        CONFIRMAR RESERVA
+      </button>
+    </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="reservaconfir">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">RESERVA CONFIRMADA CON ÉXITO</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            Modal body..
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="card">
+    <div class="card-header" style="text-align:center">RESUMEN RESERVA</div>
+    <div class="card-header">
+      <img id="fotopais" src="">Poner foto segun país
+      <h4 id="npais" class="card-title">ESCRIBIR NOMBRE PAIS</h4>
+      <p class="card-text">VUELO + HOTEL </p>
+      <p class="card-text">7 días / 6 noches</p>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Datos personales</h4>
+      <p id="nconfirmado" class="card-text">Nombre:</p>
+      <p id="fconfirmada" class="card-text">Fecha: </p>
+
+    </div>
+    <div class="card-footer">
+      <h4 class="card-title">TOTAL</h4>
+      <p id="preciototal" class="card-text"> Hacer calculos con java segun total de personas y descuentos</p>
+      <div class="container-fluid" style="text-align:center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#desgloseprecios">
+          DESGLOSE PRECIOS
+        </button>
+      </div>
+      <!-- The Modal -->
+      <div class="modal fade" id="desgloseprecios">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">DESGLOSE PRECIOS</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              Modal body..
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <br>
-
-      <div class="card">
-        <div class="card-header" style="text-align:center">RESUMEN RESERVA</div>
-        <div class="card-header">
-          <img src="">Poner foto segun país
-          <h4 class="card-title">ESCRIBIR NOMBRE PAIS</h4>
-          <p class="card-text">VUELO + HOTEL </p>
-          <p class="card-text">7 días / 6 noches</p>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">Datos personales</h4>
-          <p class="card-text">Nombre:</p>
-          <p class="card-text">Fecha: </p>
-
-        </div>
-        <div class="card-footer">
-          <h4 class="card-title">TOTAL</h4>
-          <p class="card-text"> Hacer calculos con java segun total de personas y descuentos</p>
-          <p class="card-text">Añadir desglose con ventana emergente para poder ver como se ha calculado el precio
-          </p>
-          <div class="d-grid">
-            <button type="button" class="btn btn-success btn-block">CONFIRMAR RESERVA</button>
-          </div>
-        </div>
-
-        <script src="../js/reserva.js"></script>
+    <script src="../js/reserva.js"></script>
 
 
 </body>
