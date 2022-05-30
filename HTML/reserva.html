@@ -62,9 +62,11 @@
     </div>
     </div>
   </nav>
+ 
   <div style="text-align:center">
     <h1>RESERVA</h1>
     <h3>¿A qué país vas a viajar?</h3>
+    <hr>
   </div>
   <div id="Reserva" class="container-fluid mt-3">
 
@@ -87,8 +89,9 @@
             <label for="start"></label>
             <input type="date" id="fcheckin" name="trip-start" value="current_date" min="current_date" max="20-12-30">
 
-            <button id="fcheckout" type="button" class="btn btn-primary" data-bs-toggle="popover" title="Confirmar Fecha"
-              data-bs-content="Check-out:" style="margin-left: 20px; height:35px;">
+            <button id="fcheckout" type="button" class="btn btn-primary" data-bs-toggle="popover"
+              title="Confirmar Fecha" data-bs-content="Check-out:" style="margin-left: 20px; height:35px;">
+
               <p>Confirmar Fecha</p>
             </button>
           </div>
@@ -160,7 +163,7 @@
 
         </div>
       </div>
-      <br>
+      <hr>
       <div id="InfoPersonal">
         <h5>INFORMACIÓN PERSONAL</h5>
         <div class="input-group mb-3">
@@ -188,7 +191,7 @@
           <input id="email0" type="email" class="form-control" placeholder="Correo">
           <input id="email1" type="email" class="form-control" placeholder="Confirma correo">
         </div>
-        <br>
+        <hr>
         <h5>COMUNICACIONES</h5>
         <p>A continuación, indiquenos sus preferencias respecto al tratamiento de sus datos:</p>
         <div class="form-check">
@@ -202,7 +205,7 @@
         </div>
 
       </div>
-      <br>
+      <hr>
       <div id="Añadir">
         <h5>OPCIONES PARA AÑADIR A TU RESERVA</h5>
         <div id="extras">
@@ -238,15 +241,16 @@
 
         </div>
       </div>
+      <hr>
+      <div class="container" style="text-align:center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir">
+          CONFIRMAR RESERVA
+        </button>
+      </div>
     </form>
 
+    
 
-    <br>
-    <div class="container-fluid" style="text-align:center">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir">
-        CONFIRMAR RESERVA
-      </button>
-    </div>
     <!-- The Modal -->
     <div class="modal fade" id="reservaconfir">
       <div class="modal-dialog">
@@ -282,7 +286,9 @@
     <div class="card-body">
       <h4 class="card-title">Datos personales</h4>
       <p id="nconfirmado" class="card-text">Nombre:</p>
-      <p id="fconfirmada" class="card-text">Fecha: </p>
+      <p id="fconfirmada" class="card-text">Fecha: 
+        <div id="fechafinal"></div>
+      </p>
 
     </div>
     <div class="card-footer">
@@ -314,8 +320,13 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="../js/reserva.js"></script>
+
+
+<script src="../js/reserva.js"></script>
 
 
 </body>
+
+</html>

@@ -15,11 +15,11 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 //Funcion para sumar los 7 días a la fecha seleccionada
 
 function sumar() {
-    var numero1 = document.getElementById('fcheckin').value;
-    var numero2 = 7
+    var fecha = new Date  (document.getElementById("fcheckin").value);
+    const F_CHECKOUT = 7
 
     if (numero1 !== '' && numero2 !== '') {
-        var suma = parseInt(numero1) + parseInt(numero2);
+        var suma = fecha + F_CHECKOUT;
         document.getElementById('fcheckout').value = suma;
     }
 }
