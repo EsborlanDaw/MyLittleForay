@@ -84,16 +84,11 @@
             <label for="pais" class="form-label">Selecciona uno:</label>
           </div>
 
-          <div id="fecha" style="text-align: center;">
+          <div id="fecha">
             Check-in:
-            <label for="start"></label>
-            <input type="date" id="fcheckin" name="trip-start" value="current_date" min="current_date" max="20-12-30">
-
-            <button id="fcheckout" type="button" class="btn btn-primary" data-bs-toggle="popover"
-              title="Confirmar Fecha" data-bs-content="Check-out:" style="margin-left: 20px; height:35px;">
-
-              <p>Confirmar Fecha</p>
-            </button>
+            <input type="date" id="fcheckin" name="fecha" value="current_date" onclick="sumaDias();">
+            Check-out: <input id="fcheckout" style="width: 20%;" type="text" class="form-control">
+            
           </div>
       </div>
       <br>

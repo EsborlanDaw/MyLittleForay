@@ -1,5 +1,3 @@
-//Función para ejecutar el tooltip
-
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -14,16 +12,12 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 
 //Funcion para sumar los 7 días a la fecha seleccionada
 
-function sumar() {
-    var fecha = new Date  (document.getElementById("fcheckin").value);
+function sumarDias() {
+    var fecha = document.getElementById("fcheckin");
     const F_CHECKOUT = 7
-
-    if (numero1 !== '' && numero2 !== '') {
-        var suma = fecha + F_CHECKOUT;
-        document.getElementById('fcheckout').value = suma;
-    }
+    let date = new Date (fecha.value + F_CHECKOUT);
+    console.log(date.toLocaleDateString(date));
+    
+    
+    let options = {}
 }
-
-
-
-
