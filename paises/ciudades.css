@@ -1,14 +1,32 @@
+@font-face {
+    font-family:"DancingScript";
+    src: url(../fuentes/DancingScript-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(../fuentes/static/Nunito-Black.ttf);
+}
 header{
     background-color:#04051c ;
-
 }
-h1{
-    text-align:center
+#titulo{
+    text-align:center;
+    margin-top:20px; 
+    margin-bottom:20px;
+    font-family: "Nunito";
 }
 #demo {
     width: 60%;
     
     margin: 0 auto;
+}
+#intro{
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    padding-top:30px;
+    padding-bottom:30px;
+    margin-bottom: 50px;
 }
 #imagenCarrusel{
     width: 30%;
@@ -19,11 +37,15 @@ h1{
     width: 70%;
     float:right
 }
+#itYinc{
+    width: 70%;
+}
 #itinerario{
     margin-top: 50px;
     margin-bottom: 50px;
     width: 60%;
     float: left;
+    padding-top: 20px;
 }
 #incluye{
     margin-top: 50px;
@@ -31,10 +53,32 @@ h1{
     border: solid black 5px;
     width: 40%;
     float: right;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 #botonAnt:hover,#botonSig:hover{
     background: black;
     opacity: 0.1;
     width: 10%;
 }
-
+#dias{
+    padding-left: 20px;
+}
+#textoCirculo{
+    text-align: center;
+}
+#circulo{
+    padding-top: 10px;
+    clear: both;
+    float:left;
+    width: 20%;
+}
+#txt{
+    float: right;
+    width: 80%;
+    padding-left: 10px;
+}
+#botonReservar{
+    clear: both;
+    width: 70%;  
+}

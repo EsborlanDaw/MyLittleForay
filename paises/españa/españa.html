@@ -19,19 +19,19 @@
   <!-- header -->
     <header>
       <div class="px-3 py-2 text-center text-white">
-        <a href="inicio.html">
-          <img src="../../IMG/Marca.png" alt="LOGO">
+        <a href="../../HTML/inicio.html">
+          <img src="../../img/IMG/Marca.png" alt="LOGO">
         </a>
       </div>
     </header>
     
-      <!-- NAVBAR -->
+    <!-- NAVBAR -->
   <nav id="barramenu" class="navbar navbar-expand-sm navbar-dark bg-primary">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="/MyLittleForay/HTML/inicio.html">INICIO</a>
+            <a class="nav-link" href="../../HTML/inicio.html">INICIO</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DESTINOS</a>
@@ -60,16 +60,19 @@
       </div>
     </div>
   </nav>
-  <br>
-    <h1>VEN A ESPAÑA</h1>
+
+    <h1 id="titulo">VEN A ESPAÑA</h1>
 
     <!-- intro: ¡¡hay que terminar el texto!!-->
-    <div class="text-star" id="intro">
-      <pre>
-        Aquí podrás disfrutar de un maravilloso clima mediterraneo y de una comida deliciosa.
-        España es conocida por su cultura diversa y ancestral por lo verás gran variedad de
-        
-      </pre>
+    <div class="rounded-3 bg-info" id="intro">
+      <h5 style="font-family: DancingScript; font-size: 30px;">¿Te Puedo Convencer?</h5>
+      <pre style="font-family: Nunito;">Aquí podrás disfrutar de un maravilloso clima mediterraneo y de una comida deliciosa.
+España es conocida por su diversidad cultural y paisajística, agrupa una gran cantidad de bellos
+paisajes diferentes en una extensión de terreno no demasiado grande y en la que podrás encontrar
+en cada región gente distinta. Hay uno para cada viajero. Además, descubrirás grandes y extensas
+playas de arena blanca o dorada; pequeñas calas escondidas; playas rodeadas de bosques y verde; 
+buenas para bucear, para ir con niños o nudistas… Las hay de todo tipo y para todos los gustos,
+son muchas las que se pueden visitar y disfrutar durante casi todo el año. </pre>
     </div>
 
     <!--carrusel: imágenes con info de cada ciudad -->
@@ -86,6 +89,7 @@
       <div class="carousel-inner">
         <div class="container">
           <div class="carousel-item active">
+            <h6>BARCELONA</h6>
             <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
               <img src="../../img/ciudades/Espana/Barcelona.jpg" alt="Los Angeles" class="d-block w-100">
             </div>
@@ -95,6 +99,7 @@
           </div>
           
           <div class="carousel-item">
+            <h6>MÁLAGA</h6>
             <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
               <img src="../../img/ciudades/Espana/Malaga.jpg" alt="Los Angeles" class="d-block w-100">
             </div>
@@ -103,6 +108,7 @@
             </div>
           </div>
           <div class="carousel-item">
+            <h6>VALENCIA</h6>
             <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
               <img src="../../img/ciudades/Espana/Valencia.JPG" alt="Los Angeles" class="d-block w-100">
             </div>
@@ -121,26 +127,100 @@
         <!-- <span class="carousel-control-next-icon bg-dark rounded"></span> -->
       </button>
     </div>
-
+    <br>
+    <hr style="width: 80%; margin: 0 auto;">
     <!-- parte itinerario + parte incluye -->
     <div class="container" id="itYinc">
-      <div id="itinerario" class="border rounded-start">
-        <pre>
-          wc
-          wdc
-          w
-        </pre>
+      <div id="itinerario" class="border rounded border-info border-2">
+        <h6 style="padding-left: 20px;">ITINERARIO:</h6>
+        <div id="dias">
+          <div id="circulo" class="border rounded-circle mx-auto border-secondary"><pre id="textoCirculo">BARCEL0NA
+dias
+1-2</pre></div>
+          <div id="txt" class="text-left">
+            <pre>hola
+esstas</pre>
+          </div>
+        </div>
+        <div id="dias">
+          <div id="circulo" class="border rounded-circle mx-auto border-secondary"><pre id="textoCirculo">VALENCIA
+dias
+3-5</pre></div>
+          <div id="txt" class="text-left">
+            <pre>hola
+que</pre>
+          </div>
+        </div>
+        <div id="dias">
+          <div id="circulo" class="border rounded-circle mx-auto border-secondary"><pre id="textoCirculo">MÁLAGA
+dias
+6-7</pre></div>
+          <div id="txt" class="text-left">
+            <pre>hola
+que
+tal
+esstas</pre>
+          </div>
+        </div>
       </div>
-      <div id="incluye" class="border rounded-end">
-        <pre>
-          wc
-          wdc
-          
-        </pre>
+      <div id="incluye" class="border rounded border-info border-2">
+        <h6>EL VIAJE INCLUYE:</h6>
+        <ul>
+          <li>Tour cultural guiado por el centro y alrededores de cada ciudad</li>
+          <li>Tarjeta para viajar gratis en bus</li>
+          <li>Desayunos gratuitos en el hotel</li>
+        </ul>
+        <h6>TAMBIÉN PUEDES ADQUIRIR:</h6>
+        <ul>
+          <li>Coche o taxi para desplazarte libremente</li>
+          <li>Un paquete fiesta para visitar distintos pubs y discotecas</li>
+          <li>Una cena o comida extra en la prestigiosa cadena de restaurantes MALUFA</li>
+        </ul>
       </div>
     </div>
-    
 
+    <!-- boton de reservar -->
+    <div id="botonReservar" class="d-grid mx-auto" style="clear: both; width: 70%;">
+      <a href="../../HTML/reserva.html" class="btn btn-primary btn-block">RESERVA YA A PARTIR DE 450€/p*</a>
+      
+    </div>
+
+    <!-- info descuentos -->
+    <div class="container-fluid mt-3">
+      <div class="alert alert-success">
+        <strong>*¡Descuentos!</strong> Todos nuestros paquetes incluyen descuento para grupos superiores a 10, además de
+        descuentos por familia numerosa y carnet de alberguista.
+        <!-- Offcanvas Sidebar -->
+        <div class="offcanvas offcanvas-start" id="descuento">
+          <div class="offcanvas-header">
+            <h1 class="offcanvas-title">¡DESCUENTOS!</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <div class="offcanvas-body">
+            <p>Familia numerosa: 
+              <ul id="fnumerosa">
+                <li>5% para familia numerosa categoría general</li>
+                <li>15% para familia numerosa de categoría especial</li>
+              </ul>
+            </p>
+            <p>Carné Alberguista:
+              <ul id="calberguista">
+                <li>10% por posesión de carné alberguista</li>
+              </ul>
+            </p> 
+            Estos descuentos se aplican únicamente al precio total de la persona en posesión del título.
+            <br>
+            <p>Grupos + 10 personas:
+              <ul id="grupos">
+                <li>30% aplicable al precio total del pack</li>
+              </ul>
+            </p>   
+          </div>
+        </div>
+        <!-- Button to open the offcanvas sidebar -->
+        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#descuento" >+info</button>
+      </div>
+    </div>
     <!-- footer -->
     <div class="footer" style="clear: both;">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
