@@ -62,7 +62,7 @@
     </div>
     </div>
   </nav>
- 
+
   <div style="text-align:center">
     <h1>RESERVA</h1>
     <h3>¿A qué país vas a viajar?</h3>
@@ -77,27 +77,29 @@
           <div class="form-floating mb-3 mt-3">
             <select class="form-select" id="pais" name="sellist" required>
               <option disabled selected value> selecciona </option>
-              <option>España</option>
-              <option>Italia</option>
-              <option>Japón</option>
-              <option>México</option>
+              <option id="sp">España</option>
+              <option id="it">Italia</option>
+              <option id="jp">Japón</option>
+              <option id="mx">México</option>
             </select>
-            <label for="pais" class="form-label">Selecciona uno:</label>
+            <label for="pais" class="form-label">País al que quiere viajar:</label>
           </div>
 
+          <label for="ciudad">Desde:</label>
+          <input  id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" required>
+
+          <br>
           <div id="fecha" style="text-align: center;">
             <label for="fcheckin">Check-in:</label>
             <input name="fcheckin" id="fcheckin" type="date" required>
             <label for="fcheckout">Check-out:</label>
-            <input name="fcheckout" id="fcheckout"  type="date" readonly value="">
-            <input  id="click" class="md-trigger boton" type="button" value="Calcular Check-Out" onclick="sumarDias(this.form)">
-            
+            <input name="fcheckout" id="fcheckout" type="date" readonly value="">
+            <input id="click" class="md-trigger boton" type="button" value="Calcular Check-Out"
+              onclick="sumarDias(this.form)">
+
           </div>
       </div>
       <br>
-      <input type="text" class="form-control" placeholder="Ciudad Origen" required>
-      <br>
-
       <div id="InfoReserva">
         <div class="form-floating mb-3 mt-3">
           <select class="form-select" id="adultos" name="sellist" style="width: 30%;" required>
@@ -168,21 +170,21 @@
       <div id="InfoPersonal">
         <h5>INFORMACIÓN PERSONAL</h5>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Nombre" required>
+          <input type="text" class="form-control" placeholder="Nombre" required onclick="">
           <input type="text" class="form-control" placeholder="Primer Apellido" required>
           <input type="text" class="form-control" placeholder="Segundo Apellido" required>
         </div>
         <div class="form-floating">
-          <select class="form-select" id="tipdoc" name="sellist" required >
+          <select class="form-select" id="tipdoc" name="sellist" required>
             <option disabled selected value> selecciona </option>
             <option>DNI</option>
             <option>NIF</option>
           </select>
           <label for="tipdoc" class="form-label">Tipo Documento:</label>
-  
+
         </div>
         <br>
-        <input  type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" required >
+        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" required>
         <br>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Prefijo" required>
@@ -252,7 +254,7 @@
           <label for="codigo">Codigo Tarjeta:</label>
           <input name="codigo" id="codigo" type="text">
           <label for="cantidad">Cantidad Tarjeta:</label>
-          <input name="cantidad" id="cantidad"  type="text">
+          <input name="cantidad" id="cantidad" type="text">
         </div>
       </div>
       <br>
@@ -270,7 +272,7 @@
       </div>
     </form>
 
-    
+
 
     <!-- The Modal -->
     <div class="modal fade" id="reservaconfir">
@@ -306,11 +308,11 @@
     </div>
     <div class="card-body">
       <h4 class="card-title">Datos personales</h4>
-      <p id="nconfirmado" class="card-text">Nombre:</p>
-      <p id="fconfirmada" class="card-text">Fecha: 
-        <div id="fechafinal"></div>
-      </p>
-
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nombre" readonly value="">
+        <input type="text" class="form-control" placeholder="Primer Apellido" readonly value="">
+        <input type="text" class="form-control" placeholder="Segundo Apellido" readonly value="">
+      </div>
     </div>
     <div class="card-footer">
       <h4 class="card-title">TOTAL</h4>
@@ -345,7 +347,7 @@
 
 
 
-<script src="../js/reserva.js"></script>
+  <script src="../js/reserva.js"></script>
 
 
 </body>

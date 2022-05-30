@@ -45,3 +45,15 @@ function sumarDias(frm) {
   frm.fcheckout.value = fecha.getUTCFullYear() + '-' + mes + '-' + dia;
   
 }
+
+function agregarInfo(){
+    let node = document.getElementById(id);
+    let clone = node.cloneNode(true);
+
+    document.getElementById("nconfirmado").appendChild(clone);
+
+}
+
+
+
+
