@@ -70,12 +70,13 @@
   </div>
   <div id="Reserva" class="container-fluid mt-3">
 
-    <form>
+    <form class="needs-validation">
       <h5>DATOS RESERVA</h5>
       <div class="mb-3 mt-3">
         <form>
           <div class="form-floating mb-3 mt-3">
-            <select class="form-select" id="pais" name="sellist">
+            <select class="form-select" id="pais" name="sellist" required>
+              <option disabled selected value> selecciona </option>
               <option>España</option>
               <option>Italia</option>
               <option>Japón</option>
@@ -84,20 +85,23 @@
             <label for="pais" class="form-label">Selecciona uno:</label>
           </div>
 
-          <div id="fecha">
-            Check-in:
-            <input type="date" id="fcheckin" name="fecha" value="current_date" onclick="sumaDias();">
-            Check-out: <input id="fcheckout" style="width: 20%;" type="text" class="form-control">
+          <div id="fecha" style="text-align: center;">
+            <label for="fcheckin">Check-in:</label>
+            <input name="fcheckin" id="fcheckin" type="date" required>
+            <label for="fcheckout">Check-out:</label>
+            <input name="fcheckout" id="fcheckout"  type="date" readonly value="">
+            <input  id="click" class="md-trigger boton" type="button" value="Calcular Check-Out" onclick="sumarDias(this.form)">
             
           </div>
       </div>
       <br>
-      <input type="text" class="form-control" placeholder="Ciudad Origen">
+      <input type="text" class="form-control" placeholder="Ciudad Origen" required>
       <br>
 
       <div id="InfoReserva">
         <div class="form-floating mb-3 mt-3">
-          <select class="form-select" id="adultos" name="sellist" style="width: 30%;">
+          <select class="form-select" id="adultos" name="sellist" style="width: 30%;" required>
+            <option disabled selected value> selecciona </option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -118,7 +122,8 @@
           <label for="adultos" class="form-label">Adultos:</label>
         </div>
         <div class="form-floating mb-3 mt-3">
-          <select class="form-select" id="niños" name="sellist" style="width: 30%;">
+          <select class="form-select" id="niños" name="sellist" style="width: 30%;" required>
+            <option disabled selected value> selecciona </option>
             <option>0</option>
             <option>1</option>
             <option>2</option>
@@ -142,7 +147,8 @@
 
         <div class="form-floating mb-3 mt-3" style="width: 30%">
 
-          <select class="form-select" id="habitaciones" name="sellist">
+          <select class="form-select" id="habitaciones" name="sellist" required>
+            <option disabled selected value> selecciona </option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -162,12 +168,13 @@
       <div id="InfoPersonal">
         <h5>INFORMACIÓN PERSONAL</h5>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Nombre">
-          <input type="text" class="form-control" placeholder="Primer Apellido">
-          <input type="text" class="form-control" placeholder="Segundo Apellido">
+          <input type="text" class="form-control" placeholder="Nombre" required>
+          <input type="text" class="form-control" placeholder="Primer Apellido" required>
+          <input type="text" class="form-control" placeholder="Segundo Apellido" required>
         </div>
         <div class="form-floating">
-          <select class="form-select" id="tipdoc" name="sellist">
+          <select class="form-select" id="tipdoc" name="sellist" required>
+            <option disabled selected value> selecciona </option>
             <option>DNI</option>
             <option>NIF</option>
           </select>
@@ -175,16 +182,16 @@
         </div>
         <br>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Prefijo">
-          <input id="tel0" type="tel" class="form-control" style="width: 80%" placeholder="Telefono">
+          <input type="text" class="form-control" placeholder="Prefijo" required>
+          <input id="tel0" type="tel" class="form-control" style="width: 80%" placeholder="Telefono" required>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Prefijo">
-          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono">
+          <input type="text" class="form-control" placeholder="Prefijo" required>
+          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" required>
         </div>
         <div class="input-group mb-3">
-          <input id="email0" type="email" class="form-control" placeholder="Correo">
-          <input id="email1" type="email" class="form-control" placeholder="Confirma correo">
+          <input id="email0" type="email" class="form-control" placeholder="Correo" required>
+          <input id="email1" type="email" class="form-control" placeholder="Confirma correo" required>
         </div>
         <hr>
         <h5>COMUNICACIONES</h5>
@@ -223,7 +230,7 @@
                   con nosotros se le añade una comida o cena totalmente gratuita, tiene la opción
                   de añadir otra. En el caso de querer añadir más días ha de ponerse en contacto con el restaurante
                   al 963852741 o por correo malufa@turestaurante.com">Añadir cena o comida extra en el
-              restaurante MALUFA</label>
+              restaurante <strong> MALUFA</strong></label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="fiesta" name="option4" value="something">
@@ -231,9 +238,25 @@
                 guías turísticos en el ocio nocturno. Disfruta de las mejores fiestas y discotecas que nos brindan 
                 estas fabulosas ciudades. El pack incluye una consumición y entrada
                 gratuita en todas las discotecas.">Pack Fiesta</label>
-
           </div>
+        </div>
+      </div>
+      <hr>
+      <h5>OPCIONES DE PAGO</h5>
+      <div id="TarjRegalo">
+        <div id="tarjeta">
 
+          <label for="codigo">Codigo Tarjeta:</label>
+          <input name="codigo" id="codigo" type="text">
+          <label for="cantidad">Cantidad Tarjeta:</label>
+          <input name="cantidad" id="cantidad"  type="text">
+        </div>
+      </div>
+      <br>
+      <div id="FamNum">
+        <div id="familia">
+          <label for="familia">Fam Numerosa:</label>
+          <input name="codigo" id="codigo" type="text" placeholder="Total De Personas Con FamNum">
         </div>
       </div>
       <hr>
