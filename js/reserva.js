@@ -55,27 +55,22 @@ function addPhoto(){
 
   if (pais.toUpperCase() = 'ESPAÑA')
   {
-    picture.setAttribute("src", "../IMG/paises/España.jpg");
-    picture.setAttribute("width", "304");
-    picture.setAttribute("height", "228");
-    picture.setAttribute("alt", "España");
-    document.body.appendChild(picture);
- 
+    document.getElementById('fotopais').src ="../IMG/paises/España.jpg";
   }
 
   else if(pais.toUpperCase() = 'ITALIA')
   {
-    image.src  = '../IMG/paises/Italia.jpg';
+    document.getElementById('fotopais').src = '../IMG/paises/Italia.jpg';
   }
 
   else if ((pais.toUpperCase() = 'JAPÓN') || (pais.toUpperCase() = 'JAPON'))
   {
-    image.src  = '../IMG/paises/Japon.jpg';
+    document.getElementById('fotopais').src = '../IMG/paises/Japon.jpg';
   }
 
-  else if (pais.toUpperCase() = 'MEpictureICO')
+  else if (pais.toUpperCase() = 'MEXICO')
   {
-    image.src  = '../IMG/paises/Mexico.jpg';
+    document.getElementById('fotopais').src = '../IMG/paises/Mexico.jpg';
   }
 
   document.querySelector('.fotopais').appendChild(image);

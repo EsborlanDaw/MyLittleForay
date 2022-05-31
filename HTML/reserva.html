@@ -82,7 +82,6 @@
 
           <label for="paisdestino">Viaja a:</label>
           <input id="paisdestino" name="paisdestino" type="text" class="form-control" placeholder="Pais destino" required oninput="add()">
-          <button onclick="addPhoto()">Aceptar</button>
           <br>
           <label for="ciudad">Desde:</label>
           <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" required oninput="add()">
@@ -299,8 +298,8 @@
   <div id="ResumenReserva" class="card">
     <div class="card-header" style="text-align:center">RESUMEN RESERVA</div>
     <div class="card-body">
-      <div id="fotopais">
-
+      <div>
+        <img  id="fotopais" class="card-img-top" src="../IMG/default.jpg" alt="default" onmouseover="addPhoto()">
       </div>
      
       <div class="d-inline-flex text-white">
