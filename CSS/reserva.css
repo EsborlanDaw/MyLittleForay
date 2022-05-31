@@ -15,7 +15,10 @@
     color: blue;
 }
 
-
+#ResumenReserva input{
+    background-color: inherit;
+    border-color: white;
+}
 
 
 

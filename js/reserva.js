@@ -46,11 +46,59 @@ function sumarDias(frm) {
   
 }
 
-function agregarInfo(){
-    let node = document.getElementById(id);
-    let clone = node.cloneNode(true);
+//Poner imagen
 
-    document.getElementById("nconfirmado").appendChild(clone);
+function addPhoto(){
+
+  let pais = document.getElementById("paisdestino").value;
+  let picture = document.createElement("IMG");
+
+  if (pais.toUpperCase() = 'ESPAÑA')
+  {
+    picture.setAttribute("src", "../IMG/paises/España.jpg");
+    picture.setAttribute("width", "304");
+    picture.setAttribute("height", "228");
+    picture.setAttribute("alt", "España");
+    document.body.appendChild(picture);
+ 
+  }
+
+  else if(pais.toUpperCase() = 'ITALIA')
+  {
+    image.src  = '../IMG/paises/Italia.jpg';
+  }
+
+  else if ((pais.toUpperCase() = 'JAPÓN') || (pais.toUpperCase() = 'JAPON'))
+  {
+    image.src  = '../IMG/paises/Japon.jpg';
+  }
+
+  else if (pais.toUpperCase() = 'MEpictureICO')
+  {
+    image.src  = '../IMG/paises/Mexico.jpg';
+  }
+
+  document.querySelector('.fotopais').appendChild(image);
+  
+}
+
+//Funcion para rellenar Resumen Reserva
+function add()
+{
+  let dato = document.getElementById("paisdestino").value;
+  document.getElementById("paisconfi").value = dato;
+
+  dato = document.getElementById("ciudad").value;		
+	document.getElementById("ciudadconfi").value = dato;
+
+  dato = document.getElementById("nom").value;		
+	document.getElementById("nconfi").value = dato;
+
+  dato = document.getElementById("tel1").value;		
+	document.getElementById("tconfi").value = dato;
+
+  dato = document.getElementById("email1").value;		
+	document.getElementById("econfi").value = dato;
 
 }
 
