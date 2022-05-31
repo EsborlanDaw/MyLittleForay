@@ -81,10 +81,12 @@
           </div>
 
           <label for="paisdestino">Viaja a:</label>
-          <input id="paisdestino" name="paisdestino" type="text" class="form-control" placeholder="Pais destino" required oninput="add()">
+          <input id="paisdestino" name="paisdestino" type="text" class="form-control" placeholder="Pais destino"
+            required oninput="add()" onkeypress="addPhoto(event)">
           <br>
           <label for="ciudad">Desde:</label>
-          <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" required oninput="add()">
+          <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" required
+            oninput="add()">
 
           <br>
           <div id="fecha" style="text-align: center;">
@@ -189,7 +191,8 @@
         </div>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Prefijo" required>
-          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" required oninput="add()">
+          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" required
+            oninput="add()">
         </div>
         <div class="input-group mb-3">
           <input id="email0" type="email" class="form-control" placeholder="Correo" required>
@@ -298,17 +301,18 @@
   <div id="ResumenReserva" class="card">
     <div class="card-header" style="text-align:center">RESUMEN RESERVA</div>
     <div class="card-body">
-      <div>
-        <img  id="fotopais" class="card-img-top" src="../IMG/default.jpg" alt="default" onmouseover="addPhoto()">
-      </div>
-     
+
+      <img id="fotopais" class="card-img-top" src="../img/IMG/default.jpg" alt="default">
+
       <div class="d-inline-flex text-white">
-        <div class="p-2 bg-muted"><input id="ciudadconfi" type="text" class="form-control" placeholder="Ciudad" readonly value=""></div>
+        <div class="p-2 bg-muted"><input id="ciudadconfi" type="text" class="form-control" placeholder="Ciudad" readonly
+            value=""></div>
         <div class="p-2 bg-info">TO</div>
-        <div class="p-2 bg-muted"><input id="paisconfi" type="text" class="form-control" placeholder="Pais" readonly value=""></div>
-        
+        <div class="p-2 bg-muted"><input id="paisconfi" type="text" class="form-control" placeholder="Pais" readonly
+            value=""></div>
+
       </div>
-     
+
       <p class="card-text">VUELO + HOTEL </p>
       <p class="card-text">7 días / 6 noches</p>
     </div>
