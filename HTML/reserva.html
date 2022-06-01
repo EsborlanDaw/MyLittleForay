@@ -82,7 +82,7 @@
 
           <label for="paisdestino">Viaja a:</label>
           <input id="paisdestino" name="paisdestino" type="text" class="form-control" placeholder="Pais destino"
-            required oninput="add()" onkeypress="addPhoto(event)">
+            required oninput="add()" onchange="addPhoto(event)">
           <br>
           <label for="ciudad">Desde:</label>
           <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" required
@@ -149,7 +149,7 @@
 
         <div class="form-floating mb-3 mt-3" style="width: 30%">
 
-          <select class="form-select" id="habitaciones" name="sellist" required>
+          <select class="form-select" id="habitaciones" name="sellist" required onchange="calculatePrice()">
             <option disabled selected value> selecciona </option>
             <option>1</option>
             <option>2</option>
@@ -334,7 +334,7 @@
     </div>
     <div class="card-footer">
       <h4 class="card-title">TOTAL</h4>
-      <p id="preciototal" class="card-text"> Hacer calculos con java segun total de personas y descuentos</p>
+      <input id="total" type="text" class="form-control" placeholder="PrecioTotal" readonly value="">
       <div class="container-fluid" style="text-align:center">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#desgloseprecios">
           DESGLOSE PRECIOS
