@@ -50,9 +50,8 @@ function sumarDias(frm) {
 
 function addPhoto() {
 
-
   let pais = document.getElementById("paisdestino").value;
-  console.log(pais.toUpperCase());
+  
   if (pais.toUpperCase() == 'ESPAÑA') {
     document.getElementById('fotopais').src = "../img/paises/España.jpg";
   }
@@ -96,53 +95,84 @@ function add() {
       -Italia = 550
       -Japón = 750
       -México = 650
-
 */
 
 function calculatePrice() {
 
   let pais = document.getElementById("paisdestino").value;
-  let adultos = document.getElementById("adultos");
-  let totalad = adultos.options[adultos.selectedIndex].text;
-  let menores = document.getElementById("niños");
-  let totalme = menores.options[menores.selectedIndex].text;
+  let personas = document.getElementById("personas");
+  let totalad = personas.options[personas.selectedIndex].text;
   let precio, preciototal;
-
-  console.log(totalad);
-  console.log(totalme);
+  
 
   if (pais.toUpperCase() == 'ESPAÑA') {
     precio = 450;
     
-    preciototal = (parseFloat (totalad) + parseFloat(totalme)) * precio;
+    preciototal = (parseFloat (totalad)) * precio;
     
     document.getElementById('total').value = preciototal;
   }
 
   else if (pais.toUpperCase() == 'ITALIA') {
     precio = 550;
-    preciototal = (parseFloat(totalad) + parseFloat(totalme)) * precio;
+    preciototal = (parseFloat(totalad)) * precio;
     document.getElementById('total').value = preciototal;
   }
 
   else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
     precio = 750;
-    preciototal = (parseFloat(totalad) + parseFloat(totalme)) * precio;
+    preciototal = (parseFloat(totalad)) * precio;
     document.getElementById('total').value = preciototal;
   }
 
   else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
     precio = 650;
-    preciototal = (parseFloat(totalad) + parseFloat(totalme)) * precio;
+    preciototal = (parseFloat(totalad)) * precio;
     document.getElementById('total').value = preciototal;
   }
+
+  return preciototal;
 }
 
+//Funcion para calcular el precio total con extras y descuentos
 
+function finalPrice (){
 
+  let total = calculatePrice();
+  let personas = document.getElementById("personas");
+  let totalpers = personas.options[personas.selectedIndex].text;
+  let checkTraslado = document.getElementById('traslado');
+  let checkVehiculo = document.getElementById('vehiculo');
+  let checkRestaurante = document.getElementById('restaurante');
+  let codigo = document.getElementById("codigo").value;
+  let tarjeta = document.getElementById("cantidad").value;
+  let totalFamNum = document.getElementById("cfamilia").value;
+  let totalAlberg = document.getElementById("alberg").value;
 
+  if (checkTraslado == true)
+      total = parseFloat(total) + (parseFloat(totalpers) * 15);
+  if (checkVehiculo == true)
+      total = parseFloat(total) + 500;
+  if (checkRestaurante == true)
+      total = parseFloat(total) + (parseFloat(totalpers) * 20);
+  if  (codigo.lenght != 0 && tarjeta.lenght !=0)
+      total = parseFloat(total) - parseFloat(tarjeta);
+  if (totalFamNum.lenght != 0 && totalAlberg.lenght == 0)
+      total = parseFloat(total) - (parseFloat(totalFamNum)-(parseFloat(totalFamNum) * 0.15));
+  else (totalFamNum.lenght == 0 && totalAlberg.lenght != 0)
+      total = parseFloat(total) - (parseFloat(totalAlberg)-(parseFloat(Alberg) * 0.10));
+  
+  document.getElementById('totaldesc').value = total;
+  
+}
 
+//Funcion para calcular desglose de precios
 
-
-
-
+function byPerson()
+{
+  let personas = document.getElementById("personas");
+  let totalad = personas.options[personas.selectedIndex].text;
+  let total = document.getElementById("total");
+  let preciopers = parseFloat(total) / parseFloat(totalad);
+  console.log(total);
+}
