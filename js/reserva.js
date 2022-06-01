@@ -50,25 +50,25 @@ function sumarDias(frm) {
 
 function addPhoto() {
 
- 
-    let pais = document.getElementById("paisdestino").value;
-    console.log(pais.toUpperCase());
-    if (pais.toUpperCase() == 'ESPAÑA') {
-      document.getElementById('fotopais').src = "../img/paises/España.jpg";
-    }
 
-    else if (pais.toUpperCase() == 'ITALIA') {
-      document.getElementById('fotopais').src = '../img/paises/Italia.jpg';
-    }
+  let pais = document.getElementById("paisdestino").value;
+  console.log(pais.toUpperCase());
+  if (pais.toUpperCase() == 'ESPAÑA') {
+    document.getElementById('fotopais').src = "../img/paises/España.jpg";
+  }
 
-    else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
-      document.getElementById('fotopais').src = '../img/paises/Japon.jpg';
-    }
+  else if (pais.toUpperCase() == 'ITALIA') {
+    document.getElementById('fotopais').src = '../img/paises/Italia.jpg';
+  }
 
-    else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
-      document.getElementById('fotopais').src = '../img/paises/Mexico.jpg';
-    }
-  
+  else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
+    document.getElementById('fotopais').src = '../img/paises/Japon.jpg';
+  }
+
+  else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
+    document.getElementById('fotopais').src = '../img/paises/Mexico.jpg';
+  }
+
 }
 
 //Funcion para rellenar Resumen Reserva
@@ -108,28 +108,32 @@ function calculatePrice() {
   let totalme = menores.options[menores.selectedIndex].text;
   let precio, preciototal;
 
-  if (pais.toUpperCase() == 'ESPAÑA') {
-    precio = 450.0;
+  console.log(totalad);
+  console.log(totalme);
 
-    preciototal = (totalad + totalme) * precio;
+  if (pais.toUpperCase() == 'ESPAÑA') {
+    precio = 450;
+    
+    preciototal = (parseFloat (totalad) + parseFloat(totalme)) * precio;
+    
     document.getElementById('total').value = preciototal;
   }
 
   else if (pais.toUpperCase() == 'ITALIA') {
-    precio = 550.0;
-    preciototal = (totalad + totalme) * precio;
+    precio = 550;
+    preciototal = (parseFloat(totalad) + parseFloat(totalme)) * precio;
     document.getElementById('total').value = preciototal;
   }
 
   else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
-    precio = 750.0;
-    preciototal = (totalad + totalme) * precio;
+    precio = 750;
+    preciototal = (parseFloat(totalad) + parseFloat(totalme)) * precio;
     document.getElementById('total').value = preciototal;
   }
 
   else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
-    precio = 650.0;
-    preciototal = (totalad + totalme) * precio;
+    precio = 650;
+    preciototal = (parseFloat(totalad) + parseFloat(totalme)) * precio;
     document.getElementById('total').value = preciototal;
   }
 }
