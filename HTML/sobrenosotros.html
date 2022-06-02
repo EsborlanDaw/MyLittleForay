@@ -2,16 +2,15 @@
 <html lang="en">
 
 <head>
-    <title>SOBRENOSOTROS</title>
+    <title>SOBRE NOSOTROS</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="../IMG/LOGOIMG.png">
-    <link rel="stylesheet" href="../CSS/inicio.css">
+    <link rel="icon" type="image/x-icon" href="IMG/LOGOIMG.png">
     <link rel="stylesheet" href="../bootstrap/js/">
     <link rel="stylesheet" href="../CSS/style.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="../js/sobre_nosotros.js">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
@@ -25,57 +24,57 @@
     <header>
         <div class="px-3 py-2 text-center text-white">
             <a href="inicio.html">
-                <img src="../IMG/Marca.png" alt="LOGO">
+                <img src="../img/IMG/Marca.png" alt="LOGO">
             </a>
         </div>
     </header>
-    <nav id="barramenu" class="navbar navbar-expand-sm bg-primary">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">INICIO</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">DESTINOS</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">ESPAÑA</a></li>
-                            <li><a class="dropdown-item" href="#">ITALIA</a></li>
-                            <li><a class="dropdown-item" href="#">JAPÓN</a></li>
-                            <li><a class="dropdown-item" href="#">MÉXICO</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item ab fa-linkedin-indropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">RESTAURANTE</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">CARTA ESPAÑA</a></li>
-                            <li><a class="dropdown-item" href="#">CARTA ITALIA</a></li>
-                            <li><a class="dropdown-item" href="#">CARTA JAPÓN</a></li>
-                            <li><a class="dropdown-item" href="#">CARTA MÉXICO</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">RESERVA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">SOBRE NOSOTROS</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+ <!-- NAVBAR -->
+ <nav id="barramenu" class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link " href="inicio.html">INICIO</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DESTINOS</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../paises/españa/españa.html">ESPAÑA</a></li>
+              <li><a class="dropdown-item" href="../paises/italia/italia.html">ITALIA</a></li>
+              <li><a class="dropdown-item" href="../paises/japon/japon.html">JAPÓN</a></li>
+              <li><a class="dropdown-item" href="../paises/mexico/mexico.html">MÉXICO</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="tarjetaregalo.html">TARJETA REGALO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="resenya.html">RESEÑAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobrenosotros.html">SOBRE NOSOTROS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="reserva.html">RESERVAR</a>
+          </li>
+      </div>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <br>
 
     <!--Primer div-->
-    <div class="container-fluid py-5 bg-hero" style="margin-bottom: 90px; background-color: midnightblue;">
+    <div class="container-fluid py-5 bg-hero" style="margin-bottom: 10px; background-color: midnightblue;">
         <div class="container py-2">
             <div class="row justify-content-start">
-                <div class="col-lg-8 text-center text-lg-start">
-                    <h1 class="display-1" style="color: aliceblue;">About Us</h1>
+                <div class="col-lg-5 text-center text-lg-start">
+                    <h1 class="display-1" style="color: aliceblue;">Sobre Nosotros</h1>
                     <div class="pt-2">
-                        <a href="" class="btn btn-secondary rounded-pill py-2 px-4 mx-2">Inicio</a>
-                        <a href="" class="btn btn-secondary rounded-pill py-2 px-4 mx-2">Reseñas</a>
+                        <a href="" class="btn btn-secondary rounded-pill py-1 px-4 mx-2">Inicio</a>
+                        <a href="" class="btn btn-secondary rounded-pill py-1 px-4 mx-2">Reseñas</a>
                     </div>
                 </div>
             </div>
@@ -89,27 +88,30 @@
                 <div class="col-lg-6 my-lg-5 py-lg-5">
                     <div class="about-start btn-secondary p-5">
                         <h1 class="display-5 mb-4">My Little Foray</h1>
-                        <p>La mejor herramienta para planear viajes, tanto a Japon, Mexico, Italia o cerca de ti, con complementos a añadir a tus viajes y siempre poniendo empeño en que el cliente este siempre satisfecho.</p>
-                        <a href="" class="btn btn-secondary rounded-pill py-md-3 px-md-5 mt-4">Sobre Nosotros</a>
+                        <p>La mejor herramienta para planear viajes, tanto a Japon, Mexico, Italia o cerca de ti, con
+                            complementos a añadir a tus viajes y siempre poniendo empeño en que el cliente este siempre
+                            satisfecho.</p>
                     </div>
                 </div>
                 <div class="col-lg-6" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="../img/paises/Japon.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="../img/paises/Japon.jpg"
+                            style="object-fit: cover;">
                     </div>
                 </div>
             </div>
             <div class="row gx-0">
                 <div class="col-lg-6" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="../IMG/LOGO.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="../img/IMG/LOGO.jpg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 my-lg-5 py-lg-5">
                     <div class="about-end bg-primary p-5">
                         <h1 class="display-5 mb-4">¿Porque escogernos?</h1>
-                        <p>Mi Little Foray se especializa en facilitar la planificación de viajes a diferentes paises de forma profesional y sencilla para mejorar la experiencia de planificación del viaje y así ayudar al cliente a la hora de preparar sus vacaciones.</p>
-                        <a href="" class="btn btn-secondary rounded-pill py-md-3 px-md-5 mt-4">Inicio</a>
+                        <p>Mi Little Foray se especializa en facilitar la planificación de viajes a diferentes paises de
+                            forma profesional y sencilla para mejorar la experiencia de planificación del viaje y así
+                            ayudar al cliente a la hora de preparar sus vacaciones.</p>
                     </div>
                 </div>
             </div>
@@ -117,82 +119,90 @@
     </div>
 
     <!--EQUIPO ACTIMEL-->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h1 class="display-5">Equipo ACTIMEL</h1>
-                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-item">
-                        <img class="img-fluid w-100" src="../IMG/1111.jpeg" alt="">
-                        <div class="team-text">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <div class="mt-auto mb-3">
-                                <h4 class="mb-1">Fani</h4>
-                                <span class="text-uppercase">Tecnico Superior</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-item">
-                        <img class="img-fluid w-100" src="../IMG/2222.jpeg" alt="">
-                        <div class="team-text">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <div class="mt-auto mb-3">
-                                <h4 class="mb-1">Mario</h4>
-                                <span class="text-uppercase">Relaciones Publicas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-item">
-                        <img class="img-fluid w-100" src="../IMG/3333.jpeg" alt="">
-                        <div class="team-text">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg btn-secondary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <div class="mt-auto mb-3">
-                                <h4 class="mb-1">Luis</h4>
-                                <span class="text-uppercase">POSITIVO LIONEL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div id="wrapper_team">
+        <div class="title_team">
+          <h1>Conocenos mejor</h1>
         </div>
-    </div>
+        <div class="team_box">
+          <div id="teamcontent">
+            <div class="container-left">
+              <div class="bigimg" height="260" width="225">&nbsp;</div>
+            </div>
+    
+            <div class="container-right" id="teamdetails">
+              <h2 id="bigname">Name</h2>
+              <h3 id="bigjob">Title</h3>
+              <p id="bigdesc">A brief description.</p>
+            </div>
+          </div>
+        </div>
+    
+        <ul class="team clearfix">
+          <li style="margin-left: 25.5%;">
+            <div>
+            <div class="profile_container">
+              <img alt="John Doe" class="profilepic" src="../IMG/2222.jpeg">
+              <div class="bigimg-overlay">
+                <div class="bigimg-text"><strong>Mario Tomas</strong><br>Sobrino del Director</div>
+              </div>
+            </div>
+            <span class="hcontent job">Service Specialist</span>
+            <p class="hcontent desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet diam nec risus
+              semper, a pretium nisi mollis. Vivamus non diam volutpat tortor porttitor rhoncus in non erat. Suspendisse
+              potenti. Curabitur odio tortor, lacinia at tempus vel, iaculis eget felis. Vivamus consectetur placerat
+              mauris, at mollis dui suscipit ut. <br />
+              </p>
+          </li>
+          <li>
+            <div class="profile_container">
+              <img alt="Jane Doe" class="profilepic"
+                src="../IMG/1111.jpeg">
+              <div class="bigimg-overlay">
+                <div class="bigimg-text"><strong>Estefania Boriko</strong><br>Jefa Ejecutiva</div>
+              </div>
+            </div>
+            <span class="hcontent job">Account Mananger</span>
+            <p class="hcontent desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet diam nec risus
+              semper, a pretium nisi mollis. Vivamus non diam volutpat tortor porttitor rhoncus in non erat. Suspendisse
+              potenti. Curabitur odio tortor, lacinia at tempus vel, iaculis eget felis. Vivamus consectetur placerat
+              mauris, at mollis dui suscipit ut. <br />
+              </p>
+          </li>
+          <li>
+            <div class="profile_container">
+              <img alt="Jane Doe" class="profilepic" src="../IMG/3333.jpeg" />
+              <div class="bigimg-overlay">
+                <div class="bigimg-text"><strong>Luis Rodriguez</strong><br>Positivo Lionel</div>
+              </div>
+            </div>
+            <span class="hcontent job">Account Mananger</span>
+            <p class="hcontent desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet diam nec risus
+              semper, a pretium nisi mollis. Vivamus non diam volutpat tortor porttitor rhoncus in non erat. Suspendisse
+              potenti. Curabitur odio tortor, lacinia at tempus vel, iaculis eget felis. Vivamus consectetur placerat
+              mauris, at mollis dui suscipit ut. <br />
+               </p>
+          </li>
+        </div>
+        </ul>
+      </div>
     <div class="footer">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    
-          <div class="col-1" style="width: 30%; text-align: center;">
-            <h5>Contactanos:</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Telefono: 610705043 </a></li>
-              <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Email: mlf@gmail.com</a></li>
-            </ul>
-          </div>
-    
-          <div class="col-md-4 d-flex align-items-center" style="width: 30%; text-align: center;">
-    
-            <span class="">&copy; 2022 Company, Inc</span>
-          </div>
-    
+
+            <div class="col-1" style="width: 30%; text-align: center;">
+                <h5>Contactanos:</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Telefono: 610705043 </a></li>
+                    <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Email: mlf@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 d-flex align-items-center" style="width: 30%; text-align: center;">
+
+                <span class="">&copy; 2022 Company, Inc</span>
+            </div>
+
         </footer>
-      </div>
+    </div>
 </body>
 
 </html>

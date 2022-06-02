@@ -15,8 +15,19 @@
     color: blue;
 }
 
+#ResumenReserva input{
+    background-color: inherit;
+    border-color: white;
+}
 
+h5{
+    text-align: center;
+    background-color: skyblue;
+}
 
+h4{
+    text-align: center;
+}
 
 
 
