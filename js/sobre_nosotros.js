@@ -1,15 +1,15 @@
 $(function(){
     $('.profile_container').on('click', function(e){
-      var $biginfo = $('#teamcontent');
-      var $bigname = $('#bigname');
-      var $bigjob  = $('#bigjob');
-      var $bigdesc = $('#bigdesc');
-      var $bigimg  = $('.bigimg');  
+      let $biginfo = $('#teamcontent');
+      let $bigname = $('#bigname');
+      let $bigjob  = $('#bigjob');
+      let $bigdesc = $('#bigdesc');
+      let $bigimg  = $('.bigimg');  
       
-      var newimg  = $(this).find('.profilepic').attr('src');
-      var newname = $(this).find('.profilepic').attr('alt');
-      var newrole = $(this).siblings('.job').eq(0).html();
-      var newdesc = $(this).siblings('.desc').eq(0).html();
+      let newimg  = $(this).find('.profilepic').attr('src');
+      let newname = $(this).find('.profilepic').attr('alt');
+      let newrole = $(this).siblings('.job').eq(0).html();
+      let newdesc = $(this).siblings('.desc').eq(0).html();
       
       $bigimg.css('background-image', "url(" + newimg + ")");
       $bigname.html(newname);
@@ -29,7 +29,7 @@ $(function(){
       if (this.hash !== "") {
         event.preventDefault();
           
-        var hash = this.hash;
+        let hash = this.hash;
   
         $('html, body').animate({
           scrollTop: $(hash).offset().top

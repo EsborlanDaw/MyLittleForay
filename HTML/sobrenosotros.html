@@ -28,8 +28,8 @@
             </a>
         </div>
     </header>
-      <!-- NAVBAR -->
-  <nav id="barramenu" class="navbar navbar-expand-sm navbar-dark bg-primary">
+ <!-- NAVBAR -->
+ <nav id="barramenu" class="navbar navbar-expand-sm navbar-dark bg-primary">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
@@ -45,7 +45,7 @@
               <li><a class="dropdown-item" href="../paises/mexico/mexico.html">MÉXICO</a></li>
             </ul>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link" href="tarjetaregalo.html">TARJETA REGALO</a>
           </li>
@@ -53,16 +53,17 @@
             <a class="nav-link" href="resenya.html">RESEÑAS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="sobrenosotros.html">SOBRE NOSOTROS</a>
-          </li>  
-          <li class="nav-item">
-            <a class="nav-link" href="reserva.html">RESERVAR</a>
+            <a class="nav-link" href="sobrenosotros.html">SOBRE NOSOTROS</a>
           </li>
-        </div>
-        </ul>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="reserva.html">RESERVAR</a>
+          </li>
       </div>
+      </ul>
+    </div>
     </div>
   </nav>
+
   <br>
 
     <!--Primer div-->
@@ -90,7 +91,6 @@
                         <p>La mejor herramienta para planear viajes, tanto a Japon, Mexico, Italia o cerca de ti, con
                             complementos a añadir a tus viajes y siempre poniendo empeño en que el cliente este siempre
                             satisfecho.</p>
-                        <a href="" class="btn btn-secondary rounded-pill py-md-3 px-md-5 mt-4">Sobre Nosotros</a>
                     </div>
                 </div>
                 <div class="col-lg-6" style="min-height: 400px;">
@@ -112,7 +112,6 @@
                         <p>Mi Little Foray se especializa en facilitar la planificación de viajes a diferentes paises de
                             forma profesional y sencilla para mejorar la experiencia de planificación del viaje y así
                             ayudar al cliente a la hora de preparar sus vacaciones.</p>
-                        <a href="" class="btn btn-secondary rounded-pill py-md-3 px-md-5 mt-4">Inicio</a>
                     </div>
                 </div>
             </div>
@@ -120,55 +119,72 @@
     </div>
 
     <!--EQUIPO ACTIMEL-->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h1 class="display-5">Equipo ACTIMEL</h1>
-                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-item">
-                        <img class="img-fluid w-100" src="../IMG/1111.jpeg" alt="">
-                        <div class="team-text">
-                            <div class="team-social">
-                            </div>
-                            <div class="mt-auto mb-3">
-                                <h4 class="mb-1">Fani</h4>
-                                <span class="text-uppercase">Tecnico Superior</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-item">
-                        <img class="img-fluid w-100" src="../IMG/2222.jpeg" alt="">
-                        <div class="team-text">
-                            <div class="team-social">
-                            </div>
-                            <div class="mt-auto mb-3">
-                                <h4 class="mb-1">Mario</h4>
-                                <span class="text-uppercase">Relaciones Publicas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-item">
-                        <img class="img-fluid w-100" src="../IMG/3333.jpeg" alt="">
-                        <div class="team-text">
-                            <div class="team-social">
-                            </div>
-                            <div class="mt-auto mb-3">
-                                <h4 class="mb-1">Luis</h4>
-                                <span class="text-uppercase">POSITIVO LIONEL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div id="wrapper_team">
+        <div class="title_team">
+          <h1>Conocenos mejor</h1>
         </div>
-    </div>
+        <div class="team_box">
+          <div id="teamcontent">
+            <div class="container-left">
+              <div class="bigimg" height="260" width="225">&nbsp;</div>
+            </div>
+    
+            <div class="container-right" id="teamdetails">
+              <h2 id="bigname">Name</h2>
+              <h3 id="bigjob">Title</h3>
+              <p id="bigdesc">A brief description.</p>
+            </div>
+          </div>
+        </div>
+    
+        <ul class="team clearfix">
+          <li style="margin-left: 25.5%;">
+            <div>
+            <div class="profile_container">
+              <img alt="John Doe" class="profilepic" src="../IMG/2222.jpeg">
+              <div class="bigimg-overlay">
+                <div class="bigimg-text"><strong>Mario Tomas</strong><br>Sobrino del Director</div>
+              </div>
+            </div>
+            <span class="hcontent job">Service Specialist</span>
+            <p class="hcontent desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet diam nec risus
+              semper, a pretium nisi mollis. Vivamus non diam volutpat tortor porttitor rhoncus in non erat. Suspendisse
+              potenti. Curabitur odio tortor, lacinia at tempus vel, iaculis eget felis. Vivamus consectetur placerat
+              mauris, at mollis dui suscipit ut. <br />
+              </p>
+          </li>
+          <li>
+            <div class="profile_container">
+              <img alt="Jane Doe" class="profilepic"
+                src="../IMG/1111.jpeg">
+              <div class="bigimg-overlay">
+                <div class="bigimg-text"><strong>Estefania Boriko</strong><br>Jefa Ejecutiva</div>
+              </div>
+            </div>
+            <span class="hcontent job">Account Mananger</span>
+            <p class="hcontent desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet diam nec risus
+              semper, a pretium nisi mollis. Vivamus non diam volutpat tortor porttitor rhoncus in non erat. Suspendisse
+              potenti. Curabitur odio tortor, lacinia at tempus vel, iaculis eget felis. Vivamus consectetur placerat
+              mauris, at mollis dui suscipit ut. <br />
+              </p>
+          </li>
+          <li>
+            <div class="profile_container">
+              <img alt="Jane Doe" class="profilepic" src="../IMG/3333.jpeg" />
+              <div class="bigimg-overlay">
+                <div class="bigimg-text"><strong>Luis Rodriguez</strong><br>Positivo Lionel</div>
+              </div>
+            </div>
+            <span class="hcontent job">Account Mananger</span>
+            <p class="hcontent desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet diam nec risus
+              semper, a pretium nisi mollis. Vivamus non diam volutpat tortor porttitor rhoncus in non erat. Suspendisse
+              potenti. Curabitur odio tortor, lacinia at tempus vel, iaculis eget felis. Vivamus consectetur placerat
+              mauris, at mollis dui suscipit ut. <br />
+               </p>
+          </li>
+        </div>
+        </ul>
+      </div>
     <div class="footer">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 
