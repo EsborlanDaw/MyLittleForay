@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link " href="inicio.html">INICIO</a>
+            <a class="nav-link " href="../index.html">INICIO</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DESTINOS</a>
@@ -81,9 +81,17 @@
             <div class="p-2 bg-danger" style="width: 25%;">México</div>
           </div>
 
-          <label for="paisdestino">Viaja a:</label>
-          <input id="paisdestino" name="paisdestino" type="text" class="form-control" placeholder="Pais destino"
-            required oninput="add()" onchange="addPhoto(event)">
+          <div class="form-floating mb-3 mt-3">
+            <select class="form-select" id="personas" name="sellist" required oninput="add()" onchange="addPhoto(event)">
+              <option disabled selected value> selecciona </option>
+              <option>España</option>
+              <option>Italia</option>
+              <option>Japón</option>
+              <option>México</option>
+            </select>
+            <label for="adultos" class="form-label">Destino: </label>
+          </div>
+          
           <br>
           <label for="ciudad">Desde:</label>
           <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" required
@@ -166,16 +174,11 @@
         <br>
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Prefijo" required>
-          <input id="tel0" type="tel" class="form-control" style="width: 80%" placeholder="Telefono" required>
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Prefijo" required>
-          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" required
+          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Telefono" required
             oninput="add()">
         </div>
         <div class="input-group mb-3">
-          <input id="email0" type="email" class="form-control" placeholder="Correo" required>
-          <input id="email1" type="email" class="form-control" placeholder="Confirma correo" required oninput="add()">
+          <input id="email1" type="email" class="form-control" placeholder="Correo" required oninput="add()">
         </div>
         <hr>
         <h5>COMUNICACIONES</h5>
@@ -241,19 +244,6 @@
         </div>
       </div>
       <br>
-      <div id="FamNum">
-        <div>
-          <label for="cfamilia">Fam Numerosa:</label>
-          <input name="cfamilia" id="cfamilia" type="text" placeholder="Total De Personas Con FamNum">
-        </div>
-      </div>
-      <br>
-      <div id="Alberguista">
-        <div>
-          <label for="alberg">Car Alberguista:</label>
-          <input name="alberg" id="alberg" type="text" placeholder="Total De Personas Con Carnet">
-        </div>
-      </div>
       <hr>
       <div class="container" style="text-align:center">
         <button onclick="finalPrice()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir">
@@ -316,7 +306,7 @@
 
     </div>
     <div class="card-footer">
-      <h4 class="card-title">TOTAL</h4>
+      <h4 class="card-title">Subtotal Sin Descuentos</h4>
       <input id="total" type="text" class="form-control" placeholder="PrecioTotal" readonly value="">
       <br>
       <h5 class="card-title" style="text-align:center">PRECIO FINAL</h5>

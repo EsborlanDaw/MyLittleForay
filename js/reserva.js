@@ -50,7 +50,8 @@ function sumarDias(frm) {
 
 function addPhoto() {
 
-  let pais = document.getElementById("paisdestino").value;
+  let pais = document.getElementById("paisdestino");
+  let destino = pais.options[pais.selectedIndex].text;
   
   if (pais.toUpperCase() == 'ESPAÑA') {
     document.getElementById('fotopais').src = "../img/paises/España.jpg";
@@ -67,6 +68,10 @@ function addPhoto() {
   else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
     document.getElementById('fotopais').src = '../img/paises/Mexico.jpg';
   }
+  else{
+    document.getElementById('fotopais').src = '../img/IMG/default.jpg';
+  }
+
 
 }
 
@@ -99,7 +104,8 @@ function add() {
 
 function calculatePrice() {
 
-  let pais = document.getElementById("paisdestino").value;
+  let pais = document.getElementById("paisdestino");
+  let destino = pais.options[pais.selectedIndex].text;
   let personas = document.getElementById("personas");
   let totalad = personas.options[personas.selectedIndex].text;
   let precio, preciototal;
@@ -131,16 +137,44 @@ function calculatePrice() {
     document.getElementById('total').value = preciototal;
   }
 
-  return preciototal;
+  return precio;
 }
 
 //Funcion para calcular el precio total con extras y descuentos
+class Persona {
+  constructor(id, precio)
+   {
+     this.id = id;
+     this.precio = precio;
+   }
+}
 
-function finalPrice (){
+function createPersona (){
 
-  let total = calculatePrice();
   let personas = document.getElementById("personas");
   let totalpers = personas.options[personas.selectedIndex].text;
+  let vecPersonas = [];
+
+
+  for (let i=0; i<=totalpers; i++)
+  {
+    vecPersonas[i] = new Persona(i, calculatePrice());
+  }
+}
+
+//Funcion para calcular desglose de precios
+
+function byPerson()
+{
+  let personas = document.getElementById("personas");
+  let totalad = personas.options[personas.selectedIndex].text;
+  let total = document.getElementById("total");
+  let preciopers = parseFloat(total) / parseFloat(totalad);
+  console.log(total);
+}
+
+//FUncion precio con descuento
+/*
   let checkTraslado = document.getElementById('traslado');
   let checkVehiculo = document.getElementById('vehiculo');
   let checkRestaurante = document.getElementById('restaurante');
@@ -148,7 +182,6 @@ function finalPrice (){
   let tarjeta = document.getElementById("cantidad").value;
   let totalFamNum = document.getElementById("cfamilia").value;
   let totalAlberg = document.getElementById("alberg").value;
-
   if (checkTraslado == true)
       total = parseFloat(total) + (parseFloat(totalpers) * 15);
   if (checkVehiculo == true)
@@ -162,17 +195,5 @@ function finalPrice (){
   else (totalFamNum.lenght == 0 && totalAlberg.lenght != 0)
       total = parseFloat(total) - (parseFloat(totalAlberg)-(parseFloat(Alberg) * 0.10));
   
-  document.getElementById('totaldesc').value = total;
+  document.getElementById('totaldesc').value = total;*/
   
-}
-
-//Funcion para calcular desglose de precios
-
-function byPerson()
-{
-  let personas = document.getElementById("personas");
-  let totalad = personas.options[personas.selectedIndex].text;
-  let total = document.getElementById("total");
-  let preciopers = parseFloat(total) / parseFloat(totalad);
-  console.log(total);
-}
