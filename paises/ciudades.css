@@ -1,9 +1,13 @@
 header{
     background-color:#04051c ;
 }
+#navPaises{
+    width: 23%;
+    margin: 0 auto;
+}
 #titulo{
     text-align:center;
-    margin-top:20px; 
+    margin-top:80px; 
     margin-bottom:20px;
     font-family: "Nunito";
 }
