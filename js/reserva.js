@@ -50,33 +50,29 @@ function sumarDias(frm) {
 
 function addPhoto() {
 
-  let pais = document.getElementById("paisdestino");
-  let destino = pais.options[pais.selectedIndex].text;
+    let pais = document.getElementById("paisdestino").value;
+   
+    if (pais.toUpperCase() == 'ESPAÑA') {
+      document.getElementById('fotopais').src = "../img/paises/España.jpg";
+    }
+
+    else if (pais.toUpperCase() == 'ITALIA') {
+      document.getElementById('fotopais').src = '../img/paises/Italia.jpg';
+    }
+
+    else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
+      document.getElementById('fotopais').src = '../img/paises/Japon.jpg';
+    }
+
+    else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
+      document.getElementById('fotopais').src = '../img/paises/Mexico.jpg';
+    }
   
-  if (pais.toUpperCase() == 'ESPAÑA') {
-    document.getElementById('fotopais').src = "../img/paises/España.jpg";
-  }
-
-  else if (pais.toUpperCase() == 'ITALIA') {
-    document.getElementById('fotopais').src = '../img/paises/Italia.jpg';
-  }
-
-  else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
-    document.getElementById('fotopais').src = '../img/paises/Japon.jpg';
-  }
-
-  else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
-    document.getElementById('fotopais').src = '../img/paises/Mexico.jpg';
-  }
-  else{
-    document.getElementById('fotopais').src = '../img/IMG/default.jpg';
-  }
-
-
 }
 
 //Funcion para rellenar Resumen Reserva
 function add() {
+
   let dato = document.getElementById("paisdestino").value;
   document.getElementById("paisconfi").value = dato;
 
@@ -104,41 +100,42 @@ function add() {
 
 function calculatePrice() {
 
-  let pais = document.getElementById("paisdestino");
-  let destino = pais.options[pais.selectedIndex].text;
-  let personas = document.getElementById("personas");
-  let totalad = personas.options[personas.selectedIndex].text;
-  let precio, preciototal;
+  let pais = document.getElementById("paisdestino").value;
+  let personasd = document.getElementById("personas");
+  let totalpers = personasd.options[personasd.selectedIndex].text;
   
+  let precio, preciototal;
+
+  document.getElementById ('numper').value = totalpers;
 
   if (pais.toUpperCase() == 'ESPAÑA') {
-    precio = 450;
-    
-    preciototal = (parseFloat (totalad)) * precio;
-    
+    precio = 450.0;
+
+    preciototal = totalpers * precio;
     document.getElementById('total').value = preciototal;
   }
 
   else if (pais.toUpperCase() == 'ITALIA') {
-    precio = 550;
-    preciototal = (parseFloat(totalad)) * precio;
+    precio = 550.0;
+    preciototal = totalpers * precio;
     document.getElementById('total').value = preciototal;
   }
 
-  else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
-    precio = 750;
-    preciototal = (parseFloat(totalad)) * precio;
+  else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() == 'JAPON')) {
+    precio = 750.0;
+    preciototal = totalpers * precio;
     document.getElementById('total').value = preciototal;
   }
 
-  else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
-    precio = 650;
-    preciototal = (parseFloat(totalad)) * precio;
+  else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() == 'MÉXICO')) {
+    precio = 650.0;
+    preciototal = totalpers * precio;
     document.getElementById('total').value = preciototal;
   }
 
-  return precio;
+  
 }
+
 
 //Funcion para calcular el precio total con extras y descuentos
 class Persona {
