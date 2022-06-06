@@ -1,10 +1,7 @@
 header{
     background-color:#04051c ;
 }
-#navPaises{
-    width: 23%;
-    margin: 0 auto;
-}
+
 #titulo{
     text-align:center;
     margin-top:80px; 
@@ -26,12 +23,17 @@ header{
 }
 #intro{
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
     text-align: center;
     padding-top:30px;
     padding-bottom:30px;
     margin-bottom: 50px;
     line-height: 10px;
+}
+#texto{
+    margin: 0 auto;
+    width: 70%;
+    line-height: 30px;
 }
 #imagenCarrusel{
     width: 30%;

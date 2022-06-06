@@ -26,39 +26,18 @@
     </header>
     
     <!-- NAVBAR MENU -->
-    <nav id="barramenu" class="navbar navbar-expand-sm navbar-dark bg-primary">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">INICIO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="paises.html">DESTINOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="tarjetaregalo.html">TARJETA REGALO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../HTML/resenya.html">RESEÑAS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../HTML/sobrenosotros.html">SOBRE NOSOTROS</a>
-            </li>  
-            <li class="nav-item">
-              <a class="nav-link" href="../HTML/reserva.html">RESERVAR</a>
-            </li>
-          </div>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div id="navbar"></div>
+    
 
 
     <!-- navbar paises -->
-    <nav id="navPaises" class="navbar navbar-expand-sm navbar-dark bg-dark rounded-bottom">
+    <nav id="navPaises" class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
-        <div class="collapse navbar-collapse" style="text-align: center;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar2">
+          <span>Paises</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar2">
           <ul class="navbar-nav">
             <li class="nav-item">
               <button onclick="clickEsp(this)" id="botonEsp" class="btn btn-dark bg-dark btn-block">ESPAÑA</button>
@@ -89,14 +68,16 @@
         <h1 id="titulo">VEN A ESPAÑA</h1>
         <div class="rounded-3 bg-info" id="intro">
           <h5 style="font-size: 30px;">¿Te Puedo Convencer?</h5>
+          <div id="texto">
           <br>
-          <p>Aquí podrás disfrutar de un maravilloso clima mediterraneo y de una comida deliciosa.</p>
-          <p>España es conocida por su diversidad cultural y paisajística, agrupa una gran cantidad de bellos</p>
-          <p>paisajes diferentes en una extensión de terreno no demasiado grande y en la que podrás encontrar</p>
-          <p>en cada región gente distinta. Hay uno para cada viajero. Además, descubrirás grandes y extensas</p>
-          <p>playas de arena blanca o dorada, pequeñas calas escondidas, playas rodeadas de bosques y verde,</p> 
-          <p>buenas para bucear, para ir con niños o nudistas… Las hay de todo tipo y para todos los gustos,</p>
-          <p>con muchas que se pueden visitar y disfrutar durante casi todo el año.</p>
+            <p>Aquí podrás disfrutar de un maravilloso clima mediterraneo y de una comida deliciosa.
+            España es conocida por su diversidad cultural y paisajística, agrupa una gran cantidad de bellos
+            paisajes diferentes en una extensión de terreno no demasiado grande y en la que podrás encontrar
+            en cada región gente distinta. Hay uno para cada viajero. Además, descubrirás grandes y extensas
+            playas de arena blanca o dorada, pequeñas calas escondidas, playas rodeadas de bosques y verde, 
+            buenas para bucear, para ir con niños o nudistas… Las hay de todo tipo y para todos los gustos,
+            con muchas que se pueden visitar y disfrutar durante casi todo el año.</p>
+          </div>
         </div>
 
         <!--carrusel: imágenes con info de cada ciudad -->
@@ -267,13 +248,15 @@ dias
       <div class="rounded-3 bg-info" id="intro">
         <h5 style="font-size: 30px;">¿Te Puedo Convencer?</h5>
         <br>
-        <p>Italia, uno de los mejores paises para visitar. Es el país del mundo con más lugares declarados</p>
-        <p>Patrimonio de la Humanidad por lo que está repleto de tesoros históricos y arte como lo es el Coliseo Romano</p>
-        <p>o la capilla Sixtina pintada por Miguel Ángel. Además de ser un interés artístico, ofrece la mayor</p>
-        <p>cantidad de playas de Europa, ¿qué esperas para descubrir tu favorita?</p>
-        <p>Viajar por Italia es un cambiante itinerario por culturas y escenarios muy distintos que acaban dando</p>
-        <p>la sensación de que es un país inagotable, a esto hay que su sumarle su famosísima gastronomia y</p> 
-        <p>su gente. Apúntate a este viaje y conocerás de primera mano por qué es tan reconocido este pais.</p>
+        <div id="texto">
+        <p>Italia, uno de los mejores paises para visitar. Es el país del mundo con más lugares declarados
+        Patrimonio de la Humanidad por lo que está repleto de tesoros históricos y arte como lo es el Coliseo Romano
+        o la capilla Sixtina pintada por Miguel Ángel. Además de ser un interés artístico, ofrece la mayor
+        cantidad de playas de Europa, ¿qué esperas para descubrir tu favorita?
+        Viajar por Italia es un cambiante itinerario por culturas y escenarios muy distintos que acaban dando
+        la sensación de que es un país inagotable, a esto hay que su sumarle su famosísima gastronomia y 
+        su gente. Apúntate a este viaje y conocerás de primera mano por qué es tan reconocido este pais.</p>
+        </div>
       </div>
 
       <!--carrusel: imágenes con info de cada ciudad -->
@@ -445,14 +428,16 @@ dias
       <h1 id="titulo">VEN A JAPÓN</h1>
       <div class="rounded-3 bg-info" id="intro">
         <h5 style="font-size: 30px;">¿Te Puedo Convencer?</h5>
+        <div id="texto">
         <br>
-        <p>Japón es un país de contrastes donde la cultura tradicional milenaria se mezcla con las tecnologías</p>
-        <p>más vanguardistas y futuristas del planeta.El nivel de civismo que existe en Japón es increíble,</p>
-        <p>todo es respeto, buenas formas y amabilidad.</p>
-        <p>Es un auténtico paraíso gastronómico, es el país con más estrellas Michelin del mundo, fíjate si se come bien,</p>
-        <p>ofrece comida de todo tipo desde comida rápida internacional hasta comida típica japonesa.</p>
-        <p>Una de las razones para visitar este país también son los templos y santuarios históricos, presentes en casi todos los pueblos</p> 
-        <p> y ciudades de Japón. Este país te sorprenderá por su filosofía de vida y por su cultura. </p>
+        <p>Japón es un país de contrastes donde la cultura tradicional milenaria se mezcla con las tecnologías
+        más vanguardistas y futuristas del planeta.El nivel de civismo que existe en Japón es increíble,
+        todo es respeto, buenas formas y amabilidad.
+        Es un auténtico paraíso gastronómico, es el país con más estrellas Michelin del mundo, fíjate si se come bien,
+        ofrece comida de todo tipo desde comida rápida internacional hasta comida típica japonesa.
+        Una de las razones para visitar este país también son los templos y santuarios históricos, presentes en casi todos los pueblos
+         y ciudades de Japón. Este país te sorprenderá por su filosofía de vida y por su cultura. </p>
+        </div>
       </div>
 
       <!--carrusel: imágenes con info de cada ciudad -->
@@ -637,6 +622,7 @@ dias
         
           </footer>
         </div>
-    <script src="../../js/paises.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/paises.js"></script>
 </body>
 </html>
