@@ -9,11 +9,19 @@ header{
     text-align:center;
     margin-top:80px; 
     margin-bottom:20px;
-    font-family: "Nunito";
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #demo {
     width: 60%;
-    
+    margin: 0 auto;
+}
+#demo1 {
+    width: 60%;
+    margin: 0 auto;
+}
+#demo2 {
+    width: 60%;
     margin: 0 auto;
 }
 #intro{
@@ -23,6 +31,7 @@ header{
     padding-top:30px;
     padding-bottom:30px;
     margin-bottom: 50px;
+    line-height: 10px;
 }
 #imagenCarrusel{
     width: 30%;
@@ -40,15 +49,17 @@ header{
     margin-top: 50px;
     margin-bottom: 50px;
     width: 60%;
+    height: 350px;
     float: left;
     padding-top: 20px;
+    overflow: scroll;
 }
 #incluye{
     margin-top: 50px;
     margin-bottom: 50px;
     border: solid black 5px;
     width: 40%;
-    float: right;
+    float: left;
     padding-right: 15px;
     padding-top: 20px;
     padding-left: 20px;
@@ -78,4 +89,9 @@ header{
 #botonReservar{
     clear: both;
     width: 70%;  
+}
+#sinOp{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }

@@ -1,25 +1,51 @@
-//Creación de los objetos paises con sus atributos
-var españa=new Object();
-españa.titulo = "VEN A ESPAÑA";
-españa.convencer = "Aquí podrás disfrutar de un maravilloso clima mediterraneo y de una comida deliciosa. España es conocida por su diversidad cultural y paisajística, agrupa una gran cantidad de bellos paisajes diferentes en una extensión de terreno no demasiado grande y en la que podrás encontrar en cada región gente distinta. Hay uno para cada viajero. Además, descubrirás grandes y extensas playas de arena blanca o dorada; pequeñas calas escondidas; playas rodeadas de bosques y verde; buenas para bucear, para ir con niños o nudistas… Las hay de todo tipo y para todos los gustos, son muchas las que se pueden visitar y disfrutar durante casi todo el año."
-españa.itinBarc = "BARCELONA";
-españa.itinVal = "VALENCIA";
-españa.itinMal = "MÁLAGA";
-españa.barTxt = "";
-españa.valTxt = "";
-españa.malTxt = "";
-españa.precio = "RESERVA YA A PARTIR DE 450€/p*";
+function clickEsp(id) {
+    let sinOp = document.querySelector("#sinOp");
+    let italia = document.querySelector("#italia");
+    let japon = document.querySelector("#japon");
+    let mexico = document.querySelector("#mexico");
+    let españa = document.querySelector("#españa");
+    españa.setAttribute("class", "");
+    sinOp.setAttribute("class", "d-none");
+    italia.setAttribute("class", "d-none");
+    japon.setAttribute("class", "d-none");
+    mexico.setAttribute("class", "d-none");
+}  
 
+function clickIt(id) {
+    let sinOp = document.querySelector("#sinOp");
+    let italia = document.querySelector("#italia");
+    let japon = document.querySelector("#japon");
+    let mexico = document.querySelector("#mexico");
+    let españa = document.querySelector("#españa");
+    españa.setAttribute("class", "d-none");
+    sinOp.setAttribute("class", "d-none");
+    italia.setAttribute("class", "");
+    japon.setAttribute("class", "d-none");
+    mexico.setAttribute("class", "d-none");
+}  
 
-//Inserción de texto según el pais
-var italia=new Object();
-italia.titulo = "VEN A ITALIA";
-italia.convencer = "Aquí podrás disfrutar de un maravilloso clima mediterraneo y de una comida deliciosa. España es conocida por su diversidad cultural y paisajística, agrupa una gran cantidad de bellos paisajes diferentes en una extensión de terreno no demasiado grande y en la que podrás encontrar en cada región gente distinta. Hay uno para cada viajero. Además, descubrirás grandes y extensas playas de arena blanca o dorada; pequeñas calas escondidas; playas rodeadas de bosques y verde; buenas para bucear, para ir con niños o nudistas… Las hay de todo tipo y para todos los gustos, son muchas las que se pueden visitar y disfrutar durante casi todo el año."
-italia.itinBarc = "BARCELONA";
-italia.itinVal = "VALENCIA";
-italia.itinMal = "MÁLAGA";
-italia.barTxt = "";
-italia.valTxt = "";
-italia.malTxt = "";
-italia.precio = "RESERVA YA A PARTIR DE 450€/p*";
+function clickJap(id) {
+    let sinOp = document.querySelector("#sinOp");
+    let italia = document.querySelector("#italia");
+    let japon = document.querySelector("#japon");
+    let mexico = document.querySelector("#mexico");
+    let españa = document.querySelector("#españa");
+    españa.setAttribute("class", "d-none");
+    sinOp.setAttribute("class", "d-none");
+    italia.setAttribute("class", "d-none");
+    japon.setAttribute("class", "");
+    mexico.setAttribute("class", "d-none");
+}  
 
+function clickMex(id) {
+    let sinOp = document.querySelector("#sinOp");
+    let italia = document.querySelector("#italia");
+    let japon = document.querySelector("#japon");
+    let mexico = document.querySelector("#mexico");
+    let españa = document.querySelector("#españa");
+    españa.setAttribute("class", "d-none");
+    sinOp.setAttribute("class", "d-none");
+    italia.setAttribute("class", "d-none");
+    japon.setAttribute("class", "d-none");
+    mexico.setAttribute("class", "");
+}  
