@@ -46,28 +46,39 @@ function sumarDias(frm) {
 
 }
 
-//Poner imagen
+//funcion para poner la imagen
 
 function addPhoto() {
 
-    let pais = document.getElementById("paisdestino").value;
-   
-    if (pais.toUpperCase() == 'ESPAÑA') {
-      document.getElementById('fotopais').src = "../img/paises/España.jpg";
-    }
+  let pais = document.getElementById("paisdestino").value;
+  let fotoPais;
 
-    else if (pais.toUpperCase() == 'ITALIA') {
-      document.getElementById('fotopais').src = '../img/paises/Italia.jpg';
-    }
+  if (pais.toUpperCase() == 'ESPAÑA') {
+    fotoPais = "../img/paises/España.jpg";
+    
+  }
 
-    else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
-      document.getElementById('fotopais').src = '../img/paises/Japon.jpg';
-    }
+  else if (pais.toUpperCase() == 'ITALIA') {
+    fotoPais = '../img/paises/Italia.jpg';
+    
+  }
 
-    else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
-      document.getElementById('fotopais').src = '../img/paises/Mexico.jpg';
-    }
-  
+  else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
+    fotoPias = '../img/paises/Japon.jpg';
+  }
+
+  else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
+    fotoPais = '../img/paises/Mexico.jpg';
+  }
+  else
+  {
+    fotoPais = '../img/IMG/default.jpg';
+  }
+
+  document.getElementById('fotopais').src = fotoPais;
+
+  return fotoPais;
+
 }
 
 //Funcion para rellenar Resumen Reserva
@@ -103,94 +114,159 @@ function calculatePrice() {
   let pais = document.getElementById("paisdestino").value;
   let personasd = document.getElementById("personas");
   let totalpers = personasd.options[personasd.selectedIndex].text;
-  
   let precio, preciototal;
 
-  document.getElementById ('numper').value = totalpers;
 
   if (pais.toUpperCase() == 'ESPAÑA') {
     precio = 450.0;
-
     preciototal = totalpers * precio;
-    document.getElementById('total').value = preciototal;
+
+    document.getElementById('preciototalpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
+    
   }
 
   else if (pais.toUpperCase() == 'ITALIA') {
     precio = 550.0;
     preciototal = totalpers * precio;
-    document.getElementById('total').value = preciototal;
+    document.getElementById('preciototalpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
+    
   }
 
   else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() == 'JAPON')) {
     precio = 750.0;
     preciototal = totalpers * precio;
-    document.getElementById('total').value = preciototal;
+    document.getElementById('preciototalpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
+    
   }
 
   else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() == 'MÉXICO')) {
     precio = 650.0;
     preciototal = totalpers * precio;
-    document.getElementById('total').value = preciototal;
+    document.getElementById('preciototalpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
+
   }
 
   
+
+  return preciototal;
+
 }
 
+//Funcion calcular extras
+function calculateExtras() {
 
-//Funcion para calcular el precio total con extras y descuentos
-class Persona {
-  constructor(id, precio)
-   {
-     this.id = id;
-     this.precio = precio;
-   }
-}
+  let total = calculatePrice();
 
-function createPersona (){
+  let totalextras = 0;
+  let personasd = document.getElementById("personas");
+  let totalpers = personasd.options[personasd.selectedIndex].text;
 
-  let personas = document.getElementById("personas");
-  let totalpers = personas.options[personas.selectedIndex].text;
-  let vecPersonas = [];
+  if (document.getElementById('traslado').checked) {
 
+    totalextras = (parseFloat(totalpers) * 15);
+    total = parseFloat(total) + (parseFloat(totalpers) * 15);
+    document.getElementById('extratraslado').innerHTML = '- Extra traslado: ' + totalextras + '€';
+    document.getElementById('trasladoconfirmado').innerHTML = '- Extra traslado: ' + totalextras + '€';
+  }
+  else{
+    document.getElementById('extratraslado').innerHTML = '';
+    document.getElementById('trasladoconfirmado').innerHTML = '';
+  }
 
-  for (let i=0; i<=totalpers; i++)
+  if (document.getElementById('vehiculo').checked) {
+    
+    total = parseFloat(total) + 500;
+    document.getElementById('extravehiculo').innerHTML = '- Extra vehiculo: 500€';
+    document.getElementById('vehiculoconfirmado').innerHTML = '- Extra vehiculo: 500€';
+  }
+  else{
+    document.getElementById('extravehiculo').innerHTML = '';
+    document.getElementById('vehiculoconfirmado').innerHTML = '';
+  }
+
+  if (document.getElementById('restaurante').checked) {
+    
+    totalextras = 0;
+    totalextras = (parseFloat(totalpers) * 20);
+    total = parseFloat(total) + (parseFloat(totalpers) * 20);
+    document.getElementById('extrarestaurante').innerHTML = '- Extra restaurante: ' + totalextras + '€';
+    document.getElementById('restauranteconfirmado').innerHTML = '- Extra restaurante: ' + totalextras + '€';
+
+  }
+  else{
+    document.getElementById('extrarestaurante').innerHTML = '';
+    document.getElementById('restauranteconfirmado').innerHTML = '';
+  }
+  if (document.getElementById('fiesta').checked)
   {
-    vecPersonas[i] = new Persona(i, calculatePrice());
+    document.getElementById('extrafiesta').innerHTML = '- Extra fiesta incluido, pago y confirmación en el hotel';
+    document.getElementById('fiestaconfirmada').innerHTML = '- Extra fiesta incluido, pago y confirmación en el hotel';
   }
+  else{
+    document.getElementById('extrafiesta').innerHTML = '';
+    document.getElementById('fiestaconfirmada').innerHTML = '';
+  }
+
+  
+  document.getElementById('extratotal').innerHTML = 'Total + extras: ' + total;
+  document.getElementById('totalconfirmado').innerHTML = 'Total + extras: ' + total;
+
+  return total;
 }
 
-//Funcion para calcular desglose de precios
+//Funcion para calcular descuento
 
-function byPerson()
+function calculateDiscount()
 {
-  let personas = document.getElementById("personas");
-  let totalad = personas.options[personas.selectedIndex].text;
-  let total = document.getElementById("total");
-  let preciopers = parseFloat(total) / parseFloat(totalad);
-  console.log(total);
+  let total = calculateExtras();
+  let descuento = document.getElementById('codigo').value;
+  let final;
+
+  if (descuento.lenght != 0){
+
+    switch(descuento) {
+      case 'tarj100':
+          final = total - 100;
+        break;
+      case 'tarj200':
+          final = total - 200;
+        break;
+      case 'tarj300':
+          final = total - 300;
+        break;
+      case 'tarj400':
+          final = total - 400;
+        break;
+      case 'tarj500':
+          final = total - 500;
+        break;
+      default:
+        final = total + 0;
+    }
+     
+    document.getElementById('preciofinal').innerHTML = 'Precio total reserva: ' + final;
+
+  }
+
+  return final;
 }
 
-//FUncion precio con descuento
-/*
-  let checkTraslado = document.getElementById('traslado');
-  let checkVehiculo = document.getElementById('vehiculo');
-  let checkRestaurante = document.getElementById('restaurante');
-  let codigo = document.getElementById("codigo").value;
-  let tarjeta = document.getElementById("cantidad").value;
-  let totalFamNum = document.getElementById("cfamilia").value;
-  let totalAlberg = document.getElementById("alberg").value;
-  if (checkTraslado == true)
-      total = parseFloat(total) + (parseFloat(totalpers) * 15);
-  if (checkVehiculo == true)
-      total = parseFloat(total) + 500;
-  if (checkRestaurante == true)
-      total = parseFloat(total) + (parseFloat(totalpers) * 20);
-  if  (codigo.lenght != 0 && tarjeta.lenght !=0)
-      total = parseFloat(total) - parseFloat(tarjeta);
-  if (totalFamNum.lenght != 0 && totalAlberg.lenght == 0)
-      total = parseFloat(total) - (parseFloat(totalFamNum)-(parseFloat(totalFamNum) * 0.15));
-  else (totalFamNum.lenght == 0 && totalAlberg.lenght != 0)
-      total = parseFloat(total) - (parseFloat(totalAlberg)-(parseFloat(Alberg) * 0.10));
-  
-  document.getElementById('totaldesc').value = total;*/
-  
+//Funcion rellenar confirmacion de reserva
+
+function confirmation()
+{
+  let dato = document.getElementById("paisdestino").value;
+  document.getElementById("paisconfirmado").value = dato;
+
+  dato = document.getElementById("ciudad").value;
+  document.getElementById("ciudadconfirmada").value = dato;
+
+  dato = document.getElementById("nom").value;
+  document.getElementById("nconfirmado").value = dato;
+
+  dato = document.getElementById("tel1").value;
+  document.getElementById("tconfirmado").value = dato;
+
+  dato = document.getElementById("email1").value;
+  document.getElementById("econfirmado").value = dato;
+}

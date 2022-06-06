@@ -26,41 +26,8 @@
       </a>
     </div>
   </header>
-  <!-- NAVBAR -->
-  <nav id="barramenu" class="navbar navbar-expand-sm navbar-dark bg-primary">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link " href="inicio.html">INICIO</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DESTINOS</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../paises/españa/españa.html">ESPAÑA</a></li>
-              <li><a class="dropdown-item" href="../paises/italia/italia.html">ITALIA</a></li>
-              <li><a class="dropdown-item" href="../paises/japon/japon.html">JAPÓN</a></li>
-              <li><a class="dropdown-item" href="../paises/mexico/mexico.html">MÉXICO</a></li>
-            </ul>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="tarjetaregalo.html">TARJETA REGALO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="resenya.html">RESEÑAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sobrenosotros.html">SOBRE NOSOTROS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="reserva.html">RESERVAR</a>
-          </li>
-      </div>
-      </ul>
-    </div>
-    </div>
-  </nav>
+  <div id="navbar"></div>
 
   <div style="text-align:center">
     <h1>RESERVA</h1>
@@ -170,20 +137,20 @@
         <h5>OPCIONES PARA AÑADIR A TU RESERVA</h5>
         <div id="extras">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="traslado" name="option1" value="something">
+            <input class="form-check-input" type="checkbox" id="traslado" name="option1" onchange="calculateExtras()">
             <label class="form-check-label" data-bs-toggle="tooltip"
               title="Evita sorpresas y llega a tu alojamiento 
                 desde el aeropuerto sin complicaciones. Añadiremos opciones para que reserves un taxi en la confirmación de la reserva.">
               ¿Quieres reservar un taxi o servicio de traslado con antelación?</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="vehiculo" name="option2" value="something">
+            <input class="form-check-input" type="checkbox" id="vehiculo" name="option2" onchange="calculateExtras()">
             <label class="form-check-label" data-bs-toggle="tooltip" title="¡Aprovecha al máximo el viaje! 
                   Te mandaremos un cógido promocional con un 80% de descuento en el aquiler de tu vehículo">
               Quiero alquilar un vehículo</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="restaurante" name="option3" value="something">
+            <input class="form-check-input" type="checkbox" id="restaurante" name="option3" onchange="calculateExtras()">
             <label class="form-check-label" data-bs-toggle="tooltip" title="Solo por reservar 
                   con nosotros se le añade una comida o cena totalmente gratuita, tiene la opción
                   de añadir otra. En el caso de querer añadir más días ha de ponerse en contacto con el restaurante
@@ -191,7 +158,7 @@
               restaurante <strong> MALUFA</strong></label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="fiesta" name="option4" value="something">
+            <input class="form-check-input" type="checkbox" id="fiesta" name="option4" onchange="calculateExtras()">
             <label class="form-check-label" data-bs-toggle="tooltip" title="Contamos con el mejor grupo de 
                 guías turísticos en el ocio nocturno. Disfruta de las mejores fiestas y discotecas que nos brindan 
                 estas fabulosas ciudades. El pack incluye una consumición y entrada
@@ -212,7 +179,7 @@
       <br>
       <hr>
       <div class="container" style="text-align:center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir" onclick="calculateDiscount()">
           CONFIRMAR RESERVA
         </button>
       </div>
@@ -224,16 +191,46 @@
     <div class="modal fade" id="reservaconfir">
       <div class="modal-dialog">
         <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">RESERVA CONFIRMADA CON ÉXITO</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <!-- Modal body -->
-          <div class="modal-body">
-            Modal body..
-          </div>
-          <!-- Modal footer -->
+          
+            <div class="card-header" style="text-align:center">RESERVA CONFIRMADA/div>
+            <div class="card-body">
+        
+              <img id="fotoconfirmada" class="card-img-top" src="../img/IMG/default.jpg" alt="default">
+        
+              <div class="d-inline-flex text-white">
+                <div class="p-2 bg-muted"><input id="ciudadconfirmada" type="text" class="form-control" placeholder="Ciudad" readonly
+                    value=""></div>
+                <div class="p-2 bg-info">TO</div>
+                <div class="p-2 bg-muted"><input id="paisconfirmado" type="text" class="form-control" placeholder="Pais" readonly
+                    value=""></div>
+        
+              </div>
+        
+              <p class="card-text">VUELO + HOTEL </p>
+              <p class="card-text">7 días / 6 noches</p>
+            </div>
+            <hr>
+            <div class="card-body">
+              <h4 class="card-title">Datos personales</h4>
+        
+              <input id="nconfirmado" type="text" class="form-control" placeholder="Nombre" readonly value="">
+              <input id="tconfirmado" type="text" class="form-control" placeholder="Telefono" readonly value="">
+              <input id="econfirmado" type="text" class="form-control" placeholder="Correo" readonly value="">
+        
+            </div>
+            <div class="card-footer">
+              <h4 class="card-title">Desglose precios</h4>
+              <p><div id="ptpconfirmado"></div></p>
+              <hr>
+              <p><div id="trasladoconfirmado"></div></p>
+              <p><div id="vehiculoconfirmado"></div></p>
+              <p><div id="restauranteconfirmado"></div></p>
+              <p><div id="fiestaconfirmado"></div></p>
+              <hr>
+              <p><div id="totalconfirmado"></div></p>
+              
+            </div>
+          
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           </div>
@@ -272,7 +269,15 @@
 
     </div>
     <div class="card-footer">
-      <h6>PRECIO PARA<div id="numper"></div> PERSONAS: <div id="total"></div></h6> 
+      <h4 class="card-title">Desglose precios</h4>
+      <p><div id="preciototalpersonas"></div></p>
+      <hr>
+      <p><div id="extratraslado"></div></p>
+      <p><div id="extravehiculo"></div></p>
+      <p><div id="extrarestaurante"></div></p>
+      <p><div id="extrafiesta"></div></p>
+      <hr>
+      <p><div id="extratotal"></div></p>
       
     </div>
   </div>
@@ -280,6 +285,7 @@
 
 
   <script src="../js/reserva.js"></script>
+  <script src="../js/navbar.js"></script>
 
 
 </body>
