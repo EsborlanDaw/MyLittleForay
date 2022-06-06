@@ -97,3 +97,23 @@ header{
     margin-top: 100px;
     margin-bottom: 100px;
 }
+@media only screen and (max-width: 600px) {
+    #itinerario{
+        clear: both;
+        width: 100%;
+    }
+    #incluye{
+        width: 100%;
+        clear: both;
+        margin-top: 0px;
+    }
+    #imagenCarrusel{
+        width: 100%;
+    }
+    #ciudadInfo{
+        width: 100%;
+        clear: both;
+        overflow: scroll;
+        height: 200px;
+    }
+}
