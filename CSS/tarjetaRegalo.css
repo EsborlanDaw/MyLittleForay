@@ -8,3 +8,49 @@ header{
     text-shadow: 2px 2px 5px rgb(29, 56, 56);
     border-bottom: solid 2px rgb(29, 56, 56);
 }
+#ventaja{
+    width: 33%;
+    float: left;
+}
+#imagen{
+    text-align: center;
+}
+#img{
+    width: 125px;
+}
+#titVent{
+    text-align: center;
+}
+#info{
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+#contForm{
+    border: solid black 2px;
+    width: 60%;
+    height: 300px;
+    float: left;
+}
+#contTarjeta{
+    border: solid black 2px;
+    width: 40%;
+    height: 400px;
+    float: left;
+}
+#tarjeta{
+    margin: 20px;
+    background-color: aqua;
+    border-radius: 20px;
+    height: 300px;
+}
+h3{
+    background-color: #04051c;
+    color: white;
+    width: 45%;
+    height: 40px;
+    text-align: center;
+}
