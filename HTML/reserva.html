@@ -19,14 +19,8 @@
 
 <body>
 
-  <header>
-    <div class="px-3 py-2 text-center text-white">
-      <a href="inicio.html">
-        <img src="../img/IMG/Marca.png" alt="LOGO">
-      </a>
-    </div>
-  </header>
-
+  
+  <div id="header"></div>
   <div id="navbar"></div>
 
   <div style="text-align:center">
@@ -36,7 +30,7 @@
   </div>
   <div id="Reserva" class="container-fluid mt-3">
 
-    <form class="was-validated">
+    <form >
       <h5>DATOS RESERVA</h5>
       <div class="mb-3 mt-3">
         <form>
@@ -49,16 +43,16 @@
 
           <label for="paisdestino">Viaja a:</label>
           <input id="paisdestino" name="paisdestino" type="text" class="form-control" placeholder="Pais destino"
-            required oninput="add()" onchange="addPhoto(event)">
+            required minlength="6" maxlength="6" oninput="add()" onchange="addPhoto(event)">
           <br>
           <label for="ciudad">Desde:</label>
-          <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" required
+          <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen"  required
             oninput="add()">
 
           <br>
           <div id="fecha" style="text-align: center;">
             <label for="fcheckin">Check-in:</label>
-            <input name="fcheckin" id="fcheckin" type="date" required>
+            <input name="fcheckin" id="fcheckin" type="date" required onchange="add()">
             <label for="fcheckout">Check-out:</label>
             <input name="fcheckout" id="fcheckout" type="date" readonly value="">
             <input id="click" class="md-trigger boton" type="button" value="Calcular Check-Out"
@@ -107,12 +101,12 @@
 
         </div>
         <br>
-        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" required>
+        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" maxlength="9" required>
         <br>
 
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Prefijo" required>
-          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" required
+          <input type="text" class="form-control" placeholder="Prefijo" maxlength="3" required>
+          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" minlength="9" maxlength="9" required
             oninput="add()">
         </div>
         <div class="input-group mb-3">
@@ -174,16 +168,15 @@
         <div id="tarjeta">
 
           <label for="codigo">Codigo Tarjeta:</label>
-          <input name="codigo" id="codigo" type="text">
+          <input name="codigo" id="codigo" type="text" maxlength="7">
         </div>
       </div>
       <br>
       <hr>
       <div class="container" style="text-align:center">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir"
-          onclick="calculateDiscount(); confirmation()" >
-          CONFIRMAR RESERVA
-        </button>
+          onclick="calculateDiscount(); confirmation()" >CONFIRMAR</button>
+          
       </div>
     </form>
 
@@ -211,6 +204,9 @@
             <p class="card-text">VUELO + HOTEL </p>
             <p class="card-text">7 días / 6 noches</p>
           </div>
+          <div style="background-color:skyblue; margin: 15px">
+          <div id="fechainiconf"></div><div id="fechafinconf"></div>
+        </div>
           <hr>
           <div class="card-body">
             <h4 class="card-title">Datos personales</h4>
@@ -222,9 +218,6 @@
           </div>
           <div class="card-footer">
             <h4 class="card-title">Desglose precios</h4>
-            <p>
-            <div id="ptpconfirmado"></div>
-            </p>
             <hr>
             <p>
             <div id="trasladoconfirmado"></div>
@@ -278,6 +271,7 @@
 
       <p class="card-text">VUELO + HOTEL </p>
       <p class="card-text">7 días / 6 noches</p>
+      <div id="fechaini"></div><div id="fechafin"></div>
     </div>
     <hr>
     <div class="card-body">
@@ -315,9 +309,10 @@
   </div>
 
 
-
+  <script src="../js/headfoot.js"></script>
   <script src="../js/reserva.js"></script>
   <script src="../js/navbar.js"></script>
+  
 
 
 </body>

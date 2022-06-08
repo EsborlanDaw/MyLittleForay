@@ -12,6 +12,27 @@ let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl)
 });
 
+//Funcion para validar el país
+
+/*function checkCountry(){
+
+  let pais = document.getElementById("paisdestino").value;
+
+  if (pais == null || pais.lenght == 0 || /^\s+$/.test(pais))
+  {
+    return false;
+  }
+  else if (pais.toUpperCase != "ESPAÑA" || pais.toUpperCase != "ITALIA" || 
+  pais.toUpperCase != "JAPON" || pais.toUpperCase != "JAPÓN" || 
+  pais.toUpperCase != "MÉXICO" || pais.toUpperCase != "MEXICO" )
+  {
+    return false;
+  }
+  else
+    return true;
+
+}*/
+
 //Inhabilita las fechas anteriores a hoy
 
 var hoy = new Date().toISOString().split('T')[0];
@@ -44,9 +65,15 @@ function sumarDias(frm) {
 
   frm.fcheckout.value = fecha.getUTCFullYear() + '-' + mes + '-' + dia;
 
+  document.getElementById("fechaini").innerHTML = 'Fecha ida: ' + f;
+  document.getElementById("fechafin").innerHTML = 'Fecha vuelta: ' + frm.fcheckout.value;
+  document.getElementById("fechainiconf").innerHTML = 'Fecha ida: ' + f;
+  document.getElementById("fechafinconf").innerHTML = 'Fecha vuelta: ' + frm.fcheckout.value;
+
 }
 
-//funcion para poner la imagen
+
+//Funcion para poner la imagen
 
 function addPhoto() {
 
@@ -56,12 +83,12 @@ function addPhoto() {
 
   if (pais.toUpperCase() == 'ESPAÑA') {
     fotoPais = "../img/paises/España.jpg";
-    fotoConfirmada = "../img/paises/España.jpg"; 
+    fotoConfirmada = "../img/paises/España.jpg";
   }
 
   else if (pais.toUpperCase() == 'ITALIA') {
     fotoPais = '../img/paises/Italia.jpg';
-    fotoConfirmada = '../img/paises/Italia.jpg'; 
+    fotoConfirmada = '../img/paises/Italia.jpg';
   }
 
   else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
@@ -73,8 +100,7 @@ function addPhoto() {
     fotoPais = '../img/paises/Mexico.jpg';
     fotoConfirmada = '../img/paises/Mexico.jpg';
   }
-  else
-  {
+  else {
     fotoPais = '../img/IMG/default.jpg';
     fotoConfirmada = '../img/IMG/default.jpg';
   }
@@ -89,7 +115,10 @@ function addPhoto() {
 //Funcion para rellenar Resumen Reserva
 function add() {
 
-  let dato = document.getElementById("paisdestino").value;
+  let dato;
+
+  
+  dato = document.getElementById("paisdestino").value;
   document.getElementById("paisconfi").value = dato;
 
   dato = document.getElementById("ciudad").value;
@@ -102,7 +131,9 @@ function add() {
   document.getElementById("tconfi").value = dato;
 
   dato = document.getElementById("email1").value;
+
   document.getElementById("econfi").value = dato;
+
 
 }
 
@@ -127,21 +158,21 @@ function calculatePrice() {
     preciototal = totalpers * precio;
 
     document.getElementById('preciototalpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
-    
+
   }
 
   else if (pais.toUpperCase() == 'ITALIA') {
     precio = 550.0;
     preciototal = totalpers * precio;
     document.getElementById('preciototalpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
-    
+
   }
 
   else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() == 'JAPON')) {
     precio = 750.0;
     preciototal = totalpers * precio;
     document.getElementById('preciototalpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
-    
+
   }
 
   else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() == 'MÉXICO')) {
@@ -151,7 +182,7 @@ function calculatePrice() {
 
   }
 
-  
+
 
   return preciototal;
 
@@ -173,24 +204,24 @@ function calculateExtras() {
     document.getElementById('extratraslado').innerHTML = '- Extra traslado: ' + totalextras + '€';
     document.getElementById('trasladoconfirmado').innerHTML = '- Extra traslado: ' + totalextras + '€';
   }
-  else{
+  else {
     document.getElementById('extratraslado').innerHTML = '';
     document.getElementById('trasladoconfirmado').innerHTML = '';
   }
 
   if (document.getElementById('vehiculo').checked) {
-    
+
     total = parseFloat(total) + 500;
     document.getElementById('extravehiculo').innerHTML = '- Extra vehiculo: 500€';
     document.getElementById('vehiculoconfirmado').innerHTML = '- Extra vehiculo: 500€';
   }
-  else{
+  else {
     document.getElementById('extravehiculo').innerHTML = '';
     document.getElementById('vehiculoconfirmado').innerHTML = '';
   }
 
   if (document.getElementById('restaurante').checked) {
-    
+
     totalextras = 0;
     totalextras = (parseFloat(totalpers) * 20);
     total = parseFloat(total) + (parseFloat(totalpers) * 20);
@@ -198,24 +229,23 @@ function calculateExtras() {
     document.getElementById('restauranteconfirmado').innerHTML = '- Extra restaurante: ' + totalextras + '€';
 
   }
-  else{
+  else {
     document.getElementById('extrarestaurante').innerHTML = '';
     document.getElementById('restauranteconfirmado').innerHTML = '';
   }
-  if (document.getElementById('fiesta').checked)
-  {
+  if (document.getElementById('fiesta').checked) {
     document.getElementById('extrafiesta').innerHTML = '- Extra fiesta incluido, pago y confirmación en el hotel';
     document.getElementById('fiestaconfirmada').innerHTML = '- Extra fiesta incluido, pago y confirmación en el hotel';
   }
-  else{
+  else {
     document.getElementById('extrafiesta').innerHTML = '';
     document.getElementById('fiestaconfirmada').innerHTML = '';
   }
 
-  
-  
+
+
   document.getElementById('totalconfirmado').innerHTML = 'Total + extras: ' + total;
-  
+
   document.getElementById('totalconfirmadoresumen').innerHTML = 'Total + extras: ' + total;
 
 
@@ -224,40 +254,39 @@ function calculateExtras() {
 
 //Funcion para calcular descuento
 
-function calculateDiscount()
-{
+function calculateDiscount() {
   let total = calculateExtras();
   let descuento = document.getElementById('codigo').value;
   let final;
 
-  if (descuento.lenght != 0){
+  if (descuento.lenght != 0) {
 
-    switch(descuento) {
+    switch (descuento) {
       case 'tarj100':
-          final = total - 100;
-          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -100 ';
+        final = total - 100;
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -100 ';
         break;
       case 'tarj200':
-          final = total - 200;
-          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -200 ';
+        final = total - 200;
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -200 ';
         break;
       case 'tarj300':
-          final = total - 300;
-          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -300 ';
+        final = total - 300;
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -300 ';
         break;
       case 'tarj400':
-          final = total - 400;
-          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -400 ';
+        final = total - 400;
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -400 ';
         break;
       case 'tarj500':
-          final = total - 500;
-          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -500 ';
+        final = total - 500;
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -500 ';
         break;
       default:
         final = total + 0;
     }
-     
-    document.getElementById('preciofinal').innerHTML = 'Precio total reserva: ' + final;
+
+    document.getElementById('preciofinal').innerHTML = 'Precio Total Final: ' + final;
 
   }
 
@@ -266,9 +295,8 @@ function calculateDiscount()
 
 //Funcion rellenar confirmacion de reserva
 
-function confirmation()
-{
-  
+function confirmation() {
+
   let dato = document.getElementById("paisdestino").value;
   document.getElementById("paisconfirmado").value = dato;
 
@@ -284,6 +312,6 @@ function confirmation()
   dato = document.getElementById("email1").value;
   document.getElementById("econfirmado").value = dato;
 
-  document.getElementById('ptpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
+  document.getElementById('ptconfirmado').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
 
 }
