@@ -86,35 +86,74 @@
 
   <!--EQUIPO ACTIMEL-->
   <div class="container p-5 my-5 bg-secondary text-white">
+    <div class="container mt-3">
 
-    <div class="card img-fluid" style="width:500px">
-      <img class="card-img-top" src="../img/sobrenosotros/erlui.jpg" alt="Card image" style="width:100%">
-      <div class="card-img-overlay">
-        <h4 class="card-title" style="color: black;">John Doe</h4>
-        <p class="card-text"></p>
-        <a style="color: black;">Programador Web</a>
-      </div>
+      <table class="table borderless table-responsive">
+        <thead>
+          <tr>
+            <h3 class="display-5">Conoce al equipo</h3>
+          </tr>
+        </thead>
+        <tbody id="luis">
+          <tr>
+            <td rowspan="2">
+              <div style="max-width:500px">
+                <img src="../img/sobrenosotros/erlui.jpg" alt="Card image" style="width:100%; height: auto;">
+              </div>
+            </td>
+            <td rowspan="2" class="p-5">
+              <h4 style="color: black;">John Doe</h4>
+              <a style="color: black;">Programador Web</a>
+            </td>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+        <tbody class="collapse" id="fani">
+          <tr>
+            <td rowspan="2">
+              <div style="max-width:500px">
+                <img src="../img/sobrenosotros/erlui.jpg" alt="Card image" style="width:100%; height: auto;">
+              </div>
+            </td>
+            <td rowspan="2" class="p-5">
+              <h4 style="color: black;">John Doe2</h4>
+              <a style="color: black;">Programador Web2</a>
+            </td>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+        <tbody class="collapse" id="mario">
+          <tr>
+            <td rowspan="2">
+              <div style="max-width:500px">
+                <img src="../img/sobrenosotros/erlui.jpg" alt="Card image" style="width:100%; height: auto;">
+              </div>
+            </td>
+            <td rowspan="2" class="p-5">
+              <h4 style="color: black;">John Doe3</h4>
+              <a style="color: black;">Programador Web3</a>
+            </td>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+
+
+      
     </div>
+    <div class="m-auto p-auto">
+      <ul class="pagination m-auto  justify-content-center">
+        <li class="page-item"><a class="page-link" onclick="pag1()" >1</a></li>
+        <li class="page-item"><a class="page-link" onclick="pag2()" >2</a></li>
+        <li class="page-item"><a class="page-link" onclick="pag3()" >3</a></li>
+      </ul>
     </div>
-    <div class="card img-fluid" style="width:500px">
-      <img class="card-img-top" src="../img/sobrenosotros/fani.jpg" alt="Card image" style="width:100%">
-      <div class="card-img-overlay">
-        <h4 class="card-title" style="color: black;">John Doe</h4>
-        <p class="card-text"></p>
-        <a style="color: black;">Programador Web</a>
-      </div>
-    </div>
-    </div>
-    <div class="card img-fluid" style="width:500px">
-      <img class="card-img-top" src="../img/sobrenosotros/unnamed.jpg" alt="Card image" style="width:100%">
-      <div class="card-img-overlay">
-        <h4 class="card-title" style="color: black;">John Doe</h4>
-        <p class="card-text"></p>
-        <a style="color: black;">Programador Web</a>
-      </div>
-    </div>
-    </div>
-<!--Otro div con un pagination con texto de los integrantes y que permita pasar de integrante-->
+  </div>
+
+  <!--Otro div con un pagination con texto de los integrantes y que permita pasar de integrante-->
   </div>
   <!--Footer-->
   <div class="footer">
@@ -136,6 +175,7 @@
     </footer>
   </div>
   <script src="../js/navbar.js"></script>
+  <script src="../js/sobre_nosotros.js"></script>
 </body>
 
 </html>
