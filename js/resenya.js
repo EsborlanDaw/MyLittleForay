@@ -1,5 +1,5 @@
+// Lista de reseñas
 let comentario;
-let nota;
 
 let Capturar = function(){
     let lstNumero = document.getElementsByClassName("form-control"),
@@ -24,3 +24,15 @@ let borrar = function(){
 let cerraralert = function(){
     document.getElementById("popup").classList.add("collapse")
 }
+
+/////////////
+
+class Resenya {
+    constructor(autor, comentario, nota) {
+        this.autor = autor;
+        this.comentario = comentario;
+        this.nota = nota;
+    }
+}
+
+let r1 = new Resenya("Lionel", "cuper chachi", 10);
