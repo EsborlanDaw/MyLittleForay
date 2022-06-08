@@ -52,30 +52,35 @@ function addPhoto() {
 
   let pais = document.getElementById("paisdestino").value;
   let fotoPais;
+  let fotoConfirmada;
 
   if (pais.toUpperCase() == 'ESPAÑA') {
     fotoPais = "../img/paises/España.jpg";
-    
+    fotoConfirmada = "../img/paises/España.jpg"; 
   }
 
   else if (pais.toUpperCase() == 'ITALIA') {
     fotoPais = '../img/paises/Italia.jpg';
-    
+    fotoConfirmada = '../img/paises/Italia.jpg'; 
   }
 
   else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
     fotoPias = '../img/paises/Japon.jpg';
+    fotoConfirmada = '../img/paises/Japon.jpg';
   }
 
   else if (pais.toUpperCase() == 'MEXICO' || (pais.toUpperCase() === 'MÉXICO')) {
     fotoPais = '../img/paises/Mexico.jpg';
+    fotoConfirmada = '../img/paises/Mexico.jpg';
   }
   else
   {
     fotoPais = '../img/IMG/default.jpg';
+    fotoConfirmada = '../img/IMG/default.jpg';
   }
 
   document.getElementById('fotopais').src = fotoPais;
+  document.getElementById('fotoconfirmada').src = fotoConfirmada;
 
   return fotoPais;
 
@@ -208,8 +213,11 @@ function calculateExtras() {
   }
 
   
-  document.getElementById('extratotal').innerHTML = 'Total + extras: ' + total;
+  
   document.getElementById('totalconfirmado').innerHTML = 'Total + extras: ' + total;
+  
+  document.getElementById('totalconfirmadoresumen').innerHTML = 'Total + extras: ' + total;
+
 
   return total;
 }
@@ -227,18 +235,23 @@ function calculateDiscount()
     switch(descuento) {
       case 'tarj100':
           final = total - 100;
+          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -100 ';
         break;
       case 'tarj200':
           final = total - 200;
+          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -200 ';
         break;
       case 'tarj300':
           final = total - 300;
+          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -300 ';
         break;
       case 'tarj400':
           final = total - 400;
+          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -400 ';
         break;
       case 'tarj500':
           final = total - 500;
+          document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -500 ';
         break;
       default:
         final = total + 0;
@@ -255,6 +268,7 @@ function calculateDiscount()
 
 function confirmation()
 {
+  
   let dato = document.getElementById("paisdestino").value;
   document.getElementById("paisconfirmado").value = dato;
 
@@ -269,4 +283,7 @@ function confirmation()
 
   dato = document.getElementById("email1").value;
   document.getElementById("econfirmado").value = dato;
+
+  document.getElementById('ptpersonas').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
+
 }

@@ -36,7 +36,7 @@
   </div>
   <div id="Reserva" class="container-fluid mt-3">
 
-    <form class="needs-validation">
+    <form class="was-validated">
       <h5>DATOS RESERVA</h5>
       <div class="mb-3 mt-3">
         <form>
@@ -67,29 +67,29 @@
           </div>
       </div>
       <br>
-      
-        <div class="form-floating mb-3 mt-3">
-          <select class="form-select" id="personas" name="personas" required onchange="calculatePrice()">
-            <option disabled selected value> selecciona </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-          </select>
-          <label for="adultos" class="form-label">Personas:</label>
-        </div>
+
+      <div class="form-floating mb-3 mt-3">
+        <select class="form-select" id="personas" name="personas" required onchange="calculatePrice();calculateExtras()">
+          <option disabled selected value> selecciona </option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+        </select>
+        <label for="adultos" class="form-label">Personas:</label>
+      </div>
       <hr>
 
       <div id="InfoPersonal">
@@ -109,7 +109,7 @@
         <br>
         <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" required>
         <br>
-      
+
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Prefijo" required>
           <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" required
@@ -150,7 +150,8 @@
               Quiero alquilar un vehículo</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="restaurante" name="option3" onchange="calculateExtras()">
+            <input class="form-check-input" type="checkbox" id="restaurante" name="option3"
+              onchange="calculateExtras()">
             <label class="form-check-label" data-bs-toggle="tooltip" title="Solo por reservar 
                   con nosotros se le añade una comida o cena totalmente gratuita, tiene la opción
                   de añadir otra. En el caso de querer añadir más días ha de ponerse en contacto con el restaurante
@@ -179,7 +180,8 @@
       <br>
       <hr>
       <div class="container" style="text-align:center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir" onclick="calculateDiscount()">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir"
+          onclick="calculateDiscount(); confirmation()" >
           CONFIRMAR RESERVA
         </button>
       </div>
@@ -191,46 +193,64 @@
     <div class="modal fade" id="reservaconfir">
       <div class="modal-dialog">
         <div class="modal-content">
-          
-            <div class="card-header" style="text-align:center">RESERVA CONFIRMADA/div>
-            <div class="card-body">
-        
-              <img id="fotoconfirmada" class="card-img-top" src="../img/IMG/default.jpg" alt="default">
-        
-              <div class="d-inline-flex text-white">
-                <div class="p-2 bg-muted"><input id="ciudadconfirmada" type="text" class="form-control" placeholder="Ciudad" readonly
-                    value=""></div>
-                <div class="p-2 bg-info">TO</div>
-                <div class="p-2 bg-muted"><input id="paisconfirmado" type="text" class="form-control" placeholder="Pais" readonly
-                    value=""></div>
-        
-              </div>
-        
-              <p class="card-text">VUELO + HOTEL </p>
-              <p class="card-text">7 días / 6 noches</p>
+
+          <div class="card-header" style="text-align:center">RESERVA CONFIRMADA CON ÉXITO</div>
+          <div class="card-body">
+
+            <img id="fotoconfirmada" class="card-img-top" src="../img/IMG/default.jpg" alt="default">
+
+            <div class="d-inline-flex text-white">
+              <div class="p-2 bg-muted"><input id="ciudadconfirmada" type="text" class="form-control"
+                  placeholder="Ciudad" readonly value=""></div>
+              <div class="p-2 bg-info">TO</div>
+              <div class="p-2 bg-muted"><input id="paisconfirmado" type="text" class="form-control" placeholder="Pais"
+                  readonly value=""></div>
+
             </div>
+
+            <p class="card-text">VUELO + HOTEL </p>
+            <p class="card-text">7 días / 6 noches</p>
+          </div>
+          <hr>
+          <div class="card-body">
+            <h4 class="card-title">Datos personales</h4>
+
+            <input id="nconfirmado" type="text" class="form-control" placeholder="Nombre" readonly value="">
+            <input id="tconfirmado" type="text" class="form-control" placeholder="Telefono" readonly value="">
+            <input id="econfirmado" type="text" class="form-control" placeholder="Correo" readonly value="">
+
+          </div>
+          <div class="card-footer">
+            <h4 class="card-title">Desglose precios</h4>
+            <p>
+            <div id="ptpconfirmado"></div>
+            </p>
             <hr>
-            <div class="card-body">
-              <h4 class="card-title">Datos personales</h4>
-        
-              <input id="nconfirmado" type="text" class="form-control" placeholder="Nombre" readonly value="">
-              <input id="tconfirmado" type="text" class="form-control" placeholder="Telefono" readonly value="">
-              <input id="econfirmado" type="text" class="form-control" placeholder="Correo" readonly value="">
-        
-            </div>
-            <div class="card-footer">
-              <h4 class="card-title">Desglose precios</h4>
-              <p><div id="ptpconfirmado"></div></p>
-              <hr>
-              <p><div id="trasladoconfirmado"></div></p>
-              <p><div id="vehiculoconfirmado"></div></p>
-              <p><div id="restauranteconfirmado"></div></p>
-              <p><div id="fiestaconfirmado"></div></p>
-              <hr>
-              <p><div id="totalconfirmado"></div></p>
-              
-            </div>
-          
+            <p>
+            <div id="trasladoconfirmado"></div>
+            </p>
+            <p>
+            <div id="vehiculoconfirmado"></div>
+            </p>
+            <p>
+            <div id="restauranteconfirmado"></div>
+            </p>
+            <p>
+            <div id="fiestaconfirmada"></div>
+            </p>
+            <hr>
+            <p>
+            <div id="totalconfirmado"></div>
+            </p>
+            <p>
+            <div id="preciodesc"></div>
+            </p>
+            <p>
+            <div id="preciofinal"></div>
+            </p>
+
+          </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           </div>
@@ -270,15 +290,27 @@
     </div>
     <div class="card-footer">
       <h4 class="card-title">Desglose precios</h4>
-      <p><div id="preciototalpersonas"></div></p>
+      <p>
+      <div id="preciototalpersonas"></div>
+      </p>
       <hr>
-      <p><div id="extratraslado"></div></p>
-      <p><div id="extravehiculo"></div></p>
-      <p><div id="extrarestaurante"></div></p>
-      <p><div id="extrafiesta"></div></p>
+      <p>
+      <div id="extratraslado"></div>
+      </p>
+      <p>
+      <div id="extravehiculo"></div>
+      </p>
+      <p>
+      <div id="extrarestaurante"></div>
+      </p>
+      <p>
+      <div id="extrafiesta"></div>
+      </p>
       <hr>
-      <p><div id="extratotal"></div></p>
-      
+      <p>
+      <div id="totalconfirmadoresumen"></div>
+      </p>
+
     </div>
   </div>
 
