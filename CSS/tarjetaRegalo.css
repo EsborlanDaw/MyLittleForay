@@ -18,6 +18,9 @@ header{
 #img{
     width: 125px;
 }
+<div id="otroImporte" style="float: left;">
+  <input type="text" id="importeAlt" placeholder="Otro importe">
+</div>
 #titVent{
     text-align: center;
 }
@@ -56,4 +59,12 @@ h3{
 }
 #botones{
     margin-left: 30px;
+    display: inline-block;
+}
+#titTarj{
+    float: left;
+    margin-left: 30px;
+}
+#tittle{
+    overflow: hidden;
 }
