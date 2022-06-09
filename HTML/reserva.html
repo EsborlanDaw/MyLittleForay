@@ -46,7 +46,7 @@
             required minlength="6" maxlength="6" oninput="add()" onchange="addPhoto(event)">
           <br>
           <label for="ciudad">Desde:</label>
-          <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen"  required
+          <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" minlength="4" required
             oninput="add()">
 
           <br>
@@ -101,11 +101,11 @@
 
         </div>
         <br>
-        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" maxlength="9" required>
+        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" minlength="9" maxlength="9" required onclick="checkDni()">
         <br>
 
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Prefijo" maxlength="3" required>
+          <input type="text" class="form-control" placeholder="Prefijo" minlength="2" maxlength="3" required>
           <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" minlength="9" maxlength="9" required
             oninput="add()">
         </div>
@@ -168,7 +168,7 @@
         <div id="tarjeta">
 
           <label for="codigo">Codigo Tarjeta:</label>
-          <input name="codigo" id="codigo" type="text" maxlength="7">
+          <input name="codigo" id="codigo" type="text" minlenght="7" maxlength="7">
         </div>
       </div>
       <br>

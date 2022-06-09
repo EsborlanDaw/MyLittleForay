@@ -12,6 +12,7 @@ let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl)
 });
 
+
 //Funcion para validar el país
 
 /*function checkCountry(){
@@ -112,12 +113,31 @@ function addPhoto() {
 
 }
 
+//Funcion para validar DNI
+
+function checkDNI() {
+
+  dni = document.getElementById("ndoc").value;
+
+  var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+  if (!(/^\d{8}[A-Z]$/.test(dni))) {
+    return false;
+  }
+
+  if (dni.charAt(8) != letras[(dni.substring(0, 8)) % 23]) {
+    return false;
+  }
+
+}
+
 //Funcion para rellenar Resumen Reserva
+
 function add() {
 
   let dato;
 
-  
+
   dato = document.getElementById("paisdestino").value;
   document.getElementById("paisconfi").value = dato;
 
