@@ -117,12 +117,12 @@ function addPhoto() {
 
 function checkDNI() {
 
-  dni = document.getElementById("ndoc").value;
+  let dni = document.getElementById("ndoc").value;
 
   var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
   if (!(/^\d{8}[A-Z]$/.test(dni))) {
-    return false;
+    console.log("ERRRORR");
   }
 
   if (dni.charAt(8) != letras[(dni.substring(0, 8)) % 23]) {

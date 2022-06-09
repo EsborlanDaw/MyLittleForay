@@ -43,7 +43,7 @@
 
           <label for="paisdestino">Viaja a:</label>
           <input id="paisdestino" name="paisdestino" type="text" class="form-control" placeholder="Pais destino"
-            required minlength="6" maxlength="6" oninput="add()" onchange="addPhoto(event)">
+            required minlength="6" maxlength="6" oninput="add()" onchange="addPhoto(event);calculateExtras()">
           <br>
           <label for="ciudad">Desde:</label>
           <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" minlength="4" required
@@ -101,7 +101,7 @@
 
         </div>
         <br>
-        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" minlength="9" maxlength="9" required onclick="checkDni()">
+        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" minlength="9" maxlength="9" required>
         <br>
 
         <div class="input-group mb-3">
@@ -174,7 +174,7 @@
       <br>
       <hr>
       <div class="container" style="text-align:center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir"
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir" style="margin-bottom:30px ;"
           onclick="calculateDiscount(); confirmation()" >CONFIRMAR</button>
           
       </div>
@@ -307,7 +307,8 @@
 
     </div>
   </div>
-
+  
+  <div id="footer" style="clear: both;"></div>
 
   <script src="../js/headfoot.js"></script>
   <script src="../js/reserva.js"></script>
