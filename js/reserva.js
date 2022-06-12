@@ -74,7 +74,7 @@ function addPhoto() {
   }
 
   else if ((pais.toUpperCase() == 'JAPÓN') || (pais.toUpperCase() === 'JAPON')) {
-    fotoPias = '../img/paises/Japon.jpg';
+    fotoPais = '../img/paises/Japon.jpg';
     fotoConfirmada = '../img/paises/Japon.jpg';
   }
 
