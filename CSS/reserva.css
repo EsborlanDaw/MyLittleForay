@@ -42,6 +42,20 @@ input:not([type=range]):not([type=date]):not([type=submit]):not([type=button]
 background-image: url('../img/reservas/valid.png');
 }
 
+@media only screen and (max-width: 800px)
+{
+    #Reserva form{
+        
+        width: 100%;
+    
+    }
+    
+    .card{
+        margin: auto;
+        width: 100%;
+        
+    }
+}
 
 
 

@@ -32,7 +32,7 @@
   </div>
   <div id="Reserva" class="container-fluid mt-3">
 
-    <form action="https://formsubmit.co/4957e13bb216da59e739beabfee5ec01" method="POST">
+    <form action="https://formsubmit.co/4957e13bb216da59e739beabfee5ec01" method="POST" class="was-validated">
       <h5>DATOS RESERVA</h5>
       <div class="mb-3 mt-3">
         <form>
@@ -260,7 +260,7 @@
               <input type="hidden" name="_replyto"
                 value="Gracias por confiar en MyLittleForay. En breve recibirá un correo con los datos introducidos en la reserva.">
               <input type="hidden" name="_autoresponse" value="Muchas gracias por confiar en MyLittleForay.       
-            Aquí se le envía toda la información del viaje. Tras la verificación los datos por parte de nuestros equipo recibirá un correo con el proceso que 
+            Aquí se le envía toda la información del viaje. Tras la verificación los datos por parte de nuestro equipo recibirá un correo con el proceso que 
             ha de seguir para realizar el check-in y check-out del avión, igual que el código de descuento para la adquisición de un vehiculo de alquiler en el 
             supuesto caso de haber sido solicitado.">
 
@@ -277,7 +277,7 @@
   
   <script>
     //Funcion para evitar que el formulario use la tecla intro para enviar el formulario
-    
+
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
         if(e.keyCode == 13) {

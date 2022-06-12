@@ -238,7 +238,7 @@ function calculateExtras() {
   return total;
 }
 
-//Funcion para calcular descuento
+//Funcion para calcular descuento por tarjeta de regalo
 
 function calculateDiscount() {
   let total = calculateExtras();
@@ -284,6 +284,8 @@ function calculateDiscount() {
     }
 
   }
+
+  //Calcula el 30% de descuento si el grupo es igual o superior a 10 personas
 
   if (totalpers >= 10) {
     final = final - (final * 0.30);
