@@ -1,3 +1,5 @@
+<!-- @author Estefania Boriko Laenos -->
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,7 +21,7 @@
 
 <body>
 
-  
+
   <div id="header"></div>
   <div id="navbar"></div>
 
@@ -30,27 +32,27 @@
   </div>
   <div id="Reserva" class="container-fluid mt-3">
 
-    <form onsubmit="return validacion()">
+    <form action="https://formsubmit.co/4957e13bb216da59e739beabfee5ec01" method="POST">
       <h5>DATOS RESERVA</h5>
       <div class="mb-3 mt-3">
         <form>
           <div class="d-inline-flex bg-secondary text-white" style="width: 100%; text-align: center;">
-            <div class="p-2 bg-secondary" style="width: 25%;">España</div>
-            <div class="p-2 bg-warning" style="width: 25%;">Italia</div>
-            <div class="p-2 bg-primary" style="width: 25%;">Japón</div>
-            <div class="p-2 bg-danger" style="width: 25%;">México</div>
+            <div class="p-2 bg-secondary" style="width: 25%;">España-450€/p</div>
+            <div class="p-2 bg-warning" style="width: 25%;">Italia-550€/p</div>
+            <div class="p-2 bg-primary" style="width: 25%;">Japón-750€/p</div>
+            <div class="p-2 bg-danger" style="width: 25%;">México-650€/p</div>
           </div>
 
           <label for="paisdestino">Viaja a:</label>
           <input id="paisdestino" name="paisdestino" type="text" class="form-control" placeholder="Pais destino"
-            required minlength="6" maxlength="6" oninput="add()" onchange="addPhoto(event);calculateExtras()">
+            required minlength="5" maxlength="6" oninput="add()" onchange="addPhoto(event);calculateExtras()">
           <br>
           <label for="ciudad">Desde:</label>
-          <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" minlength="4" required
-            oninput="add()">
+          <input id="ciudad" name="ciudad" type="text" class="form-control" placeholder="Ciudad origen" minlength="4"
+            required oninput="add()">
 
           <br>
-          <div id="fecha" style="text-align: center;">
+          <div id="fecha" class="fecha" style="text-align: center;">
             <label for="fcheckin">Check-in:</label>
             <input name="fcheckin" id="fcheckin" type="date" required onchange="add()">
             <label for="fcheckout">Check-out:</label>
@@ -63,7 +65,8 @@
       <br>
 
       <div class="form-floating mb-3 mt-3">
-        <select class="form-select" id="personas" name="personas" required onchange="calculatePrice();calculateExtras()">
+        <select class="form-select" id="personas" name="personas" required
+          onchange="calculatePrice();calculateExtras()">
           <option disabled selected value> selecciona </option>
           <option>1</option>
           <option>2</option>
@@ -89,7 +92,7 @@
       <div id="InfoPersonal">
         <h5>INFORMACIÓN PERSONAL</h5>
         <label for="nom">Nombre completo: </label>
-        <input id="nom" type="text" class="form-control" placeholder="Nombre" required oninput="add()">
+        <input id="nom" type="text" name="nombre" class="form-control" placeholder="Nombre" required oninput="add()">
         <br>
         <div class="form-floating">
           <select class="form-select" id="tipdoc" name="sellist" required>
@@ -101,26 +104,29 @@
 
         </div>
         <br>
-        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" minlength="9" maxlength="9" required>
+        <input type="text" name="ndoc" class="form-control" id="ndoc" placeholder="Numero Identidad" minlength="9"
+          maxlength="9" required>
         <br>
 
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Prefijo" minlength="2" maxlength="3" required>
-          <input id="tel1" type="tel" class="form-control" style="width: 80%" placeholder="Confirma telefono" minlength="9" maxlength="9" required
-            oninput="add()">
+          <input id="tel1" name="telefono" type="tel" class="form-control" style="width: 80%"
+            placeholder="Confirma telefono" minlength="9" maxlength="9" required oninput="add()">
         </div>
         <div class="input-group mb-3">
-          <input id="email1" type="email" class="form-control" placeholder="Confirma correo" required oninput="add()">
+          <input id="email1" name="email" type="email" class="form-control" placeholder="Confirma correo" required
+            oninput="add()">
         </div>
+
         <hr>
         <h5>COMUNICACIONES</h5>
         <p>A continuación, indiquenos sus preferencias respecto al tratamiento de sus datos:</p>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="check1" name="option1" checked>
+          <input class="form-check-input" type="checkbox" id="check1" name="comunicaciongeneral" checked>
           <label class="form-check-label">Quiero recibir comunicaciones generales</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="check2" name="option2" checked>
+          <input class="form-check-input" type="checkbox" id="check2" name="ofertaspersonalizadas" checked>
           <label class="form-check-label">Quiero recibir ofertas personalizadas en base a mis intereses</label>
 
         </div>
@@ -131,33 +137,32 @@
         <h5>OPCIONES PARA AÑADIR A TU RESERVA</h5>
         <div id="extras">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="traslado" name="option1" onchange="calculateExtras()">
-            <label class="form-check-label" data-bs-toggle="tooltip"
-              title="Evita sorpresas y llega a tu alojamiento 
-                desde el aeropuerto sin complicaciones. Añadiremos opciones para que reserves un taxi en la confirmación de la reserva.">
-              ¿Quieres reservar un taxi o servicio de traslado con antelación?</label>
+            <input class="form-check-input" type="checkbox" id="traslado" name="traslado" onchange="calculateExtras()">
+            <label class="form-check-label" data-bs-toggle="tooltip" title="Evita sorpresas y llega a tu alojamiento 
+                desde el aeropuerto sin complicaciones.">
+              ¿Quieres reservar un taxi o servicio de traslado con antelación? Solo por 15€/p.</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="vehiculo" name="option2" onchange="calculateExtras()">
+            <input class="form-check-input" type="checkbox" id="vehiculo" name="vehiculo" onchange="calculateExtras()">
             <label class="form-check-label" data-bs-toggle="tooltip" title="¡Aprovecha al máximo el viaje! 
                   Te mandaremos un cógido promocional con un 80% de descuento en el aquiler de tu vehículo">
-              Quiero alquilar un vehículo</label>
+              Quiero alquilar un vehículo. Precio fijo de 500€.</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="restaurante" name="option3"
+            <input class="form-check-input" type="checkbox" id="restaurante" name="restaurante"
               onchange="calculateExtras()">
             <label class="form-check-label" data-bs-toggle="tooltip" title="Solo por reservar 
                   con nosotros se le añade una comida o cena totalmente gratuita, tiene la opción
                   de añadir otra. En el caso de querer añadir más días ha de ponerse en contacto con el restaurante
                   al 963852741 o por correo malufa@turestaurante.com">Añadir cena o comida extra en el
-              restaurante <strong> MALUFA</strong></label>
+              restaurante <strong> MALUFA</strong>. Nada más que 20€/p</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="fiesta" name="option4" onchange="calculateExtras()">
+            <input class="form-check-input" type="checkbox" id="fiesta" name="fiesta" onchange="calculateExtras()">
             <label class="form-check-label" data-bs-toggle="tooltip" title="Contamos con el mejor grupo de 
-                guías turísticos en el ocio nocturno. Disfruta de las mejores fiestas y discotecas que nos brindan 
+                guías turísticas en el ocio nocturno. Disfruta de las mejores fiestas y discotecas que nos brindan 
                 estas fabulosas ciudades. El pack incluye una consumición y entrada
-                gratuita en todas las discotecas.">Pack Fiesta</label>
+                gratuita en todas las discotecas.">Pack Fiesta. Coste de 50€/p.</label>
           </div>
         </div>
       </div>
@@ -168,89 +173,119 @@
         <div id="tarjeta">
 
           <label for="codigo">Codigo Tarjeta:</label>
-          <input name="codigo" id="codigo" type="text" minlenght="7" maxlength="7">
+          <input name="codigo" id="codigo" type="text" minlenght="7" maxlength="7" onchange="calculateDiscount()">
         </div>
       </div>
       <br>
       <hr>
+
       <div class="container" style="text-align:center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir" style="margin-bottom:30px ;"
-          onclick="calculateDiscount(); confirmation()" >CONFIRMAR</button>
-          
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reservaconfir"
+          style="margin-bottom:30px ;" onclick="calculateDiscount();confirmation()">REVISAR RESERVA</button>
+
+
       </div>
-    </form>
+      <!-- The Modal -->
+      <div class="modal fade" id="reservaconfir" name="reservaconfir">
+        <div class="modal-dialog">
+          <div class="modal-content">
 
+            <div class="card-header" style="text-align:center">RESERVA CONFIRMADA CON ÉXITO</div>
+            <div class="card-body">
 
+              <img id="fotoconfirmada" class="card-img-top" src="../img/IMG/default.jpg" alt="default">
 
-    <!-- The Modal -->
-    <div class="modal fade" id="reservaconfir">
-      <div class="modal-dialog">
-        <div class="modal-content">
+              <div class="d-inline-flex text-white">
+                <div class="p-2 bg-muted"><input id="cconfirmada" type="text" class="form-control" placeholder="Ciudad"
+                    readonly value=""></div>
+                <div class="p-2 bg-info">TO</div>
+                <div class="p-2 bg-muted"><input id="pconfirmado" type="text" class="form-control" placeholder="Pais"
+                    readonly value=""></div>
 
-          <div class="card-header" style="text-align:center">RESERVA CONFIRMADA CON ÉXITO</div>
-          <div class="card-body">
+              </div>
 
-            <img id="fotoconfirmada" class="card-img-top" src="../img/IMG/default.jpg" alt="default">
+              <p class="card-text">VUELO + HOTEL </p>
+              <p class="card-text">7 días / 6 noches</p>
+            </div>
+            <div style="background-color:skyblue; margin: 15px">
+              <div id="fechainiconf"></div>
+              <div id="fechafinconf"></div>
+            </div>
+            <hr>
+            <div class="card-body">
+              <h4 class="card-title">Datos personales</h4>
 
-            <div class="d-inline-flex text-white">
-              <div class="p-2 bg-muted"><input id="ciudadconfirmada" type="text" class="form-control"
-                  placeholder="Ciudad" readonly value=""></div>
-              <div class="p-2 bg-info">TO</div>
-              <div class="p-2 bg-muted"><input id="paisconfirmado" type="text" class="form-control" placeholder="Pais"
-                  readonly value=""></div>
+              <input id="nconfirmado" type="text" class="form-control" placeholder="Nombre" readonly value="">
+              <input id="tconfirmado" type="text" class="form-control" placeholder="Telefono" readonly value="">
+              <input id="econfirmado" type="text" class="form-control" placeholder="Correo" readonly value="">
+
+            </div>
+            <div class="card-footer">
+              <h4 class="card-title">Desglose precios</h4>
+              <hr>
+              <p>
+              <div id="trasladoconfirmado"></div>
+              </p>
+              <p>
+              <div id="vehiculoconfirmado"></div>
+              </p>
+              <p>
+              <div id="restauranteconfirmado"></div>
+              </p>
+              <p>
+              <div id="fiestaconfirmada"></div>
+              </p>
+              <hr>
+              <p>
+              <div id="totalconfirmado"></div>
+              </p>
+              <p>
+              <div id="preciodesc"></div>
+              </p>
+              <p>
+              <div id="grupomasdiez"></div>
+              </p>
+              <p>
+              <div id="preciofinal"></div>
+              </p>
+              <input id="sentdesc" name="PrecioDesc" type="hidden" class="form-control" placeholder="PrecioDesc"
+                readonly value="">
+              <input id="sentpreciofinal" name="PrecioFinal" type="hidden" class="form-control"
+                placeholder="PrecioFinal" readonly value="">
 
             </div>
 
-            <p class="card-text">VUELO + HOTEL </p>
-            <p class="card-text">7 días / 6 noches</p>
-          </div>
-          <div style="background-color:skyblue; margin: 15px">
-          <div id="fechainiconf"></div><div id="fechafinconf"></div>
-        </div>
-          <hr>
-          <div class="card-body">
-            <h4 class="card-title">Datos personales</h4>
+            <div class="modal-footer">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_replyto"
+                value="Gracias por confiar en MyLittleForay. En breve recibirá un correo con los datos introducidos en la reserva.">
+              <input type="hidden" name="_autoresponse" value="Muchas gracias por confiar en MyLittleForay.       
+            Aquí se le envía toda la información del viaje. Tras la verificación los datos por parte de nuestros equipo recibirá un correo con el proceso que 
+            ha de seguir para realizar el check-in y check-out del avión, igual que el código de descuento para la adquisición de un vehiculo de alquiler en el 
+            supuesto caso de haber sido solicitado.">
 
-            <input id="nconfirmado" type="text" class="form-control" placeholder="Nombre" readonly value="">
-            <input id="tconfirmado" type="text" class="form-control" placeholder="Telefono" readonly value="">
-            <input id="econfirmado" type="text" class="form-control" placeholder="Correo" readonly value="">
-
-          </div>
-          <div class="card-footer">
-            <h4 class="card-title">Desglose precios</h4>
-            <hr>
-            <p>
-            <div id="trasladoconfirmado"></div>
-            </p>
-            <p>
-            <div id="vehiculoconfirmado"></div>
-            </p>
-            <p>
-            <div id="restauranteconfirmado"></div>
-            </p>
-            <p>
-            <div id="fiestaconfirmada"></div>
-            </p>
-            <hr>
-            <p>
-            <div id="totalconfirmado"></div>
-            </p>
-            <p>
-            <div id="preciodesc"></div>
-            </p>
-            <p>
-            <div id="preciofinal"></div>
-            </p>
-
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+              <input type="submit" value="CONFIRMAR RESERVA" style="text-align:center ;" onclick="alertConfirmation()">
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
+
+  </form>
+
+  
+  <script>
+    //Funcion para evitar que el formulario use la tecla intro para enviar el formulario
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
+        if(e.keyCode == 13) {
+          e.preventDefault();
+        }
+      }))
+    });
+  </script>
 
   <br>
 
@@ -271,14 +306,15 @@
 
       <p class="card-text">VUELO + HOTEL </p>
       <p class="card-text">7 días / 6 noches</p>
-      <div id="fechaini"></div><div id="fechafin"></div>
+      <div id="fechaini"></div>
+      <div id="fechafin"></div>
     </div>
     <hr>
     <div class="card-body">
       <h4 class="card-title">Datos personales</h4>
 
-      <input id="nconfi" type="text" class="form-control" placeholder="Nombre" readonly value="">
-      <input id="tconfi" type="text" class="form-control" placeholder="Telefono" readonly value="">
+      <input id="nombre" type="text" class="form-control" placeholder="Nombre" readonly value="">
+      <input id="telefono" type="text" class="form-control" placeholder="Telefono" readonly value="">
       <input id="econfi" type="text" class="form-control" placeholder="Correo" readonly value="">
 
     </div>
@@ -307,13 +343,14 @@
 
     </div>
   </div>
-  
+
   <div id="footer" style="clear: both;"></div>
 
   <script src="../js/headfoot.js"></script>
   <script src="../js/reserva.js"></script>
   <script src="../js/navbar.js"></script>
-  
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
 
 
 </body>

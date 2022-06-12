@@ -1,38 +1,19 @@
-//Funcion para ejecutar el tooltip
+//@author Estefania Boriko Laenos
+
+//Funcion para ejecutar el tooltip: Plantilla boostrap
 
 let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
-//Funcion para ejecutar el toggle
+//Funcion para ejecutar el toggle: Plantilla boostrap
 
 let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl)
 });
 
-
-//Funcion para validar el país
-
-/*function checkCountry(){
-
-  let pais = document.getElementById("paisdestino").value;
-
-  if (pais == null || pais.lenght == 0 || /^\s+$/.test(pais))
-  {
-    return false;
-  }
-  else if (pais.toUpperCase != "ESPAÑA" || pais.toUpperCase != "ITALIA" || 
-  pais.toUpperCase != "JAPON" || pais.toUpperCase != "JAPÓN" || 
-  pais.toUpperCase != "MÉXICO" || pais.toUpperCase != "MEXICO" )
-  {
-    return false;
-  }
-  else
-    return true;
-
-}*/
 
 //Inhabilita las fechas anteriores a hoy
 
@@ -113,30 +94,11 @@ function addPhoto() {
 
 }
 
-//Funcion para validar DNI
-
-function checkDNI() {
-
-  let dni = document.getElementById("ndoc").value;
-
-  var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
-
-  if (!(/^\d{8}[A-Z]$/.test(dni))) {
-    console.log("ERRRORR");
-  }
-
-  if (dni.charAt(8) != letras[(dni.substring(0, 8)) % 23]) {
-    return false;
-  }
-
-}
-
-//Funcion para rellenar Resumen Reserva
+//Funcion para rellenar el div Resumen Reserva
 
 function add() {
 
   let dato;
-
 
   dato = document.getElementById("paisdestino").value;
   document.getElementById("paisconfi").value = dato;
@@ -145,24 +107,23 @@ function add() {
   document.getElementById("ciudadconfi").value = dato;
 
   dato = document.getElementById("nom").value;
-  document.getElementById("nconfi").value = dato;
+  document.getElementById("nombre").value = dato;
 
   dato = document.getElementById("tel1").value;
-  document.getElementById("tconfi").value = dato;
+  document.getElementById("telefono").value = dato;
 
   dato = document.getElementById("email1").value;
-
   document.getElementById("econfi").value = dato;
 
 
 }
 
 /* Funcion para calcular el total de pago
-    Costes
-      -España = 450
-      -Italia = 550
-      -Japón = 750
-      -México = 650
+    Costes:
+      -España = 450€/p
+      -Italia = 550€/p
+      -Japón = 750€/p
+      -México = 650€/p
 */
 
 function calculatePrice() {
@@ -203,12 +164,18 @@ function calculatePrice() {
   }
 
 
-
   return preciototal;
 
 }
 
-//Funcion calcular extras
+/* Funcion para calcular Extras
+  Costes:
+    -Traslado = 15€/p
+    -Vehiculo = 500€
+    -Restaurante = 20€/p
+    -Extra Fiesta = 0€
+*/
+
 function calculateExtras() {
 
   let total = calculatePrice();
@@ -263,10 +230,9 @@ function calculateExtras() {
   }
 
 
+  document.getElementById('totalconfirmado').innerHTML = 'Total + extras: ' + total + ' €';
 
-  document.getElementById('totalconfirmado').innerHTML = 'Total + extras: ' + total;
-
-  document.getElementById('totalconfirmadoresumen').innerHTML = 'Total + extras: ' + total;
+  document.getElementById('totalconfirmadoresumen').innerHTML = 'Total + extras: ' + total + ' €';
 
 
   return total;
@@ -278,35 +244,57 @@ function calculateDiscount() {
   let total = calculateExtras();
   let descuento = document.getElementById('codigo').value;
   let final;
+  let personasd = document.getElementById("personas");
+  let totalpers = personasd.options[personasd.selectedIndex].text;
 
   if (descuento.lenght != 0) {
 
     switch (descuento) {
       case 'tarj100':
         final = total - 100;
-        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -100 ';
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -100 €';
+        document.getElementById("sentdesc").value = -100;
         break;
       case 'tarj200':
         final = total - 200;
-        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -200 ';
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -200 €';
+        document.getElementById("sentdesc").value = -200;
         break;
       case 'tarj300':
         final = total - 300;
-        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -300 ';
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -300 €';
+        document.getElementById("sentdesc").value = -300;
         break;
       case 'tarj400':
         final = total - 400;
-        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -400 ';
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -400 €';
+        document.getElementById("sentdesc").value = -400;
         break;
       case 'tarj500':
         final = total - 500;
-        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -500 ';
+        document.getElementById('preciodesc').innerHTML = 'Tarjeta descuento: -500 €';
+        document.getElementById("sentdesc").value = -500;
         break;
+      case '':
+        final = total + 0;
       default:
         final = total + 0;
+        alert("DESCUENTO INEXISTENTE");
+
     }
 
-    document.getElementById('preciofinal').innerHTML = 'Precio Total Final: ' + final;
+  }
+
+  if (totalpers >= 10) {
+    final = final - (final * 0.30);
+    document.getElementById('grupomasdiez').innerHTML = 'Incluido el 30% de descuento para grupos superiores a 10.';
+    document.getElementById('preciofinal').innerHTML = 'Precio Total Final: ' + final + ' €';
+    document.getElementById("sentpreciofinal").value = final;
+
+  }
+  else {
+    document.getElementById('preciofinal').innerHTML = 'Precio Total Final: ' + final + ' €';
+    document.getElementById("sentpreciofinal").value = final;
 
   }
 
@@ -318,10 +306,10 @@ function calculateDiscount() {
 function confirmation() {
 
   let dato = document.getElementById("paisdestino").value;
-  document.getElementById("paisconfirmado").value = dato;
+  document.getElementById("pconfirmado").value = dato;
 
   dato = document.getElementById("ciudad").value;
-  document.getElementById("ciudadconfirmada").value = dato;
+  document.getElementById("cconfirmada").value = dato;
 
   dato = document.getElementById("nom").value;
   document.getElementById("nconfirmado").value = dato;
@@ -335,3 +323,10 @@ function confirmation() {
   document.getElementById('ptconfirmado').innerHTML = 'Precio total para ' + totalpers + ' personas: ' + preciototal + ' €';
 
 }
+
+//Funcion para generar alert de confirmacion
+
+function alertConfirmation() {
+  alert("Gracias por reservar. Recibirá un correo de confirmación");
+}
+
