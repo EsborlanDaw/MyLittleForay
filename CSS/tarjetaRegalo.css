@@ -127,3 +127,29 @@ h3{
     float: left;
     margin-top: 20px;
 }
+@media only screen and (max-width: 1300px) {
+    #contForm{
+        margin: 0 auto;
+        float: none;
+    }
+    #contTarjeta{
+        padding-top: 30px;
+        clear: both;
+        margin: 0 auto;
+        float: none;
+    }
+    #tarjeta{
+        width: 500px;
+    }
+    #paraQuien{
+        float: left;
+        margin-left: 0px;
+    }
+    #botons{
+        float: none;
+        margin: 0 auto;
+    }
+    #titTarj{
+        padding-top: 30px;
+    }
+}
