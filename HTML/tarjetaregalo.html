@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <title>TARJETAREGALO</title>
   <meta charset="utf-8">
@@ -65,42 +67,132 @@
   <!-- formulario -->
   <h2>Crea Tu Tarjeta Regalo</h2>
 
-  <div id="contForm">
-    <div id="botones">
-      <div id="titBtn">
-        <h6>Selecciona el importe:</h6>
+  <form>
+    <div id="contForm">
+      <p class="bg-info rounder-1" style="width: 250px;">*Importe y e-mail obligatorio*</p>
+      <div id="botones">
+        <div id="titBtn">
+          <h6>Selecciona el importe:</h6>
+        </div>
+        <div class="btn-group" style="float: left;">
+          <input id="btns" type="button" class="btn btn-dark" value="100€" onclick="importe(100)">
+          <input id="btns" type="button" class="btn btn-dark" value="200€" onclick="importe(200)">
+          <input id="btns" type="button" class="btn btn-dark" value="300€" onclick="importe(300)">
+          <input id="btns" type="button" class="btn btn-dark" value="400€" onclick="importe(400)">
+          <input id="btns" type="button" class="btn btn-dark" value="500€" onclick="importe(500)">
+        </div>
       </div>
-      <div id="btns" class="btn-group" style="float: left;">
-        <button class="btn btn-dark">100€</button>
-        <button class="btn btn-dark">200€</button>
-        <button class="btn btn-dark">300€</button>
-        <button class="btn btn-dark">400€</button>
-        <button class="btn btn-dark">500€</button>
+
+      <div id="titTarj">
+        <div>
+          <h6>Título:</h6>
+        </div>
+        <div style="clear: both;">
+          <input id="tittle" type="text" placeholder="Escribe algo" maxlength="20">
+        </div>
       </div>
-    </div>
-    <div id="titTarj">
-      <div>
-        <h6>Título:</h6>
-      </div>
-      <div style="clear: both;">
-        <input id="tittle" type="text" placeholder="Escribe algo" maxlength="20">
-      </div>
-    </div>
+
+      <div id="mensaje">
+        <div>
+          <h6>Mensaje:</h6>
+        </div>
+        <div style="clear: both;">
+          <textarea name="mnsj" id="mnsj" cols="50" rows="4" placeholder="Escribe un mensaje" maxlength="200" style="resize: none;"></textarea>
+        </div>
+      </div> 
       
-  </div>
+      <div id="selBg">
+        <div>
+          <h6>Selecciona un fondo:</h6>
+        </div>
+        <div>
+          <select id="fondo">
+            <option  value="aqua">Aqua</option>
+            <option  value="green">Verde</option>
+            <option  value="red">Rojo</option>
+            <option  value="yellow">Amarillo</option>
+            <option  value="purple">Morado</option>
+            <option  value="url(../IMG/tarjetaregalo/atardecer.png)">Atardecer</option>
+            <option  value="url(../IMG/tarjetaregalo/colores.jpeg)">Colores</option>
+            <option  value="url(../IMG/tarjetaregalo/perro.jpg)">Perro</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="dePara">
+        <div id="deQuien">
+          <div>
+            <h6>¿Quién hace el regalo?</h6>
+          </div>
+          <div>
+            <input id="deq" type="text" placeholder="Escribe algo" maxlength="40" size="40">
+          </div>
+        </div>
+
+        <div id="paraQuien">
+          <div>
+            <h6>¿Para quién es el regalo?</h6>
+          </div>
+          <div>
+            <input id="paraq" type="text" placeholder="Escribe algo" maxlength="40" size="40">
+          </div>
+        </div>
+      </div>
+
+      <div id="correo">
+        <div>
+          <h6>E-mail:</h6>
+        </div>
+        <div>
+          <input id="email" type="text" placeholder="Introduce tu e-mail" size="40" required>
+        </div>
+      </div>
+
+      <input type="button" id="button" class="btn btn-primary" value="Crear tarjeta" onclick="tarjeta()">
+    </div>
+  </form>
 
   <div id="contTarjeta">
     <div id="tarjeta">
       <h3 class="rounded-3">MyLittleForay</h3>
-      
+
+      <div id="imp">
+        <p id="importe"></p>
+      </div>
+
+      <div id="tit">
+        <h4 id="titT" class="rounded-3" style="text-decoration: underline;"></h4>
+      </div>
+
+      <div id="divText" class="rounded-3">
+        <p id="text" style="font-style: italic;"></p>
+      </div>
+
+      <div id="yota">
+        <div id="dePara2">
+          <p id="deQ"></p>
+          <p id="paraQ"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-info rounded-1">
+      <p>*El precio de la tarjeta es la misma que la del importe.</p>
+    </div>
+
+    <!-- boton de comprar tarjeta -->
+    <div style="clear: both; text-align: center;">
+      <button  id="botonComprar" class="btn btn-primary disabled" data-bs-toggle="modal" data-bs-target=".modal">COMPRAR TARJETA</button>
     </div>
   </div>
 
   <!-- footer -->
-  <div id="footer" style="clear: both;"></div>
+  <div id="footer" style="clear: both; padding-top: 50px;"></div>
 
+  <!-- scripts -->
   <script src="../js/navbar.js"></script>
   <script src="../js/headfoot.js"></script>
+  <script src="../js/tarjetaRegalo.js"></script>
   
 </body>
 

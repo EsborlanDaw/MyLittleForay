@@ -16,13 +16,7 @@
   <body>
 
     <!-- header -->
-    <header>
-      <div class="px-3 py-2 text-center text-white">
-        <a href="../index.html">
-          <img src="../img/IMG/Marca.png" alt="LOGO">
-        </a>
-      </div>
-    </header>
+    <div id="header"></div>
     
     <!-- NAVBAR MENU -->
     <div id="navbar"></div>
@@ -205,7 +199,6 @@ dias
         <!-- boton de reservar -->
         <div id="botonReservar" class="d-grid mx-auto" style="clear: both; width: 70%;">
           <a href="../../HTML/reserva.html" class="btn btn-primary btn-block">RESERVA YA A PARTIR DE 450€/p*</a>
-          
         </div>
 
         <!-- info descuentos -->
@@ -385,7 +378,7 @@ dias
 
       <!-- boton de reservar -->
       <div id="botonReservar" class="d-grid mx-auto" style="clear: both; width: 70%;">
-        <a href="../../HTML/reserva.html" class="btn btn-primary btn-block">RESERVA YA A PARTIR DE 450€/p*</a>
+        <a href="../../HTML/reserva.html" class="btn btn-primary btn-block">RESERVA YA A PARTIR DE 550€/p*</a>
         
       </div>
 
@@ -566,7 +559,7 @@ dias
 
       <!-- boton de reservar -->
       <div id="botonReservar" class="d-grid mx-auto" style="clear: both; width: 70%;">
-        <a href="../../HTML/reserva.html" class="btn btn-primary btn-block">RESERVA YA A PARTIR DE 450€/p*</a>
+        <a href="../../HTML/reserva.html" class="btn btn-primary btn-block">RESERVA YA A PARTIR DE 750€/p*</a>
         
       </div>
 
@@ -599,26 +592,190 @@ dias
         </div>
       </div>
     </div>
-    
-        <!-- footer -->
-        <div class="footer" style="clear: both;">
-          <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+
+    <!-- Mexico -->
+    <div id="mexico" class="d-none">  
+      <!-- intro-->
+      <h1 id="titulo">VEN A MÉXICO</h1>
+      <div class="rounded-3 bg-info" id="intro">
+        <h5 style="font-size: 30px;">¿Te Puedo Convencer?</h5>
+        <div id="texto">
+        <br>
+        <p>México es un país que tiene todo lo que los viajeros están buscando: lugares con paisajes increíbles,
+          clima fríos y calurosos, una gastronomía tradicional para deleitarse, y una cultura asombrosa
+           que se ha conservado a lo largo del tiempo. Para los aventureros este lugar es muy interesante pues 
+           las antiguas civilizaciones prehispánicas que habitaron en este país, sembraron en los pueblos mexicanos
+            y en el mundo historias que revelan información y cuentan leyendas sobre sus dioses y antiguos moradores.
+             Además también es conocido por sus aguas caribeñas, desde paraísos aún bastantes tranquilos a 
+             otras más populares que tienen mucha fiesta.</p>
+        </div>
+      </div>
+
+      <!--carrusel: imágenes con info de cada ciudad -->
+      <div id="demo3" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo3" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo3" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo3" data-bs-slide-to="2"></button>
+        </div>
+      
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="container">
+            <div class="carousel-item active">
+              <h6>CANCÚN</h6>
+              <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
+                <img src="../img/ciudades/Mexico/Cancun.jpg" alt="Cancun" class="d-block w-100">
+              </div>
+              <div id="ciudadInfo" class="text-left">
+                <p>El destino más famoso del Caribe Mexicano es Cancún, que su nombre en lengua maya significa
+                   “Nido de Serpientes” y es el destino número uno de Latinoamérica. Cancún nos ofrece un sin 
+                   fin de actividades y lugares que valen la pena descubrir si visitas este bello paraíso. También
+                   posee una importante cultura maya que nos envuelve en su historia a través de sus tres zonas arqueológicas.
+                </p>
+              </div>
+            </div>
             
-        <div class="col-1" style="width: 30%; text-align: center;">
-          <h5>Contactanos:</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-1" ><a href="#" class="nav-link p-0 text-muted">Telefono: 610705043 </a></li>
-            <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Email: mlf@gmail.com</a></li>
+            <div class="carousel-item">
+              <h6>CIUDAD DE MÉXICO</h6>
+              <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
+                <img src="../img/ciudades/Mexico/CiudadDeMexico.jpg" alt="CiudadDeMexico" class="d-block w-100">
+              </div>
+              <div id="ciudadInfo" class="text-left">
+                <p>La Ciudad de México es la capital del país, de carácter vibrante, multifacético y siempre en movimiento,
+                   es el núcleo, político, económico y cultural de la República Mexicana.La CDMX guarda entre sus calles y
+                    largas avenidas los secretos y acontecimientos que han dado forma a la nación. Camina por su centro histórico,
+                     descubre su imponente Catedral y el Templo Mayor, que aún conserva vestigios de lo que alguna vez fue el gran 
+                     imperio Azteca.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <h6>GUADALAJARA</h6>
+              <div id="imagenCarrusel" class="border border-dark border-2 rounded-3">
+                <img src="../img/ciudades/Mexico/Guadalajara.jpg" alt="Guadalajara" class="d-block w-100">
+              </div>
+              <div id="ciudadInfo" class="text-left">
+                <p>Guadalajara se caracteriza entre otras cosas por su Centro Histórico, donde se encuentran edificios como el 
+                  Instituto Cultural Cabañas, nombrado patrimonio histórico de la Humanidad por la UNESCO, el Teatro Degollado, 
+                  el Museo Regional, el Museo de la Ciudad, el Palacio de Gobierno, la Cruz de Plazas y la Catedral, su más 
+                  reconocido símbolo identificativo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Left and right controls/icons -->
+        <button id="botonAnt" class="carousel-control-prev rounded"  type="button" data-bs-target="#demo3" data-bs-slide="prev">
+          
+        </button>
+        <button id="botonSig" class="carousel-control-next rounded" type="button" data-bs-target="#demo3" data-bs-slide="next">
+          <!-- <span class="carousel-control-next-icon bg-dark rounded"></span> -->
+        </button>
+      </div>
+      <br>
+      <hr style="width: 80%; margin: 0 auto;">
+      <!-- parte itinerario + parte incluye -->
+      <div class="container" id="itYinc">
+        <div id="itinerario" class="border rounded border-info border-2">
+          <h6 style="padding-left: 20px;">ITINERARIO:</h6>
+          <div id="dias">
+            <div id="circulo" class="border rounded-circle mx-auto border-secondary"><pre id="textoCirculo">KIOTO
+dias
+1-2</pre></div>
+            <div id="txt" class="text-left">
+              <p>Dia 1: Día libre.</p>
+              <p>Dia 2:</p>
+              <p> -Mañana: Visita guiada por algunos de los templos y santuarios.</p>
+              <p> -Tarde: Libre. </p>
+            </div>
+          </div>
+          <hr style="width: 80%; margin: 0 auto; margin-bottom: 20px;">
+          <div id="dias">
+            <div id="circulo" class="border rounded-circle mx-auto border-secondary"><pre id="textoCirculo">TOKIO
+dias
+3-5</pre></div>
+            <div id="txt" class="text-left">
+              <p>Dia 3:</p>
+              <p> -Mañana: Libre</p>
+              <p> -Tarde: Visita guiada por el centro de la ciudad.</p>
+              <p>Dia 4:</p>
+              <p> -Mañana: Libre</p>
+              <p> -Tarde: Visita guiada por los rincones más enigmáticos. </p>
+              <p>Dia 5: Día libre.</p>
+            </div>
+          </div>
+          <hr style="width: 80%; margin: 0 auto; margin-bottom: 20px;">
+          <div id="dias">
+            <div id="circulo" class="border rounded-circle mx-auto border-secondary"><pre id="textoCirculo">OSAKA
+dias
+6-7</pre></div>
+            <div id="txt" class="text-left">
+              <p>Dia 6:</p>
+              <p> -Mañana: Visita guiada por el castillo de Osaka.</p>
+              <p> -Tarde: Libre. </p>
+              <p>Dia 7:  Día libre.</p>
+            </div>
+          </div>
+          <br>
+          <p class="bg-warning" style="clear: both;">** También está la opción de ir por libre todos los días.</p>
+        </div>
+        <div id="incluye" class="border rounded border-info border-2">
+          <h6>EL VIAJE INCLUYE:</h6>
+          <ul>
+            <li>Tour cultural guiado por el centro y alrededores de cada ciudad</li>
+            <li>Tarjeta para viajar gratis en bus o metro</li>
+            <li>Desayunos gratuitos en el hotel</li>
+          </ul>
+          <h6>TAMBIÉN PUEDES ADQUIRIR:</h6>
+          <ul>
+            <li>Coche o taxi para desplazarte libremente</li>
+            <li>Un paquete fiesta para visitar distintos pubs y discotecas</li>
+            <li>Una cena o comida extra en la prestigiosa cadena de restaurantes MALUFA</li>
           </ul>
         </div>
-            
-        <div class="col-md-4 d-flex align-items-center" style="width: 30%; text-align: center;">
-              
-          <span class="">&copy; 2022 Company, Inc</span>
-        </div>   
+      </div>
+
+      <!-- boton de reservar -->
+      <div id="botonReservar" class="d-grid mx-auto" style="clear: both; width: 70%;">
+        <a href="../../HTML/reserva.html" class="btn btn-primary btn-block">RESERVA YA A PARTIR DE 650€/p*</a>
         
-          </footer>
+      </div>
+
+      <!-- info descuentos -->
+      <div class="container-fluid mt-3">
+        <div class="alert alert-success">
+          <strong>¡Descuentos!</strong> Todos nuestros paquetes incluyen descuento para grupos superiores a 10, además de
+          descuentos por familia numerosa y carnet de alberguista.
+          <!-- Offcanvas Sidebar -->
+          <div class="offcanvas offcanvas-start" id="descuento3">
+            <div class="offcanvas-header">
+              <h1 class="offcanvas-title">¡DESCUENTOS!</h1>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+              <br>
+              <p>Grupos + 10 personas:
+                <ul id="grupos">
+                  <li>30% aplicable al precio total del pack</li>
+                </ul>
+    
+              </p> 
+              
+              *El descuento de familia númerosa y carnet de alberguista no son acumulables,
+              se disfruta uno u otro.
+            </div>
+          </div>
+          <!-- Button to open the offcanvas sidebar -->
+          <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#descuento3" >+info</button>
         </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+    
+    <!-- scripts -->
+    <script src="../js/headfoot.js"></script>
     <script src="../js/navbar.js"></script>
     <script src="../js/paises.js"></script>
 </body>
