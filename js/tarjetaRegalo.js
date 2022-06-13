@@ -76,7 +76,7 @@ function modal() {
 
       <!-- Modal body -->
       <div class="modal-body">
-        En breves te será enviado un mensaje con la tarjeta regalo y la información pertinente al e-mail introducido.
+        En breves, si está de acuerdo, te será enviado un mensaje con la tarjeta regalo y la información pertinente al e-mail introducido.
         !!Muchas Gracias¡¡
       </div>
 
