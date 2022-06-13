@@ -4,7 +4,7 @@
 function tarjeta() {
     //titulo
     let titulo = document.getElementById("tittle").value;
-    document.getElementById("titT").innerText = titulo;
+    document.getElementById("titT").innerText = titulo.toUpperCase();
 
     //mensaje
     let mensaje = document.getElementById("mnsj").value;
