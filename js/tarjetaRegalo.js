@@ -1,3 +1,4 @@
+//<!-- Hecho por Luis Rodríguez -->
 
 //Crear tarjeta
 function tarjeta() {
