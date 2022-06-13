@@ -19,10 +19,6 @@ function tarjeta() {
     if (para != "") {
         document.getElementById("paraQ").innerText = "Para: " + para;
     }
-        
-    //importe
-    /*let importe = document.getElementById("btns").value;
-    document.getElementById("importe").innerHTML = importe;*/
 
     //fondo
     let fondo = document.getElementById("fondo").value;
@@ -87,11 +83,21 @@ function modal() {
 
     </div>
   </div>`;
-    document.body.appendChild(modal);
-
-    
+    document.body.appendChild(modal);   
 }
+
+//Nueva tarjeta, vaciar
+function vaciar() {
+    document.getElementById("titT").innerText = null;
+    document.getElementById("text").innerText = null;
+    document.getElementById("deQ").innerText = null;
+    document.getElementById("paraQ").innerText = null;
+    document.getElementById("tarjeta").style.background = "aqua";
+    document.getElementById("importe").innerHTML = "";
+}
+
   
+//Recargar pagina
 function recargar() {
         window.location.href = window.location.href;
 }
