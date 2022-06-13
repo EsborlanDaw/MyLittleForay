@@ -15,19 +15,11 @@
 
 <body>
 
-  <header>
-    <div class="px-3 py-2 text-center text-white">
-      <a href="inicio.html">
-        <img src="../img/IMG/Marca.png" alt="LOGO">
-      </a>
-    </div>
-  </header>
+  <div id="header"></div>
   <!-- NAVBAR -->
   <div id="navbar"></div>
 
-  <hr>
- 
-  <br>
+
   <!--Primer div-->
   <br>
   <div class="container-fluid py-5 bg-hero" style="margin-bottom: 10px; background-color: midnightblue;">
@@ -47,59 +39,72 @@
   <br>
 
   <!--Listado simple-->
+  <div class="d-inline-flex bg-secondary text-white" style="width: 100%; text-align: center;">
+    <div class="p-2 bg-secondary" style="width: 25%;">España</div>
+    <div class="p-2 bg-warning" style="width: 25%;">Italia</div>
+    <div class="p-2 bg-primary" style="width: 25%;">Japón</div>
+    <div class="p-2 bg-danger" style="width: 25%;">México</div>
+  </div>
+
+  <br>
+  <br>
+
+  <!--Ejemplo de listado QUE NO SE BE-->
 
   <ul id="listado" class="list-group list-group-numbered">
-    <li class="list-group-item d-flex justify-content-between align-items-start">
+    <li class="list-group-item d-flex justify-content-between align-items-start ">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Marc</div>
-        Me ha parecido fascinante el viaje, con la infrmacion que da a pagina me he aclarado a la hora de planificarlo y
-        espero con ansias volve r arepetir una experiencia como la ultima.
+        <span class=" text-light">
+          Me ha parecido fascinante el viaje, con la infrmacion que da a pagina me he aclarado a la hora de planificarlo
+          y
+          espero con ansias volve r arepetir una experiencia como la ultima.
+        </span>
       </div>
       <span class="badge bg-primary rounded-pill">7</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-      <div class="ms-2 me-auto">
-        <div class="fw-bold">Paco</div>
-        EL viaje no ha estado nada mal, pero al ruta no me ha acabado de gustar, te deja sin ver cosas importantes del
-        pais y acabe sin ver lo que me apetecia.
-      </div>
-      <span class="badge bg-primary rounded-pill">5</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-      <div class="ms-2 me-auto">
-        <div class="fw-bold">Lionel</div>
-        Me ha ayudado mucho la pagina y volveria a repetir uno de los viajes que ofrecen para probar la experiencia
-        MALUFA en otro pais.
-      </div>
-      <span class="badge bg-primary rounded-pill">9</span>
+      <button class="badge bg-danger rounded-pill" onclick="">X</button>
     </li>
   </ul>
   <br>
   <br>
+
   <!--FOrmulario de reseña-->
   <div style="padding-left: 10%; padding-right: 10%;">
     <h5 style="text-align: center; background-color: lightgreen;">AÑADE TU RESEÑA</h5>
-   <hr>
-    <div class="input-group mb-3">
-      <span class="input-group-text">Nombre</span>
-      <input type="text" class="form-control" placeholder="Primer Nombre">
-      </div>
-    <label for="nom">Reseña: </label>
-    <input id="nom" type="text" class="form-control" placeholder="Escribe aqui tu reseña">
     <hr>
-    <label for="customRange3" class="form-label">Califica la experiencia: <span id="nota"></span></label>
-    <input type="range" class="form-control" min="0" max="10" step="1" id="customRange3">
-    <br>
-    <div class="btn-group container" style="text-align: center;">
-      <button type="submit" class="btn btn-primary" onclick="Capturar()">
-        Enviar Reseña
-      </button>
-      <button type="submit" class="btn btn-primary" onclick="borrar()" >
-        Eliminar la ultima Reseña
-      </button>
+    <form id="form" action="#" onsubmit="Capturar(); return false">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Nombre</span>
+        <input required type="text" class="form-control" placeholder="Primer Nombre" pattern="^[a-zA-Z]+$">
+      </div>
+      <label for="nom">Reseña: </label>
+      <input id="nom" type="text" class="form-control" placeholder="Escribe aqui tu reseña">
+      <br>
+      <label for="pais"></label>
+      <select required name="pais" class="form-control">
+        <option value=""></option>
+        <option value="españa">España</option>
+        <option value="italia">Italia</option>
+        <option value="japon">Japón</option>
+        <option value="mexico">México</option>
+      </select>
+      <br>
+      <label for="customRange3" class="form-label">Califica la experiencia: <span id="nota"></span></label>
+      <input type="range" class="form-control" min="0" max="10" step="1" id="customRange3">
+      <hr>
+      <br>
+      <div class="m-auto">
+      <div class="btn-group container" style="text-align: center; ">
+        <button type="submit" class="btn btn-primary ">
+          Enviar Reseña
+        </button>
+        <button type="button" class="btn btn-primary " onclick="vaciarform()">
+          Vaciar Formulario
+        </button>
+      </div>
     </div>
+    </form>
 
-    
   </div>
   <br>
   <div class="alert alert-success alert-dismissible col-6 m-auto collapse" id="popup">
@@ -109,26 +114,12 @@
 
 
   <!-- RESTO DE TEXTO -->
-  <div class="footer">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div id="footer"></div>
 
-      <div class="col-1" style="width: 30%; text-align: center;">
-        <h5>Contactanos:</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Telefono: 610705043 </a></li>
-          <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Email: mlf@gmail.com</a></li>
-        </ul>
-      </div>
 
-      <div class="col-md-4 d-flex align-items-center" style="width: 30%; text-align: center;">
-
-        <span class="">&copy; 2022 Company, Inc</span>
-      </div>
-
-    </footer>
-  </div>
   <script src="../js/navbar.js"></script>
   <script src="../js/resenya.js"></script>
+  <script src="../js/headfoot.js"></script>
 </body>
 
 </html>
