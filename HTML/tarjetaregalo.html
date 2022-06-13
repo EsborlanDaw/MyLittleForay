@@ -1,12 +1,15 @@
+<!-- Hecho por Luis Rodríguez -->
+
+<!DOCTYPE html>
+<html>
 <head>
   <title>TARJETAREGALO</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="../IMG/LOGOIMG.png">
-  <link rel="stylesheet" href="../CSS/inicio.css">
+  <link rel="stylesheet" href="../CSS/tarjetaRegalo.css">
   <link rel="stylesheet" href="../bootstrap/js/">
-  <link rel="stylesheet" href="../CSS/style.css">
   <!-- Latest compiled and minified CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Latest compiled JavaScript -->
@@ -15,68 +18,186 @@
 
 <body>
 
-  <header>
-    <div class="px-3 py-2 text-center text-white">
-      <a href="inicio.html">
-        <img src="../img/IMG/Marca.png" alt="LOGO">
-      </a>
-    </div>
-  </header>
-  <!-- NAVBAR -->
-  <nav id="barramenu" class="navbar navbar-expand-sm navbar-dark bg-primary">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link " href="../index.html">INICIO</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DESTINOS</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../paises/españa/españa.html">ESPAÑA</a></li>
-              <li><a class="dropdown-item" href="../paises/italia/italia.html">ITALIA</a></li>
-              <li><a class="dropdown-item" href="../paises/japon/japon.html">JAPÓN</a></li>
-              <li><a class="dropdown-item" href="../paises/mexico/mexico.html">MÉXICO</a></li>
-            </ul>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="tarjetaregalo.html">TARJETA REGALO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="resenya.html">RESEÑAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="sobrenosotros.html">SOBRE NOSOTROS</a>
-          </li>  
-          <li class="nav-item">
-            <a class="nav-link" href="reserva.html">RESERVAR</a>
-          </li>
-        </div>
-        </ul>
-      </div>
-    </div>
-    </nav>
-<!-- RESTO DE TEXTO -->
-  <div class="footer">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <!-- header -->
+  <div id="header"></div>
 
-      <div class="col-1" style="width: 30%; text-align: center;">
-        <h5>Contactanos:</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Telefono: 610705043 </a></li>
-          <li class="nav-item mb-1"><a href="#" class="nav-link p-0 text-muted">Email: mlf@gmail.com</a></li>
-        </ul>
-      </div>
+  <!-- navbar -->
+  <div id="navbar"></div>
 
-      <div class="col-md-4 d-flex align-items-center" style="width: 30%; text-align: center;">
-
-        <span class="">&copy; 2022 Company, Inc</span>
-      </div>
-
-    </footer>
+  <!-- titulo -->
+  <div id="titulo" class="container-fluid">
+    <h1>TARJETA REGALO</h1>
   </div>
 
+  <!-- ventajas -->
+  
+  <div id="ventaja">
+    <div id="imagen">
+      <img id="img" src="../img/tarjetaRegalo/240_F_330323826_mJqnpxjA1YEYCIcmRKfIE2CCVo1chkPJ.jpg" alt="icono">
+    </div>
+    <div id="titVent">
+      <h6>CADUCIDAD</h6>
+    </div>
+    <div id="info">
+      <p>La persona obsequiada dispondrá de 12 meses para canjear la tarjeta regalo por cualquier viaje disponible en la página de MyLittleForay.</p>
+    </div>
+  </div>
+  <div id="ventaja">
+    <div id="imagen">
+      <img id="img" src="../img/tarjetaRegalo/240_F_300170007_EeUnk2vDMLQJDQh0sStL46tH0rTUy1j3.jpg" alt="icono">
+    </div>
+    <div id="titVent">
+      <h6>PERSONALIZABLE</h6>
+    </div>
+    <div id="info">
+      <p>La tarjeta regalo se puede personalizar completamente, también eliges el importe a regalar y puedes añadir un mensaje.</p>
+    </div>
+  </div>
+  <div id="ventaja">
+    <div id="imagen">
+      <img id="img" src="../img/tarjetaRegalo/240_F_308927365_4GDa2GJrXXtIifyTgNdRJiRFrrIawtaq.jpg" alt="icono">
+    </div>
+    <div id="titVent">
+      <h6>LIBERTAD DE ENVÍO</h6>
+    </div>
+    <div id="info" style="padding-bottom: 100px;">
+      <p>La tarjeta se puede tanto imprimir y regalar en mano, como enviar por correo electrónico.</p>
+    </div>
+  </div>
+  
+
+  <!-- formulario -->
+  <h2>Crea Tu Tarjeta Regalo</h2>
+
+  <form>
+    <div id="contForm">
+      <p class="bg-info rounder-1" style="width: 250px;">*Importe y e-mail obligatorio*</p>
+      <div id="botones">
+        <div id="titBtn">
+          <h6>Selecciona el importe:</h6>
+        </div>
+        <div id="botons" class="btn-group" style="float: left;">
+          <input id="btns" type="button" class="btn btn-dark" value="100€" onclick="importe(100)">
+          <input id="btns" type="button" class="btn btn-dark" value="200€" onclick="importe(200)">
+          <input id="btns" type="button" class="btn btn-dark" value="300€" onclick="importe(300)">
+          <input id="btns" type="button" class="btn btn-dark" value="400€" onclick="importe(400)">
+          <input id="btns" type="button" class="btn btn-dark" value="500€" onclick="importe(500)">
+        </div>
+      </div>
+
+      <div id="titTarj">
+        <div>
+          <h6>Título:</h6>
+        </div>
+        <div style="clear: both;">
+          <input id="tittle" type="text" placeholder="Escribe algo" maxlength="20">
+        </div>
+      </div>
+
+      <div id="mensaje">
+        <div>
+          <h6>Mensaje:</h6>
+        </div>
+        <div style="clear: both;">
+          <textarea name="mnsj" id="mnsj" cols="50" rows="4" placeholder="Escribe un mensaje" maxlength="200" style="resize: none;"></textarea>
+        </div>
+      </div> 
+      
+      <div id="selBg">
+        <div>
+          <h6>Selecciona un fondo:</h6>
+        </div>
+        <div>
+          <select id="fondo">
+            <option  value="aqua">Aqua</option>
+            <option  value="green">Verde</option>
+            <option  value="red">Rojo</option>
+            <option  value="yellow">Amarillo</option>
+            <option  value="purple">Morado</option>
+            <option  value="url(../IMG/tarjetaregalo/atardecer.png)">Atardecer</option>
+            <option  value="url(../IMG/tarjetaregalo/colores.jpeg)">Colores</option>
+            <option  value="url(../IMG/tarjetaregalo/perro.jpg)">Perro</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="dePara">
+        <div id="deQuien">
+          <div>
+            <h6>¿Quién hace el regalo?</h6>
+          </div>
+          <div>
+            <input id="deq" type="text" placeholder="Escribe algo" maxlength="40" size="40">
+          </div>
+        </div>
+
+        <div id="paraQuien">
+          <div>
+            <h6>¿Para quién es el regalo?</h6>
+          </div>
+          <div>
+            <input id="paraq" type="text" placeholder="Escribe algo" maxlength="40" size="40">
+          </div>
+        </div>
+      </div>
+
+      <div id="correo">
+        <div>
+          <h6>E-mail:</h6>
+        </div>
+        <div>
+          <input id="email" type="text" placeholder="Introduce tu e-mail" size="40" required>
+        </div>
+      </div>
+
+      <input type="button" id="button" class="btn btn-success" value="Crear tarjeta" onclick="tarjeta()">
+      <input type="button" id="button2" class="btn btn-danger" style="margin-left: 20px;" value="Nueva tarjeta" onclick="vaciar()">
+    </div>
+  </form>
+
+  <!-- Tarjeta -->
+  <div id="contTarjeta">
+    <div id="tarjeta">
+      <h3 class="rounded-3">MyLittleForay</h3>
+
+      <div id="imp">
+        <p id="importe"></p>
+      </div>
+
+      <div id="tit">
+        <h4 id="titT" class="rounded-3" style="text-decoration: underline;"></h4>
+      </div>
+
+      <div id="divText" class="rounded-3">
+        <p id="text" style="font-style: italic;"></p>
+      </div>
+
+      <div id="yota">
+        <div id="dePara2">
+          <p id="deQ"></p>
+          <p id="paraQ"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-info rounded-1">
+      <p>*El precio de la tarjeta es la misma que la del importe.</p>
+    </div>
+
+    <!-- boton de comprar tarjeta -->
+    <div style="clear: both; text-align: center;">
+      <button  id="botonComprar" class="btn btn-primary disabled" data-bs-toggle="modal" data-bs-target=".modal">COMPRAR TARJETA</button>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div id="footer" style="clear: both; padding-top: 50px;"></div>
+
+  <!-- scripts -->
+  <script src="../js/navbar.js"></script>
+  <script src="../js/headfoot.js"></script>
+  <script src="../js/tarjetaRegalo.js"></script>
+  
 </body>
 
 </html>
