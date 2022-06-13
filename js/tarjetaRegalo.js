@@ -94,8 +94,8 @@ function vaciar() {
     document.getElementById("paraQ").innerText = null;
     document.getElementById("tarjeta").style.background = "aqua";
     document.getElementById("importe").innerHTML = "";
+    validarEmail();
 }
-
   
 //Recargar pagina
 function recargar() {
